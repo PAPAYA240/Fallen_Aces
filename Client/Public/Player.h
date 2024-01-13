@@ -25,9 +25,10 @@ public:
 	virtual HRESULT Render() override;
 
 public:
-	// 플레이어 멤버 변수의 주소를 반환해주는 함수
+	// 플레이어 멤버 변수의 주소를 반환해주는 함수들 (UI에 연동해줌)
 	_uint* Get_Hp_Address() { return &m_iHp; }
 	class CItem** Get_EquipItem_Address()  { return &m_pEquipment; }
+	vector<class CItem*>* Get_Inventory_Address() { return &m_vecInven; }
 
 private:
 	CTexture*				m_pTextureCom = { nullptr };

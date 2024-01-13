@@ -29,7 +29,7 @@ HRESULT CUI_Player_State::Initialize(void* pArg)
 
     Initialize_UI_Setting(g_iWinSizeX, g_iWinSizeY);
 
-    if (FAILED(m_pGameInstance->Add_Font(TEXT("Font_Default"), TEXT("³Ø½¼Lv1 °íµñ"), m_vSize.x * 0.1f, m_vSize.y * 0.18f, FW_BOLD)))
+    if (FAILED(m_pGameInstance->Add_Font(TEXT("Font_Default"), TEXT("³Ø½¼Lv1 °íµñ"), (_uint)(m_vSize.x * 0.1f), (_uint)(m_vSize.y * 0.18f), FW_BOLD)))
         return E_FAIL;
 
     return S_OK;

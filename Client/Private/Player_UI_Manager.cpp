@@ -3,7 +3,9 @@
 
 #include "Player.h"
 #include "UI_Player_State.h"
+#include "UI_Inventory.h"
 #include "UI_Equip.h"
+
 #include "CItem.h"
 
 CPlayer_UI_Manager::CPlayer_UI_Manager(LPDIRECT3DDEVICE9 pGraphic_Device)
@@ -33,6 +35,7 @@ HRESULT CPlayer_UI_Manager::Initialize(void* pArg)
 {
 	Player_UI_Manager_DESC* Desc = (Player_UI_Manager_DESC*)pArg;
 	m_pPlayer = Desc->pPlayer;
+
 	Safe_AddRef(m_pPlayer);
 
 	if (FAILED(__super::Initialize(pArg)))
@@ -41,22 +44,38 @@ HRESULT CPlayer_UI_Manager::Initialize(void* pArg)
 #pragma region Cloned Player State UI
 	CUI_Player_State::UI_PLAYER_STATE_DESC StateDesc = {};
 	StateDesc. vSize = { 873.f * 0.3f, 653.f * 0.3f};
+	// 화면 좌하단
 	StateDesc.vPos = { StateDesc.vSize.x * 0.5f, g_iWinSizeY - StateDesc.vSize.y * 0.55f, 0.f };
+	// 플레이어의 체력 멤버변수의 주소를 가져와 연동
 	StateDesc.pPlayerHp = m_pPlayer->Get_Hp_Address();
 
 	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, TEXT("Layer_Player_UI"), TEXT("Prototype_GameObject_UI_Player_State"), &StateDesc)))
 		return E_FAIL;
 #pragma endregion
 
+#pragma region Cloned Player Equipment UI
+	//CUI_Player_State::UI_PLAYER_STATE_DESC EquipDesc = {};
+	//StateDesc.vSize = { 873.f * 0.3f, 653.f * 0.3f };
+	//// 화면 좌하단
+	//StateDesc.vPos = { StateDesc.vSize.x * 0.5f, g_iWinSizeY - StateDesc.vSize.y * 0.55f, 0.f };
+	//// 플레이어의 체력 멤버변수의 주소를 가져와 연동
+	//StateDesc.pPlayerHp = m_pPlayer->Get_Hp_Address();
+
+	//if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, TEXT("Layer_Player_UI"), TEXT("Prototype_GameObject_UI_Player_State"), &StateDesc)))
+	//	return E_FAIL;
+#pragma endregion
 
 #pragma region Cloned Player Equipment UI
 	CUI_Equip::UI_EQUIP_DESC EquipDesc = {};
 	EquipDesc.vSize = { 304.f * 0.4f, 171.f * 0.4f };
+	// 화면 우하단
 	EquipDesc.vPos = { g_iWinSizeX - (StateDesc.vSize.x * 0.5f), g_iWinSizeY - StateDesc.vSize.y * 0.5f, 0.f };
+	// 플레이어의 장착 아이템 멤버변수의 주소를 가져와 연동
 	EquipDesc.pEquipItem = (m_pPlayer->Get_EquipItem_Address());
 
 	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, TEXT("Layer_Player_UI"), TEXT("Prototype_GameObject_UI_Equip"), &EquipDesc)))
 		return E_FAIL;
+#pragma endregion
 
 	return S_OK;
 }

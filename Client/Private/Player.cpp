@@ -62,6 +62,7 @@ void CPlayer::Tick(_float fTimeDelta)
 		m_iHp++;
 	}
 
+	// 장비 아이템 UI 테스트용 Item 생성문
 	if (m_pGameInstance->Get_KeyState(VK_LBUTTON) == EKeyState::DOWN)
 	{
 		if (nullptr == m_pEquipment)
@@ -133,9 +134,9 @@ void CPlayer::Tick(_float fTimeDelta)
 		m_bLeftPunch ? m_pPlayer_LH->Set_State(STATE_ATTACK) : m_pPlayer_RH->Set_State(STATE_ATTACK);
 
 		m_bLeftPunch = !m_bLeftPunch;
-	}
+	}*/
 
-	if (m_pGameInstance->Get_KeyState(VK_RBUTTON) == EKeyState::DOWN)
+	/*if (m_pGameInstance->Get_KeyState(VK_RBUTTON) == EKeyState::DOWN)
 	{
 		_uint LCnt = m_pPlayer_LH->m_iAttackCnt;
 		_uint RCnt = m_pPlayer_RH->m_iAttackCnt;

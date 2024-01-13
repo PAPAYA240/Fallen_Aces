@@ -102,6 +102,4 @@ void CGameObject::Free()
 
 	Safe_Release(m_pGameInstance);
 	Safe_Release(m_pGraphic_Device);
-
-	
 }
