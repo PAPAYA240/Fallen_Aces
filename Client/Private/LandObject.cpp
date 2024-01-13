@@ -76,6 +76,7 @@ void CLandObject::Free()
 
 	Safe_Release(m_pTerrainTransform);
 	Safe_Release(m_pTerrainVIBuffer);
+	Safe_Release(m_pColliderCom);
 
 	for (auto iter : m_Collisions)
 	{

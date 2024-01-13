@@ -138,6 +138,9 @@ HRESULT CLevel_GamePlay::Ready_Layer_Items(const wstring& strLayerTag, CLandObje
 
 		if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_Cola"), &LandObjectDesc)))
 			return E_FAIL;
+
+		if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_MedKit"), &LandObjectDesc)))
+			return E_FAIL;
 	}
 
 	return S_OK;

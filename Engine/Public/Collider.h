@@ -4,12 +4,7 @@
 
 #define COLLIDER_BOX_VERTICES 8
 
-// TEST 2
-
 BEGIN(Engine)
-
-
-//	TEST Sangwoo
 
 class ENGINE_DLL CCollider abstract : public CComponent
 {

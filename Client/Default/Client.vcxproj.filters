@@ -94,6 +94,9 @@
     <Filter Include="02.GameObjects\LandObject\Items\0. HealItems\02. Cola">
       <UniqueIdentifier>{f0e5bedd-4b0c-4d06-a6a6-b102c68fcd47}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02.GameObjects\LandObject\Items\0. HealItems\03. Medkit">
+      <UniqueIdentifier>{2bdb1085-14ac-41f0-939e-e1d3e2e5f6c3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -186,6 +189,9 @@
     <ClInclude Include="..\Public\CItemCola.h">
       <Filter>02.GameObjects\LandObject\Items\0. HealItems\02. Cola</Filter>
     </ClInclude>
+    <ClInclude Include="..\public\CItemMedKit.h">
+      <Filter>02.GameObjects\LandObject\Items\0. HealItems\03. Medkit</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -265,6 +271,9 @@
     </ClCompile>
     <ClCompile Include="..\Private\CItemCola.cpp">
       <Filter>02.GameObjects\LandObject\Items\0. HealItems\02. Cola</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\CItemMedKit.cpp">
+      <Filter>02.GameObjects\LandObject\Items\0. HealItems\03. Medkit</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

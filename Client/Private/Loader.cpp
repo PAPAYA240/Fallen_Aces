@@ -24,6 +24,7 @@
 #include "CItemApple.h"
 #include "CItemBanana.h"
 #include "CItemCola.h"
+#include "CItemMedKit.h"
 
 CLoader::CLoader(LPDIRECT3DDEVICE9 pGraphic_Device)
 	: m_pGraphic_Device(pGraphic_Device)
@@ -228,6 +229,10 @@ HRESULT CLoader::Loading_For_GamePlay()
 		CItemCola::Create(m_pGraphic_Device))))
 		return E_FAIL;
 
+	/* For.Prototype_GameObject_MedKit */
+	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_MedKit"),
+		CItemMedKit::Create(m_pGraphic_Device))))
+		return E_FAIL;
 
 	/* For.Prototype_GameObject_Monster */
 	/* 1. Goon Monster */

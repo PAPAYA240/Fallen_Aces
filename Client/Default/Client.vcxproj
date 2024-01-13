@@ -167,6 +167,7 @@
     <ClInclude Include="..\Public\CItemApple.h" />
     <ClInclude Include="..\Public\CItemBanana.h" />
     <ClInclude Include="..\Public\CItemCola.h" />
+    <ClInclude Include="..\public\CItemMedKit.h" />
     <ClInclude Include="..\Public\Client_Defines.h" />
     <ClInclude Include="..\Public\Effect.h" />
     <ClInclude Include="..\Public\Goon_Monster.h" />
@@ -198,6 +199,7 @@
     <ClCompile Include="..\Private\CItemApple.cpp" />
     <ClCompile Include="..\Private\CItemBanana.cpp" />
     <ClCompile Include="..\Private\CItemCola.cpp" />
+    <ClCompile Include="..\private\CItemMedKit.cpp" />
     <ClCompile Include="..\Private\Effect.cpp" />
     <ClCompile Include="..\Private\Goon_Monster.cpp" />
     <ClCompile Include="..\private\LandObject.cpp" />

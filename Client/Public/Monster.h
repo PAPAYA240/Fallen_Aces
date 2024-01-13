@@ -13,7 +13,7 @@ BEGIN(Client)
 class CMonster abstract : public CLandObject
 {
 public:
-	typedef struct : public CLandObject::LANDOBJECT_DESC
+	typedef struct tagMonsterDescription : public CLandObject::LANDOBJECT_DESC
 	{
 		MONSTER_STATE	pMonster_Start_State;
 		_float3			fAttack_Direction;
