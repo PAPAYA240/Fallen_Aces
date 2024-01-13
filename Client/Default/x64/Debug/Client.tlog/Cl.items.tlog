@@ -1,26 +1,30 @@
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\private\BackGround.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\BackGround.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\private\Camera_Free.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\Camera_Free.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Private\Camera_Object.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\Camera_Object.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Private\CHealItem.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\CHealItem.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Private\CItem.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\CItem.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Private\CItemApple.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\CItemApple.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Private\CItemBanana.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\CItemBanana.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Private\CItemCola.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\CItemCola.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Private\Effect.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\Effect.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Private\Goon_Monster.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\Goon_Monster.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\private\LandObject.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\LandObject.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Private\Level_GamePlay.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\Level_GamePlay.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\private\Level_Loading.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\Level_Loading.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Private\Level_Logo.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\Level_Logo.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\private\Loader.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\Loader.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\private\MainApp.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\MainApp.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Private\Matches_Monster.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\Matches_Monster.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Private\Monster.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\Monster.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Private\PipeGuy_Monster.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\PipeGuy_Monster.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Private\Player.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\Player.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Private\Player_LH.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\Player_LH.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Private\Player_RH.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\Player_RH.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Private\Sky.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\Sky.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Private\Terrain.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\Terrain.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\Client.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\Client.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\stdafx.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Default\x64\Debug\stdafx.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\private\BackGround.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\BackGround.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\private\Camera_Free.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\Camera_Free.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\Camera_Object.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\Camera_Object.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\CHealItem.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\CHealItem.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\CItem.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\CItem.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\CItemApple.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\CItemApple.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\CItemBanana.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\CItemBanana.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\CItemCola.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\CItemCola.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\Effect.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\Effect.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\Goon_Monster.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\Goon_Monster.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\private\LandObject.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\LandObject.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\Level_GamePlay.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\Level_GamePlay.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\private\Level_Loading.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\Level_Loading.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\Level_Logo.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\Level_Logo.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\private\Loader.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\Loader.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\private\MainApp.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\MainApp.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\Matches_Monster.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\Matches_Monster.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\Monster.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\Monster.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\PipeGuy_Monster.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\PipeGuy_Monster.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\Player.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\Player.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\Player_LH.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\Player_LH.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\Player_RH.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\Player_RH.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\Player_UI_Manager.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\Player_UI_Manager.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\Sky.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\Sky.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\Terrain.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\Terrain.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\UI_Equip.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\UI_Equip.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\UI_Inventory.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\UI_Inventory.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\UI_Player_State.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\UI_Player_State.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\Client.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\Client.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\stdafx.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Default\x64\Debug\stdafx.obj

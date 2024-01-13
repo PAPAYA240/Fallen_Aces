@@ -4,6 +4,7 @@
 #include "Object_Manager.h"
 #include "Level_Manager.h"
 #include "Timer_Manager.h"
+#include "Font_Manager.h"
 #include "Key_Manager.h"
 #include "Renderer.h"
 #include "Picking.h"
@@ -38,7 +39,9 @@ HRESULT CGameInstance::Initialize_Engine(_uint iNumLevels, const ENGINE_DESC& En
 	if (nullptr == m_pLevel_Manager)
 		return E_FAIL;
 
-	
+	m_pFont_Manager = CFont_Manager::Create(*ppGraphic_Device);
+	if (nullptr == m_pFont_Manager)
+		return E_FAIL;
 
 	/* 인풋 디바이스를 초기화한다 .*/
 
@@ -226,6 +229,16 @@ _uint CGameInstance::Get_KeyState(int _iKey)
 	return m_pKey_Manager->Get_KeyState(_iKey);
 }
 
+HRESULT CGameInstance::Add_Font(const wstring& strFontTag, const wstring& strFontType, const _uint& iWidth, const _uint& iHeight, const _uint& iWeight)
+{
+	return m_pFont_Manager->Add_Font(strFontTag, strFontType, iWidth, iHeight, iWeight);
+}
+
+void CGameInstance::Render_Font(const wstring& strFontTag, const wstring& strText, const _float2* pPos, D3DXCOLOR Color)
+{
+	return m_pFont_Manager->Render_Font(strFontTag, strText, pPos, Color);
+}
+
 void CGameInstance::Release_Engine()
 {
 	CGameInstance::Get_Instance()->Free();
@@ -243,4 +256,5 @@ void CGameInstance::Free()
 	Safe_Release(m_pLevel_Manager);
 	Safe_Release(m_pGraphic_Device);
 	Safe_Release(m_pKey_Manager);
+	Safe_Release(m_pFont_Manager);
 }

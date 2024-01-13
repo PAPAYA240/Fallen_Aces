@@ -100,6 +100,12 @@
     <Filter Include="01.Utility\04.Components\Collider\Collider_Sphere">
       <UniqueIdentifier>{a5c00ccc-8e2f-4c79-bbbe-c7a4e5553b17}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01.Utility\07.Font">
+      <UniqueIdentifier>{8b21934a-c509-4bb4-a2f9-9bb9098ae849}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Utility\07.Font\Manager">
+      <UniqueIdentifier>{f28aa50f-04c4-4ea0-ae17-3f12c8cd1e48}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Private\Base.cpp">
@@ -182,6 +188,15 @@
     </ClCompile>
     <ClCompile Include="..\Private\Collider_Box.cpp">
       <Filter>01.Utility\04.Components\Collider\Collider_Box</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\UI.cpp">
+      <Filter>01.Utility\02.GameObjects\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Font_Manager.cpp">
+      <Filter>01.Utility\07.Font\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\CustomFont.cpp">
+      <Filter>01.Utility\07.Font</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -283,6 +298,15 @@
     </ClInclude>
     <ClInclude Include="..\Public\Collider_Box.h">
       <Filter>01.Utility\04.Components\Collider\Collider_Box</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Font_Manager.h">
+      <Filter>01.Utility\07.Font\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\CustomFont.h">
+      <Filter>01.Utility\07.Font</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\UI.h">
+      <Filter>01.Utility\02.GameObjects\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

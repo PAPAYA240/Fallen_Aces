@@ -81,4 +81,6 @@ void CLandObject::Free()
 	{
 		Safe_Release(iter.pCollisionObject);
 	}
+
+	Safe_Release(m_pColliderCom);
 }

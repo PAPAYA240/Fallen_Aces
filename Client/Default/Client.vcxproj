@@ -182,8 +182,12 @@
     <ClInclude Include="..\Public\Player.h" />
     <ClInclude Include="..\Public\Player_LH.h" />
     <ClInclude Include="..\Public\Player_RH.h" />
+    <ClInclude Include="..\Public\Player_UI_Manager.h" />
     <ClInclude Include="..\Public\Sky.h" />
     <ClInclude Include="..\Public\Terrain.h" />
+    <ClInclude Include="..\Public\UI_Equip.h" />
+    <ClInclude Include="..\Public\UI_Inventory.h" />
+    <ClInclude Include="..\Public\UI_Player_State.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -212,8 +216,12 @@
     <ClCompile Include="..\Private\Player.cpp" />
     <ClCompile Include="..\Private\Player_LH.cpp" />
     <ClCompile Include="..\Private\Player_RH.cpp" />
+    <ClCompile Include="..\Private\Player_UI_Manager.cpp" />
     <ClCompile Include="..\Private\Sky.cpp" />
     <ClCompile Include="..\Private\Terrain.cpp" />
+    <ClCompile Include="..\Private\UI_Equip.cpp" />
+    <ClCompile Include="..\Private\UI_Inventory.cpp" />
+    <ClCompile Include="..\Private\UI_Player_State.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

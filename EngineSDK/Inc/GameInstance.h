@@ -49,6 +49,9 @@ public: /* For.Picking */
 public: // For Key Manager
 	_uint Get_KeyState(int _iKey);
 
+public: /* For.Font_Manager */
+	HRESULT		Add_Font(const wstring& strFontTag, const wstring& strFontType, const _uint& iWidth, const _uint& iHeight, const _uint& iWeight);
+	void		Render_Font(const wstring& strFontTag, const wstring& strText, const _float2* pPos, D3DXCOLOR Color);
 
 private:
 	class CGraphic_Device*			m_pGraphic_Device = { nullptr };
@@ -59,6 +62,7 @@ private:
 	class CTimer_Manager*			m_pTimer_Manager = { nullptr };
 	class CPicking*					m_pPicking = { nullptr };
 	class CKey_Manager*				m_pKey_Manager = { nullptr };
+	class CFont_Manager*			m_pFont_Manager = { nullptr };
 
 public:		
 	static void Release_Engine();

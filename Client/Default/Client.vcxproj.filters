@@ -94,6 +94,24 @@
     <Filter Include="02.GameObjects\LandObject\Items\0. HealItems\02. Cola">
       <UniqueIdentifier>{f0e5bedd-4b0c-4d06-a6a6-b102c68fcd47}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02.GameObjects\UI">
+      <UniqueIdentifier>{bc08f1f8-756c-4dbe-8967-b60b9d2a8d77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\UI\Player">
+      <UniqueIdentifier>{991493c9-d825-4b84-82a6-bea8380e0ccc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\UI\Player\UI_Equip">
+      <UniqueIdentifier>{cd86d945-3c6d-4b14-8650-1032f5d32bfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\UI\Player\UI_Inventory">
+      <UniqueIdentifier>{f294c5b5-955a-4ab5-aab1-d680d2e61480}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\UI\Player\UI_Player_Manager">
+      <UniqueIdentifier>{7cc9d125-8664-4eaf-9374-05dfcba5054f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\UI\Player\UI_Player_State">
+      <UniqueIdentifier>{906ea60f-1221-4648-9a5f-56a65c4f2f2e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -186,6 +204,18 @@
     <ClInclude Include="..\Public\CItemCola.h">
       <Filter>02.GameObjects\LandObject\Items\0. HealItems\02. Cola</Filter>
     </ClInclude>
+    <ClInclude Include="..\Public\UI_Player_State.h">
+      <Filter>02.GameObjects\UI\Player\UI_Player_State</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Player_UI_Manager.h">
+      <Filter>02.GameObjects\UI\Player\UI_Player_Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\UI_Equip.h">
+      <Filter>02.GameObjects\UI\Player\UI_Equip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\UI_Inventory.h">
+      <Filter>02.GameObjects\UI\Player\UI_Inventory</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -265,6 +295,18 @@
     </ClCompile>
     <ClCompile Include="..\Private\CItemCola.cpp">
       <Filter>02.GameObjects\LandObject\Items\0. HealItems\02. Cola</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Player_UI_Manager.cpp">
+      <Filter>02.GameObjects\UI\Player\UI_Player_Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\UI_Equip.cpp">
+      <Filter>02.GameObjects\UI\Player\UI_Equip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\UI_Inventory.cpp">
+      <Filter>02.GameObjects\UI\Player\UI_Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\UI_Player_State.cpp">
+      <Filter>02.GameObjects\UI\Player\UI_Player_State</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
