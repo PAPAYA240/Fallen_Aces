@@ -51,7 +51,7 @@ HRESULT CItemMedKit::Initialize(void* pArg)
 
 	m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(_float(rand() % 100), 5.f, _float(rand() % 100)));
 	//m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(_float(0), 5.f, _float(0)));
-	m_pTransformCom->Set_Scaled(1.f, 0.7f, 1.f);
+	m_pTransformCom->Set_Scaled(0.5f, 0.3f, 1.f);
 
 	return S_OK;
 }
@@ -120,9 +120,6 @@ CGameObject* CItemMedKit::Clone(void* pArg)
 void CItemMedKit::Free()
 {
 	__super::Free();
-
-	Safe_Release<CTexture*>(m_pTextureCom);
-	Safe_Release<CVIBuffer_Rect*>(m_pVIbufferCom);
 }
 
 HRESULT CItemMedKit::Add_MyComponents()

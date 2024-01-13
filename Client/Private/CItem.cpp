@@ -33,16 +33,12 @@ HRESULT CItem::Initialize(void* pArg)
 	return S_OK;
 }
 
-const ITEM& CItem::ItemType() const
-{
-	// TODO: 여기에 return 문을 삽입합니다.
-
-	return ITEM::_END;
-}
-
 void CItem::Free()
 {
 	__super::Free();
+
+	Safe_Release<CTexture*>(m_pTextureCom);
+	Safe_Release<CVIBuffer_Rect*>(m_pVIbufferCom);
 }
 
 void CItem::BillBoard_Camera()
@@ -56,6 +52,42 @@ void CItem::BillBoard_Camera()
 	D3DXMatrixInverse(&matViewInv, nullptr, &matView);
 
 	m_pTransformCom->Set_State(CTransform::STATE_RIGHT, *(_float3*)& matViewInv.m[0][0] * vScale.x);
-	m_pTransformCom->Set_State(CTransform::STATE_UP, *(_float3*)&matViewInv.m[1][0] * vScale.y);
+
+	if(XYZ == m_eBillbordType)
+		m_pTransformCom->Set_State(CTransform::STATE_UP, *(_float3*)&matViewInv.m[1][0] * vScale.y);
+
 	m_pTransformCom->Set_State(CTransform::STATE_LOOK, *(_float3*)&matViewInv.m[2][0] * vScale.z);
+}
+
+void CItem::Check_Durability()
+{
+	if (nullptr == m_pTextureCom)
+		return;
+
+	if (100.f >= m_fDurability && 50.f < m_fDurability)
+		m_eDuraType = ITEM_DURA::PERFECT;
+	else if (50.f >= m_fDurability && 0.f < m_fDurability)
+		m_eDuraType = ITEM_DURA::GOOD;
+	else if(0.f >= m_fDurability)
+		m_eDuraType = ITEM_DURA::BROKEN;
+
+	switch (_uint(m_eItemType))
+	{
+	case _uint(ITEM::APPLE):
+	{
+		if (ITEM_DURA::GOOD == m_eDuraType)
+			m_pTextureCom->Change_Container(TEXT("Item"), TEXT("Apple"));
+		else if (ITEM_DURA::BROKEN == m_eDuraType)
+			m_pTextureCom->Change_Container(TEXT("Item"), TEXT("Apple_Eat"));
+	}
+		break;
+	case _uint(ITEM::BANANA):
+	{
+		if (ITEM_DURA::GOOD == m_eDuraType)
+			m_pTextureCom->Change_Container(TEXT("Item"), TEXT("Banana"));
+		else if (ITEM_DURA::BROKEN == m_eDuraType)
+			m_pTextureCom->Change_Container(TEXT("Item"), TEXT("Banana_Eat"));
+	}
+	break;
+	}
 }

@@ -17,8 +17,8 @@ public:
 	virtual HRESULT			Render()						override;
 
 public:
-	static	CItemCola* Create(LPDIRECT3DDEVICE9 _pGraphic_Device);
-	virtual CGameObject* Clone(void* pArg)	override;
+	static	CItemCola*		Create(LPDIRECT3DDEVICE9 _pGraphic_Device);
+	virtual CGameObject*	Clone(void* pArg)	override;
 	virtual void			Free()				override;
 
 public:
@@ -28,9 +28,5 @@ public:
 
 private:
 	CGameObject* Check_Collision(LEVEL eLevel, const wstring& strLayerTag, _float3* pDirection = nullptr);
-
-private:
-	CTexture* m_pTextureCom = { nullptr };
-	CVIBuffer_Rect* m_pVIbufferCom = { nullptr };
 };
 

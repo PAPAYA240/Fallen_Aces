@@ -50,7 +50,7 @@ HRESULT CItemCola::Initialize(void* pArg)
 	m_pTextureCom->Change_Container(TEXT("Item"), TEXT("Cola"));
 
 	m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(_float(rand() % 100), 5.f, _float(rand() % 100)));
-	m_pTransformCom->Set_Scaled(0.4f, 0.7f, 1.f);
+	m_pTransformCom->Set_Scaled(0.3f, 0.6f, 1.f);
 
 	return S_OK;
 }
@@ -119,9 +119,6 @@ CGameObject* CItemCola::Clone(void* pArg)
 void CItemCola::Free()
 {
 	__super::Free();
-
-	Safe_Release<CTexture*>(m_pTextureCom);
-	Safe_Release<CVIBuffer_Rect*>(m_pVIbufferCom);
 }
 
 HRESULT CItemCola::Add_MyComponents()

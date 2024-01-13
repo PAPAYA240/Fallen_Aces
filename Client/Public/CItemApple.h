@@ -28,9 +28,5 @@ public:
 
 private:
 	CGameObject*			Check_Collision(LEVEL eLevel, const wstring& strLayerTag, _float3* pDirection = nullptr);
-
-private:
-	CTexture*				m_pTextureCom = { nullptr };
-	CVIBuffer_Rect*			m_pVIbufferCom = { nullptr };
 };
 

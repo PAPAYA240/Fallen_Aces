@@ -28,6 +28,8 @@ HRESULT CItemBanana::Initialize(void* pArg)
 		MyDesc.pTerrainVIBuffer = pDesc->pTerrainVIBuffer;
 	}
 
+	m_eBillbordType = XYZ;
+
 	MyDesc.eItemType = { ITEM::BANANA };
 	MyDesc.fAttackDamage = { 0.f };
 	MyDesc.fDurability = { 1.f };
@@ -50,13 +52,15 @@ HRESULT CItemBanana::Initialize(void* pArg)
 	m_pTextureCom->Change_Container(TEXT("Item"), TEXT("Banana"));
 
 	m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(_float(rand() % 100), 5.f, _float(rand() % 100)));
-	m_pTransformCom->Set_Scaled(0.7f, 0.5f, 1.f);
+	m_pTransformCom->Set_Scaled(0.5f, 0.3f, 1.f);
 
 	return S_OK;
 }
 
 void CItemBanana::Tick(_float fTimeDelta)
 {
+	Check_Durability();
+
 	if (FAILED(SetUp_OnTerrain(0.3f)))
 		return;
 }
@@ -119,9 +123,6 @@ CGameObject* CItemBanana::Clone(void* pArg)
 void CItemBanana::Free()
 {
 	__super::Free();
-
-	Safe_Release<CTexture*>(m_pTextureCom);
-	Safe_Release<CVIBuffer_Rect*>(m_pVIbufferCom);
 }
 
 HRESULT CItemBanana::Add_MyComponents()

@@ -28,7 +28,10 @@ HRESULT CItemApple::Initialize(void* pArg)
 		MyDesc.pTerrainVIBuffer = pDesc->pTerrainVIBuffer;
 	}
 
+	m_eBillbordType = XYZ;
+
 	MyDesc.eItemType = { ITEM::APPLE };
+	
 	MyDesc.fAttackDamage = { 0.f };
 	MyDesc.fDurability = { 1.f };
 
@@ -50,13 +53,15 @@ HRESULT CItemApple::Initialize(void* pArg)
 	m_pTextureCom->Change_Container(TEXT("Item"), TEXT("Apple"));
 
 	m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(_float(rand() % 100), 5.f, _float(rand() % 100)));
-	m_pTransformCom->Set_Scaled(0.5f, 0.5f, 1.f);
+	m_pTransformCom->Set_Scaled(0.3f, 0.3f, 1.f);
 
 	return S_OK;
 }
 
 void CItemApple::Tick(_float fTimeDelta)
 {
+	Check_Durability();
+
 	if (FAILED(SetUp_OnTerrain(0.3f)))
 		return;
 }
@@ -119,9 +124,6 @@ CGameObject* CItemApple::Clone(void* pArg)
 void CItemApple::Free()
 {
 	__super::Free();
-
-	Safe_Release<CTexture*>(m_pTextureCom);
-	Safe_Release<CVIBuffer_Rect*>(m_pVIbufferCom);
 }
 
 HRESULT CItemApple::Add_MyComponents()
