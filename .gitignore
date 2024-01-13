@@ -31,6 +31,9 @@
 *.out
 *.app
 
+# Vs
+.vs/
+
 # Project Client
 Client/Bin/Client.exe
 Client/Bin/Client.pdb
