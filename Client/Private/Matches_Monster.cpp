@@ -87,7 +87,4 @@ CGameObject* CMatches_Monster::Clone(void* pArg)
 void CMatches_Monster::Free()
 {
 	__super::Free();
-
-	Safe_Release(m_pTextureCom);
-	Safe_Release(m_pVIBufferCom);
 }

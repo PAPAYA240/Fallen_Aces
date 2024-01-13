@@ -23,6 +23,8 @@ HRESULT CPipeGuy_Monster::Initialize(void* pArg)
 	pMonsterDesc->fRotationPerSec = D3DXToRadian(90.0f);
 	m_fAttack_Radius = pMonsterDesc->fAttack_Direction = _float3(1.f, 1.f, 1.f);
 
+	m_wstrStateTag = TEXT("PipeGuy");
+
 	if (FAILED(__super::Initialize(pArg)))
 		return E_FAIL;
 
@@ -92,7 +94,4 @@ CGameObject* CPipeGuy_Monster::Clone(void* pArg)
 void CPipeGuy_Monster::Free()
 {
 	__super::Free();
-
-	Safe_Release(m_pTextureCom);
-	Safe_Release(m_pVIBufferCom);
 }

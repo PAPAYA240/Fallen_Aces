@@ -151,6 +151,9 @@ list<class CGameObject*>* CObject_Manager::Get_LayerList(int iLevelIndex, const 
 {
 	class CLayer* pLayer = Find_Layer(iLevelIndex, strLayerTag);
 
+	if (nullptr == pLayer)
+		return nullptr;
+
 	return pLayer->Get_LayerList();
 }
 

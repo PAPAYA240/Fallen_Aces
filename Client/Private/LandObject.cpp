@@ -45,8 +45,8 @@ void CLandObject::Late_Tick(_float fTimeDelta)
 
 HRESULT CLandObject::Render()
 {
-	if (FAILED(m_pColliderCom->Render()))
-		return E_FAIL;
+	/*if (FAILED(m_pColliderCom->Render()))
+		return E_FAIL;*/
 
 	return S_OK;
 }
@@ -82,6 +82,4 @@ void CLandObject::Free()
 	{
 		Safe_Release(iter.pCollisionObject);
 	}
-
-	Safe_Release(m_pColliderCom);
 }

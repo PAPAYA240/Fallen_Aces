@@ -43,12 +43,18 @@ protected:
 	void	Player_Follow(_float fDeltaTime);
 	void	Walk_Range();
 
+protected:
+	HRESULT	Check_ForChangeContainer();
+
 protected : // 멤버 변수
 	MONSTER_STATE				m_pMonsterState;
 	MONSTER_STATE				m_pPast_MonsterState;
 
 	CTexture*					m_pTextureCom = { nullptr };
 	CVIBuffer_Rect*				m_pVIBufferCom = { nullptr };
+
+	wstring						m_wstrTypeTag = { TEXT("Monster") };
+	wstring						m_wstrStateTag = { TEXT("") };
 
 	_float						m_fSpeedPerSec = { 0.0f };
 	// 상태 값

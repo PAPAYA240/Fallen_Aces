@@ -26,6 +26,8 @@ HRESULT CGoon_Monster::Initialize(void* pArg)
 	m_fRunRange = pMonsterDesc->fRun_Range = 40.f; // 뛰는 모션의 범위
 	m_fWalkRange = pMonsterDesc->fWalk_Range = 20.f; // 걷는 모션의 범위
 
+	m_wstrStateTag = TEXT("PipeGuy");
+
 	if (FAILED(__super::Initialize(pArg)))
 		return E_FAIL;
 
@@ -347,7 +349,4 @@ CGameObject* CGoon_Monster::Clone(void* pArg)
 void CGoon_Monster::Free()
 {
 	__super::Free();
-
-	Safe_Release(m_pTextureCom);
-	Safe_Release(m_pVIBufferCom);
 }

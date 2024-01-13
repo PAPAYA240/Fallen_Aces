@@ -46,6 +46,9 @@ void CMonster::Tick(_float fTimeDelta)
 
 	const CTransform* pPlayer_Transform = dynamic_cast<const CTransform*>(m_pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_Player"), g_strTransformTag));
 
+	if (nullptr == pPlayer_Transform)
+		return;
+
 	_float3 fPlayer_Position = pPlayer_Transform->Get_State(CTransform::STATE_POSITION);
 	_float3 fMonster_Position = m_pTransformCom->Get_State(CTransform::STATE_POSITION);
 
@@ -73,6 +76,9 @@ void CMonster::Tick(_float fTimeDelta)
 
 		m_pTransformCom->Set_State(CTransform::STATE_POSITION, vPos);
 	}
+
+	if (FAILED(Check_ForChangeContainer()))
+		return;
 }
 
 void CMonster::Late_Tick(_float fTimeDelta)
@@ -211,6 +217,95 @@ void CMonster::Walk_Range()
 		m_bDash = false;
 	}
 	
+}
+
+HRESULT CMonster::Check_ForChangeContainer()
+{
+	wstring strArrow = m_wstrStateTag;
+
+	switch (_uint(m_pMonsterState))
+	{
+	case _uint(MONSTER_STATE::MONSTER_IDLE):
+		strArrow += TEXT("_Idle");
+		break;
+	case _uint(MONSTER_STATE::MONSTER_WALK):
+		strArrow += TEXT("_Walk");
+		break;
+	case _uint(MONSTER_STATE::MONSTER_RUN):
+		strArrow += TEXT("_Run");
+		break;
+	case _uint(MONSTER_STATE::MONSTER_STRAFING):
+		strArrow += TEXT("_Strafing");
+		break;
+	case _uint(MONSTER_STATE::MONSTER_POOPING):
+		strArrow += TEXT("_Pooping");
+		break;
+	case _uint(MONSTER_STATE::MONSTER_TAUNT):
+		strArrow += TEXT("_Taunt");
+		break;
+	case _uint(MONSTER_STATE::MONSTER_ATTACK_READY):
+		strArrow += TEXT("_AttackReady");
+		break;
+	case _uint(MONSTER_STATE::MONSTER_ATTACK_WALK):
+		strArrow += TEXT("_AttackWalk");
+		break;
+	case _uint(MONSTER_STATE::MONSTER_CROTCH_HIT):
+		strArrow += TEXT("_CrotchHit");
+		break;
+	case _uint(MONSTER_STATE::MONSTER_DASH):
+		strArrow += TEXT("_Dash");
+		break;
+	case _uint(MONSTER_STATE::MONSTER_HEAVY_ATTACK):
+		strArrow += TEXT("_HeavyAttack");
+		break;
+	case _uint(MONSTER_STATE::MONSTER_FLINCH):
+		strArrow += TEXT("_Flich");
+		break;
+	case _uint(MONSTER_STATE::MONSTER_ATTACK):
+		strArrow += TEXT("_BasicAttack");
+		break;
+	case _uint(MONSTER_STATE::MONSTER_COLLAR):
+		strArrow += TEXT("_Collar");
+		break;
+	default:
+		return E_FAIL;
+	}
+
+	if (MONSTER_STATE::MONSTER_IDLE != m_pMonsterState)
+	{
+		strArrow += TEXT("_North");
+		return m_pTextureCom->Change_Container(m_wstrTypeTag, strArrow);
+	}
+
+	switch (_uint(m_eBodyDraw))
+	{
+	case _uint(CAMERA_DIR::SOUTH):
+		strArrow += TEXT("_South");
+		break;
+	case _uint(CAMERA_DIR::SOUTH_EAST):
+		strArrow += TEXT("_SouthEast");
+		break;
+	case _uint(CAMERA_DIR::SOUTH_WEST):
+		strArrow += TEXT("_SouthWest");
+		break;
+	case _uint(CAMERA_DIR::EAST):
+		strArrow += TEXT("_East");
+		break;
+	case _uint(CAMERA_DIR::NORTH):
+		strArrow += TEXT("_North");
+		break;
+	case _uint(CAMERA_DIR::NORTH_EAST):
+		strArrow += TEXT("_NorthEast");
+		break;
+	case _uint(CAMERA_DIR::NORTH_WEST):
+		strArrow += TEXT("_NorthWest");
+		break;
+	case _uint(CAMERA_DIR::WEST):
+		strArrow += TEXT("_WEST");
+		break;
+	}
+
+	return m_pTextureCom->Change_Container(m_wstrTypeTag, strArrow);
 }
 
 HRESULT CMonster::Add_Components()

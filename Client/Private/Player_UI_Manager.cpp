@@ -26,6 +26,7 @@ HRESULT CPlayer_UI_Manager::Initialize_Prototype()
 HRESULT CPlayer_UI_Manager::Initialize(void* pArg)
 {
 	Player_UI_Manager_DESC* Desc = (Player_UI_Manager_DESC*)pArg;
+
 	m_pPlayer = Desc->pPlayer;
 	Safe_AddRef(m_pPlayer);
 
