@@ -7,9 +7,13 @@
 #include "BackGround.h"
 #include "Terrain.h"
 #include "Monster.h"
+
 #include "Player.h"
 #include "Player_LH.h"
 #include "Player_RH.h"
+
+#include "Player_UI_Manager.h"
+
 #include "Effect.h"
 #include "Sky.h"
 
@@ -121,6 +125,11 @@ HRESULT CLoader::Loading_For_GamePlay()
 		CTexture::Create(m_pGraphic_Device, CTexture::TYPE_TEX2D, TEXT("../Bin/Resources/Textures/Terrain")))))
 		return E_FAIL;
 
+	/* Prototype_Component_Texture_UI */
+	if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Texture_UI"),
+		CTexture::Create(m_pGraphic_Device, CTexture::TYPE_TEX2D, TEXT("../Bin/Resources/Textures/UI")))))
+		return E_FAIL;
+
 	/* Prototype_Component_Texture_Player */
 	if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Texture_Player"),
 		CTexture::Create(m_pGraphic_Device, CTexture::TYPE_TEX2D, TEXT("../Bin/Resources/Textures/Player")))))
@@ -190,6 +199,11 @@ HRESULT CLoader::Loading_For_GamePlay()
 
 	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_Player_RH"),
 		CPlayer_RH::Create(m_pGraphic_Device))))
+		return E_FAIL;
+
+	/* For.Prototype_GameObject_Player_UI_Manager */
+	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_Player_UI_Manager"),
+		CPlayer_UI_Manager::Create(m_pGraphic_Device))))
 		return E_FAIL;
 
 	/* For.Prototype_GameObject_Effect */
