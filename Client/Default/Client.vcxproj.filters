@@ -97,6 +97,24 @@
     <Filter Include="02.GameObjects\LandObject\Items\0. HealItems\03. Medkit">
       <UniqueIdentifier>{2bdb1085-14ac-41f0-939e-e1d3e2e5f6c3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02.GameObjects\UI">
+      <UniqueIdentifier>{c31f0a4b-2575-470f-87b2-4ed6209441f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\UI\Player">
+      <UniqueIdentifier>{dea2e2dc-7ecf-4aae-b9de-6e550d45b426}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\UI\Player\State">
+      <UniqueIdentifier>{d0ac304d-111a-4cd0-b6f2-812313d4c56a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\UI\Player\Manager">
+      <UniqueIdentifier>{275c598e-c781-466f-a32e-e50a46087aac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\UI\Player\Equipment">
+      <UniqueIdentifier>{783088e8-744e-4ab6-bd15-35c1d0457095}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\UI\Player\Inventory">
+      <UniqueIdentifier>{0cd918d1-dfe3-4ec8-b685-4255c663c1df}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -192,6 +210,18 @@
     <ClInclude Include="..\public\CItemMedKit.h">
       <Filter>02.GameObjects\LandObject\Items\0. HealItems\03. Medkit</Filter>
     </ClInclude>
+    <ClInclude Include="..\Public\Player_UI_Manager.h">
+      <Filter>02.GameObjects\UI\Player\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\UI_Equip.h">
+      <Filter>02.GameObjects\UI\Player\Equipment</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\UI_Inventory.h">
+      <Filter>02.GameObjects\UI\Player\Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\UI_Player_State.h">
+      <Filter>02.GameObjects\UI\Player\State</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -274,6 +304,18 @@
     </ClCompile>
     <ClCompile Include="..\private\CItemMedKit.cpp">
       <Filter>02.GameObjects\LandObject\Items\0. HealItems\03. Medkit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Player_UI_Manager.cpp">
+      <Filter>02.GameObjects\UI\Player\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\UI_Equip.cpp">
+      <Filter>02.GameObjects\UI\Player\Equipment</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\UI_Inventory.cpp">
+      <Filter>02.GameObjects\UI\Player\Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\UI_Player_State.cpp">
+      <Filter>02.GameObjects\UI\Player\State</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
