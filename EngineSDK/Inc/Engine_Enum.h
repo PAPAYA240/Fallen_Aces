@@ -1,0 +1,14 @@
+#pragma once
+
+enum class CAMERA_DIR
+{
+	SOUTH,
+	SOUTH_EAST,
+	EAST,
+	NORTH_EAST,
+	NORTH,
+	NORTH_WEST,
+	WEST,
+	SOUTH_WEST,
+	_END
+};

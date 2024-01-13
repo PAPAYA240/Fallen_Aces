@@ -1,0 +1,34 @@
+﻿  Base.cpp
+  BlendObject.cpp
+  Camera.cpp
+  Collider.cpp
+  Collider_Box.cpp
+  Collider_Sphere.cpp
+  Component.cpp
+  Component_Manager.cpp
+  CTexLayer.cpp
+  GameInstance.cpp
+  GameObject.cpp
+  Graphic_Device.cpp
+  Key_Manager.cpp
+  Layer.cpp
+  Level.cpp
+  Level_Manager.cpp
+  Object_Manager.cpp
+  Picking.cpp
+  Renderer.cpp
+  Texture.cpp
+  컴파일하고 있습니다...
+  Timer.cpp
+  Timer_Manager.cpp
+  Transform.cpp
+  VIBuffer.cpp
+  VIBuffer_Cube.cpp
+  VIBuffer_Rect.cpp
+  VIBuffer_Terrain.cpp
+     ..\Bin\Engine.lib 라이브러리 및 ..\Bin\Engine.exp 개체를 생성하고 있습니다.
+  코드를 생성하고 있습니다.
+  Previous IPDB not found, fall back to full compilation.
+  All 1704 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  코드를 생성했습니다.
+  Engine.vcxproj -> C:\Users\tkddn\OneDrive\Desktop\수업자료\SR Frame\SR_FrameWork240111-1\Engine\Bin\Engine.dll

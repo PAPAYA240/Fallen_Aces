@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="98.Default">
+      <UniqueIdentifier>{5e9cf832-7cd5-4954-9ac1-bcdc87939fe4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00.MainApp">
+      <UniqueIdentifier>{448b625f-8459-4e03-8f95-26d7fe8d7430}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99.Defines">
+      <UniqueIdentifier>{3abce97a-393a-4d46-8d85-9f7c0cb3d32b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Levels">
+      <UniqueIdentifier>{33a280e1-98a4-4025-9cba-96ed986b25d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Levels\Loading">
+      <UniqueIdentifier>{05504e83-c144-48eb-8dbf-9ad30088da89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Levels\Logo">
+      <UniqueIdentifier>{fc2816b9-ba6f-453f-bd80-4a7444413e5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Levels\GamePlay">
+      <UniqueIdentifier>{05870aac-f5a8-4b1d-850f-9a7fedce870f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Levels\Loading\Loader">
+      <UniqueIdentifier>{c86bf72b-ddac-4dba-bbca-9ebfc014ccc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects">
+      <UniqueIdentifier>{1c5d9716-bab4-436d-bc23-d9362caeed6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\BackGround">
+      <UniqueIdentifier>{026d7c43-ca37-47e9-8c12-02e151b6d06d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Terrain">
+      <UniqueIdentifier>{65bdbe25-a5f0-4b36-85b5-8bc2c2ba51b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Camera">
+      <UniqueIdentifier>{1ad405b1-9ece-4ddd-90f4-0dd7f956903a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\LandObject">
+      <UniqueIdentifier>{a6b5ce7a-e84a-4da4-b0d0-0145f716597b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\LandObject\Player">
+      <UniqueIdentifier>{59e6cfee-ceb8-460c-8532-eb2b1deaab0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\LandObject\Monster">
+      <UniqueIdentifier>{438a8e37-22ac-4de3-97ed-b474b3f192a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Sky">
+      <UniqueIdentifier>{fb2e0bb0-d06f-4ae0-9c30-8c97d2b433d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Effect">
+      <UniqueIdentifier>{2cc338d0-ceaf-46c9-ab7e-344d7c18136b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\LandObject\Player\Hand">
+      <UniqueIdentifier>{d18da776-1b49-4b94-9788-ed9bdff46b11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\LandObject\Player\Hand\Left">
+      <UniqueIdentifier>{a42dd2c6-fdd3-4a90-a38a-73b8ce384c67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\LandObject\Player\Hand\Right">
+      <UniqueIdentifier>{680dd5b4-8099-4695-8687-d60a3c1e04d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Camera\Camera_Object">
+      <UniqueIdentifier>{e9b50dd1-667a-48a1-ae0a-93b6a858fe82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\LandObject\Monster\1. Goon Monster">
+      <UniqueIdentifier>{5c305ea3-5329-402c-adae-88270cb7c6f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\LandObject\Monster\2. Pipe Monster">
+      <UniqueIdentifier>{fde90810-1347-4bdb-a27d-345c4c0c9f40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\LandObject\Monster\3. Boss Monster">
+      <UniqueIdentifier>{393b54e2-12ab-4a7f-a541-cb1143f4faee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\LandObject\Items">
+      <UniqueIdentifier>{cb1abedf-f69c-4081-9c65-cfdb3ce878fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\LandObject\Items\0. HealItems">
+      <UniqueIdentifier>{9b3ea859-ce97-46a9-bdb5-f9cb63500fd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\LandObject\Items\1. BluntItems">
+      <UniqueIdentifier>{e8d9cea0-8680-4fdc-9d64-133819e3b8a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\LandObject\Items\2. Guns">
+      <UniqueIdentifier>{d457e43b-1c49-4616-8c85-039680d0b669}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\LandObject\Items\0. HealItems\00. Apple">
+      <UniqueIdentifier>{ef902153-3f16-4ec9-9168-07aec58b24eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\LandObject\Items\0. HealItems\01. Banana">
+      <UniqueIdentifier>{df0fb4bd-3e4f-4516-8754-c6ae3ce84dec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\LandObject\Items\0. HealItems\02. Cola">
+      <UniqueIdentifier>{f0e5bedd-4b0c-4d06-a6a6-b102c68fcd47}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Client.h">
+      <Filter>98.Default</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>98.Default</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>98.Default</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>98.Default</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\MainApp.h">
+      <Filter>00.MainApp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Client_Defines.h">
+      <Filter>99.Defines</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Level_Loading.h">
+      <Filter>01.Levels\Loading</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Level_GamePlay.h">
+      <Filter>01.Levels\GamePlay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Level_Logo.h">
+      <Filter>01.Levels\Logo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Loader.h">
+      <Filter>01.Levels\Loading\Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\BackGround.h">
+      <Filter>02.GameObjects\BackGround</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Terrain.h">
+      <Filter>02.GameObjects\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Camera_Free.h">
+      <Filter>02.GameObjects\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Player.h">
+      <Filter>02.GameObjects\LandObject\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Monster.h">
+      <Filter>02.GameObjects\LandObject\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\LandObject.h">
+      <Filter>02.GameObjects\LandObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Sky.h">
+      <Filter>02.GameObjects\Sky</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Effect.h">
+      <Filter>02.GameObjects\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Camera_Object.h">
+      <Filter>02.GameObjects\Camera\Camera_Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Player_LH.h">
+      <Filter>02.GameObjects\LandObject\Player\Hand\Left</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Player_RH.h">
+      <Filter>02.GameObjects\LandObject\Player\Hand\Right</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Goon_Monster.h">
+      <Filter>02.GameObjects\LandObject\Monster\1. Goon Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Matches_Monster.h">
+      <Filter>02.GameObjects\LandObject\Monster\3. Boss Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\PipeGuy_Monster.h">
+      <Filter>02.GameObjects\LandObject\Monster\2. Pipe Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\CItem.h">
+      <Filter>02.GameObjects\LandObject\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\CHealItem.h">
+      <Filter>02.GameObjects\LandObject\Items\0. HealItems</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\CItemApple.h">
+      <Filter>02.GameObjects\LandObject\Items\0. HealItems\00. Apple</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\CItemBanana.h">
+      <Filter>02.GameObjects\LandObject\Items\0. HealItems\01. Banana</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\CItemCola.h">
+      <Filter>02.GameObjects\LandObject\Items\0. HealItems\02. Cola</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Client.cpp">
+      <Filter>98.Default</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>98.Default</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\MainApp.cpp">
+      <Filter>00.MainApp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\Level_Loading.cpp">
+      <Filter>01.Levels\Loading</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Level_GamePlay.cpp">
+      <Filter>01.Levels\GamePlay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Level_Logo.cpp">
+      <Filter>01.Levels\Logo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\Loader.cpp">
+      <Filter>01.Levels\Loading\Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\BackGround.cpp">
+      <Filter>02.GameObjects\BackGround</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Terrain.cpp">
+      <Filter>02.GameObjects\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\Camera_Free.cpp">
+      <Filter>02.GameObjects\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Player.cpp">
+      <Filter>02.GameObjects\LandObject\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Monster.cpp">
+      <Filter>02.GameObjects\LandObject\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\LandObject.cpp">
+      <Filter>02.GameObjects\LandObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Sky.cpp">
+      <Filter>02.GameObjects\Sky</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Effect.cpp">
+      <Filter>02.GameObjects\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Player_LH.cpp">
+      <Filter>02.GameObjects\LandObject\Player\Hand\Left</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Player_RH.cpp">
+      <Filter>02.GameObjects\LandObject\Player\Hand\Right</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Camera_Object.cpp">
+      <Filter>02.GameObjects\Camera\Camera_Object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Goon_Monster.cpp">
+      <Filter>02.GameObjects\LandObject\Monster\1. Goon Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\PipeGuy_Monster.cpp">
+      <Filter>02.GameObjects\LandObject\Monster\2. Pipe Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Matches_Monster.cpp">
+      <Filter>02.GameObjects\LandObject\Monster\3. Boss Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\CHealItem.cpp">
+      <Filter>02.GameObjects\LandObject\Items\0. HealItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\CItem.cpp">
+      <Filter>02.GameObjects\LandObject\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\CItemApple.cpp">
+      <Filter>02.GameObjects\LandObject\Items\0. HealItems\00. Apple</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\CItemBanana.cpp">
+      <Filter>02.GameObjects\LandObject\Items\0. HealItems\01. Banana</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\CItemCola.cpp">
+      <Filter>02.GameObjects\LandObject\Items\0. HealItems\02. Cola</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Client.ico">
+      <Filter>98.Default</Filter>
+    </Image>
+    <Image Include="small.ico">
+      <Filter>98.Default</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Client.rc">
+      <Filter>98.Default</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

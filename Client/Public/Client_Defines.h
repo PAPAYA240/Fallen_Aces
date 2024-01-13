@@ -1,0 +1,33 @@
+#pragma once
+
+
+#include "GameInstance.h"
+
+#define SQRT(x, y, z) x * x + y * y + z * z
+
+namespace Client
+{
+	enum LEVEL { LEVEL_STATIC, LEVEL_LOADING, LEVEL_LOGO, LEVEL_GAMEPLAY, LEVEL_END };
+	enum STATE { STATE_IDLE, STATE_WALK, STATE_RUN, STATE_ATTACK, STATE_END };
+	enum class ITEM { NONE, APPLE, BANANA, COLA, MEDKIT, GLASS, PISTOL, TOMYGUN, _END };
+
+	enum MONSTER_STATE
+	{
+		MONSTER_IDLE, MONSTER_WALK, MONSTER_RUN, MONSTER_ATTACK_WALK,
+		MONSTER_TAUNT, MONSTER_STRAFING, MONSTER_ATTACK_READY, MONSTER_DASH,
+		MONSTER_ATTACK, MONSTER_HEAVY_ATTACK,
+		MONSTER_CROTCH_HIT, MONSTER_FLINCH,
+		MONSTER_COLLAR, MONSTER_POOPING,
+		MONSTER_MONSTER_END
+	};
+
+	const unsigned int	g_iWinSizeX = 1280;
+	const unsigned int	g_iWinSizeY = 720;
+}
+
+
+extern HWND g_hWnd;
+extern HINSTANCE g_hInst;
+
+using namespace std;
+using namespace Client;
