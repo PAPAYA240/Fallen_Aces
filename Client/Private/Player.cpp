@@ -8,6 +8,8 @@
 #include "Collider_Box.h"
 #include "Collider_Sphere.h"
 
+#include "Player_UI_Manager.h"
+
 CPlayer::CPlayer(LPDIRECT3DDEVICE9 pGraphic_Device)
 	: CLandObject(pGraphic_Device)
 {
@@ -41,12 +43,22 @@ HRESULT CPlayer::Initialize(void* pArg)
 
 	Ready_Layer_Player_Hands(TEXT("Layer_Player_Hand"));
 
+	// Player UI甸阑 醚褒 积己秦临 按眉 积己
+	CPlayer_UI_Manager::Player_UI_Manager_DESC Desc = {};
+	Desc.pPlayer = this;
+
+	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, TEXT("Layer_Player_UI"), TEXT("Prototype_GameObject_Player_UI_Manager"), &Desc)))
+		return E_FAIL;
+
 	return S_OK;
 }
 
 void CPlayer::Tick(_float fTimeDelta)
 {
-	
+	if (m_iHp < 500)
+	{
+		m_iHp++;
+	}
 	//if (m_pGameInstance->Get_KeyState('W') == EKeyState::PRESSING)
 	//{
 	//	//if (m_pGameInstance->Get_KeyState(VK_SHIFT) == EKeyState::DOWN)
@@ -308,6 +320,7 @@ void CPlayer::Free()
 
 	Safe_Release(m_pTextureCom);
 	Safe_Release(m_pVIBufferCom);
+
 	Safe_Release(m_pPlayer_LH);
 	Safe_Release(m_pPlayer_RH);
 }
