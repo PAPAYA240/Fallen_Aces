@@ -53,3 +53,10 @@ Engine/Default/x64/
 Client/Default/x64/
 x64/
 
+# Debug Log
+*.pdb
+*.log
+*.tlog
+*.idb
+*.ilk
+
