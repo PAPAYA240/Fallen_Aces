@@ -28,18 +28,18 @@ HRESULT CItemMedKit::Initialize(void* pArg)
 		MyDesc.pTerrainVIBuffer = pDesc->pTerrainVIBuffer;
 	}
 
-	MyDesc.eItemType = { ITEM::COLA };
+	MyDesc.eItemType = { ITEM::MEDKIT };
 	MyDesc.fAttackDamage = { 0.f };
 	MyDesc.fDurability = { 1.f };
 
 	MyDesc.fRotationPerSec = { D3DXToRadian(90.f) };
-	MyDesc.fSpeedPerSec = { 5.f };
+	MyDesc.fSpeedPerSec = { 0.f };
 
-	MyDesc.fRecorvery_Buff = { 5.f };
-	MyDesc.fRBuff_LimitTime = { 5.f };
+	MyDesc.fRecorvery_Buff = { 35.f };
+	MyDesc.fRBuff_LimitTime = { 0.f };
 
-	MyDesc.fSpeed_Buff = { 10.f };
-	MyDesc.fSBuff_LimitTime = { 15.f };
+	MyDesc.fSpeed_Buff = { 0.f };
+	MyDesc.fSBuff_LimitTime = { 0.f };
 
 	if (FAILED(__super::Initialize(&MyDesc)))
 		return E_FAIL;
@@ -47,10 +47,11 @@ HRESULT CItemMedKit::Initialize(void* pArg)
 	if (FAILED(Add_MyComponents()))
 		return E_FAIL;
 
-	m_pTextureCom->Change_Container(TEXT("Item"), TEXT("MedKit"));
+	m_pTextureCom->Change_Container(TEXT("Item"), TEXT("Medkit"));
 
 	m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(_float(rand() % 100), 5.f, _float(rand() % 100)));
-	m_pTransformCom->Set_Scaled(0.4f, 0.7f, 1.f);
+	//m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(_float(0), 5.f, _float(0)));
+	m_pTransformCom->Set_Scaled(1.f, 0.7f, 1.f);
 
 	return S_OK;
 }
