@@ -77,6 +77,8 @@ void CMonster::Tick(_float fTimeDelta)
 		m_pTransformCom->Set_State(CTransform::STATE_POSITION, vPos);
 	}
 
+	m_pTransformCom->NormalizeScale(m_pTextureCom->Get_ImageScale(m_fFrame));
+
 	if (FAILED(Check_ForChangeContainer()))
 		return;
 }
@@ -222,6 +224,8 @@ void CMonster::Walk_Range()
 HRESULT CMonster::Check_ForChangeContainer()
 {
 	wstring strArrow = m_wstrStateTag;
+
+	m_eBodyDraw = m_pGameInstance->Get_CameraDot(m_pTransformCom, LEVEL_GAMEPLAY, TEXT("Layer_Camera"));
 
 	switch (_uint(m_pMonsterState))
 	{

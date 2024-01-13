@@ -12,9 +12,18 @@ void CTransform::Set_Scaled(_float fX, _float fY, _float fZ)
 	_float3		vUp = Get_State(STATE_UP);
 	_float3		vLook = Get_State(STATE_LOOK);
 
-	Set_State(STATE_RIGHT, *D3DXVec3Normalize(&vRight, &vRight) * fX);
-	Set_State(STATE_UP, *D3DXVec3Normalize(&vUp, &vUp) * fY);
+	Set_State(STATE_RIGHT, *D3DXVec3Normalize(&vRight, &vRight)	* m_vScale.x * fX);
+	Set_State(STATE_UP, *D3DXVec3Normalize(&vUp, &vUp) * m_vScale.y * fY);
 	Set_State(STATE_LOOK, *D3DXVec3Normalize(&vLook, &vLook) * fZ);
+}
+
+void CTransform::NormalizeScale(const POINT& _ptSize)
+{
+	_float x = (819.f / _ptSize.x) > 1.f ? 1 : (819.f / _ptSize.x);
+	_float y = (1300.f / _ptSize.y); //> 1.f ? 1 : (512.f / _ptSize.y);
+
+	m_vScale.x = x;
+	m_vScale.y = y;
 }
 
 HRESULT CTransform::Initialize_Prototype()
@@ -47,9 +56,21 @@ void CTransform::Refresh_ToLook()
 	m_vToLookAt = *(_float3*)&m_WorldMatrix.m[2][0];
 }
 
-
 HRESULT CTransform::Bind_WorldMatrix()
 {
+	//_float4x4 matWorldInv = {};
+
+	//D3DXMatrixInverse(&matWorldInv, nullptr, &matWorldInv);
+
+	//_float4x4 matIdentity = matWorldInv * matWorldInv;
+
+	//matIdentity._11 *= m_vScale.x;
+	//matIdentity._22 *= m_vScale.y;
+
+	//matWorldInv *= matIdentity;
+
+	Set_Scaled(1.f, 1.f, 1.f);
+
 	return m_pGraphic_Device->SetTransform(D3DTS_WORLD, &m_WorldMatrix);	
 }
 

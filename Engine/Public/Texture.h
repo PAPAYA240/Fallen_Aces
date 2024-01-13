@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Component.h"
+#include "CTexLayer.h"
 
 BEGIN(Engine)
 
@@ -21,6 +22,7 @@ public:
 	HRESULT Bind_Texture(_ulong dwStage, _uint iTextureIndex);
 	HRESULT	Change_Container(const wstring& _wstrTypeTag, const wstring& _wstrStateTag);
 	const _uint& Container_MaxSize() { return m_iNumTextures; }
+	POINT	Get_ImageScale(_uint idx);
 
 public:
 	static CTexture* Create(LPDIRECT3DDEVICE9 pGraphic_Device, TYPE eType, const wstring& strTextureFilePath);
@@ -38,7 +40,7 @@ private:
 	_uint									m_iNumTextures = { 0 };
 
 	map<wstring, class CTexLayer*>			m_Textures;
-	vector<LPDIRECT3DBASETEXTURE9>*			m_pTexture = { nullptr };
+	vector<T_IMAGE>*						m_pTexture = { nullptr };
 };
 
 END

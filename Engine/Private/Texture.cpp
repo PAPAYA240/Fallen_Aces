@@ -1,7 +1,5 @@
 #include "..\Public\Texture.h"
 
-#include "CTexLayer.h"
-
 CTexture::CTexture(LPDIRECT3DDEVICE9 pGraphic_Device)
 	: CComponent(pGraphic_Device)
 {
@@ -53,7 +51,21 @@ HRESULT CTexture::Initialize_Prototype(TYPE eType, const wstring & strTextureFil
 						
 						hr = D3DXCreateTextureFromFile(m_pGraphic_Device, file.path().c_str(), &pTexture);
 
-						pTexLayer->Add_Texture(wstrStateTag, pTexture);
+						POINT ptSize = {};
+
+						D3DXIMAGE_INFO ImageInfo = {};
+
+						if (FAILED(D3DXGetImageInfoFromFile(file.path().c_str(), &ImageInfo)))
+						{
+							MSG_BOX(TEXT("Failed to GetInfoFromFile"));
+							Safe_Release<LPDIRECT3DTEXTURE9>(pTexture);
+							return E_FAIL;
+						}
+
+						ptSize.x = ImageInfo.Width;
+						ptSize.y = ImageInfo.Height;
+
+						pTexLayer->Add_Texture(wstrStateTag, pTexture, ptSize);
 					}
 					else if (TYPE_TEXCUBE == eType)
 					{
@@ -61,7 +73,21 @@ HRESULT CTexture::Initialize_Prototype(TYPE eType, const wstring & strTextureFil
 
 						hr = D3DXCreateCubeTextureFromFile(m_pGraphic_Device, file.path().c_str(), &pTexture);
 
-						pTexLayer->Add_Texture(wstrStateTag, pTexture);
+						POINT ptSize = {};
+
+						D3DXIMAGE_INFO ImageInfo = {};
+
+						if (FAILED(D3DXGetImageInfoFromFile(file.path().c_str(), &ImageInfo)))
+						{
+							MSG_BOX(TEXT("Failed to GetInfoFromFile"));
+							Safe_Release<LPDIRECT3DCUBETEXTURE9>(pTexture);
+							return E_FAIL;
+						}
+
+						ptSize.x = ImageInfo.Width;
+						ptSize.y = ImageInfo.Height;
+
+						pTexLayer->Add_Texture(wstrStateTag, pTexture, ptSize);
 					}
 
 					m_Textures.emplace(wstrTypeTag, pTexLayer);
@@ -86,7 +112,7 @@ HRESULT CTexture::Initialize_Prototype(TYPE eType, const wstring & strTextureFil
 					/* 태그는 있지만, 객체 주소가 없는 경우, 벡터만 추가함 (해당 태그의 공간을 만듦)*/
 					if (nullptr == StateIter)
 					{
-						if (FAILED(TypeIter->second->Add_Texture(wstrStateTag, nullptr)))
+						if (FAILED(TypeIter->second->Add_Texture(wstrStateTag, nullptr, POINT())))
 							return E_FAIL;
 
 						StateIter = TypeIter->second->Find_State(wstrStateTag);
@@ -98,7 +124,21 @@ HRESULT CTexture::Initialize_Prototype(TYPE eType, const wstring & strTextureFil
 
 						hr = D3DXCreateTextureFromFile(m_pGraphic_Device, file.path().c_str(), &pTexture);
 
-						StateIter->push_back(pTexture);
+						T_IMAGE tImage = {};
+						D3DXIMAGE_INFO dxInfo = {};
+
+						if (FAILED(D3DXGetImageInfoFromFile(file.path().c_str(), &dxInfo)))
+						{
+							MSG_BOX(TEXT("Failed to GetInfoFromFile"));
+							Safe_Release<LPDIRECT3DTEXTURE9>(pTexture);
+							return E_FAIL;
+						}
+
+						tImage.pTexture = pTexture;
+						tImage.ptImageSize.x = dxInfo.Width;
+						tImage.ptImageSize.y = dxInfo.Height;
+
+						StateIter->push_back(tImage);
 					}
 					else if (TYPE_TEXCUBE == eType)
 					{
@@ -106,7 +146,21 @@ HRESULT CTexture::Initialize_Prototype(TYPE eType, const wstring & strTextureFil
 
 						hr = D3DXCreateCubeTextureFromFile(m_pGraphic_Device, file.path().c_str(), &pTexture);
 
-						StateIter->push_back(pTexture);
+						T_IMAGE tImage = {};
+						D3DXIMAGE_INFO dxInfo = {};
+
+						if (FAILED(D3DXGetImageInfoFromFile(file.path().c_str(), &dxInfo)))
+						{
+							MSG_BOX(TEXT("Failed to GetInfoFromFile"));
+							Safe_Release<LPDIRECT3DCUBETEXTURE9>(pTexture);
+							return E_FAIL;
+						}
+
+						tImage.pTexture = pTexture;
+						tImage.ptImageSize.x = dxInfo.Width;
+						tImage.ptImageSize.y = dxInfo.Height;
+
+						StateIter->push_back(tImage);
 					}
 				}
 
@@ -136,8 +190,7 @@ HRESULT CTexture::Bind_Texture(_ulong dwStage, _uint iTextureIndex)
 	if (iTextureIndex >= m_iNumTextures)
 		return E_FAIL;
 
-
-	return m_pGraphic_Device->SetTexture(dwStage, (*m_pTexture)[iTextureIndex]); 
+	return m_pGraphic_Device->SetTexture(dwStage, (*m_pTexture)[iTextureIndex].pTexture); 
 #pragma region 공부 주석임
 
 	// SetTexture ( 슬롯, 텍스쳐 )
@@ -182,6 +235,11 @@ HRESULT CTexture::Change_Container(const wstring& _wstrTypeTag, const wstring& _
 	m_wstrTypeTag = _wstrStateTag;
 
 	return S_OK;
+}
+
+POINT CTexture::Get_ImageScale(_uint idx)
+{
+	return (*m_pTexture)[idx].ptImageSize;
 }
 
 CTexture * CTexture::Create(LPDIRECT3DDEVICE9 pGraphic_Device, TYPE eType, const wstring & strTextureFilePath)

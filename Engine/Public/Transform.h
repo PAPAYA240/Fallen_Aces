@@ -50,6 +50,8 @@ public:
 
 	void Set_Scaled(_float fX, _float fY, _float fZ);
 
+	void NormalizeScale(const POINT& _ptSize);
+
 public:
 	virtual HRESULT Initialize_Prototype();
 	virtual HRESULT Initialize(void* pArg);
@@ -78,6 +80,8 @@ public:
 
 private:
 	_float4x4			m_WorldMatrix;
+	_float3				m_vScale = { 1.f, 1.f, 1.f };
+
 	_float3				m_vToLookAt = { 0.f, 0.f, 0.f };
 	_float				m_fRotationPerSec = { 0.0f };
 	_float				m_fSpeedPerSec = { 0.0f };
