@@ -1,4 +1,8 @@
-﻿  Player.cpp
+﻿  CHealItem.cpp
   Player_UI_Manager.cpp
+  Sky.cpp
+  UI_Equip.cpp
+  Client.cpp
   코드를 생성하고 있습니다...
+  LINK : C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Bin\Client.pdb 프로그램 데이터베이스가 없습니다. 전체 링크를 수행하고 있습니다.
   Client.vcxproj -> C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Bin\Client.exe

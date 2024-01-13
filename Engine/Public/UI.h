@@ -9,7 +9,7 @@ class ENGINE_DLL CUI abstract : public CGameObject
 public:
 	typedef struct tagUIDescription : public CGameObject::GAMEOBJECT_DESC
 	{
-		_float2 vPos;
+		_float3 vPos;
 		_float2 vSize;
 
 	}UI_DESC;
@@ -30,7 +30,9 @@ protected:
 	void Initialize_UI_Setting(_uint iWinSizeX, _uint iWinSizeY);
 
 protected:
-	_float2						m_vPos, m_vSize;
+	// 렌더링 때 z sorting을 위한 z값 부여
+	_float3						m_vPos;
+	_float2						m_vSize;
 	_float4x4					m_ViewMatrix, m_ProjMatrix;
 
 public:

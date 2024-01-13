@@ -16,7 +16,6 @@ CPlayer_UI_Manager::CPlayer_UI_Manager(CPlayer_UI_Manager& rhs)
 
 HRESULT CPlayer_UI_Manager::Initialize_Prototype()
 {
-
 	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_UI_Player_State"),
 		CUI_Player_State::Create(m_pGraphic_Device))))
 		return E_FAIL;
@@ -34,8 +33,8 @@ HRESULT CPlayer_UI_Manager::Initialize(void* pArg)
 		return E_FAIL;
 
 	CUI_Player_State::UI_PLAYER_STATE_DESC StateDesc = {};
-	StateDesc. vSize = { 873.f * 0.4f, 653.f * 0.4f };
-	StateDesc.vPos = { StateDesc.vSize.x * 0.5f, g_iWinSizeY - StateDesc.vSize.y * 0.5f };
+	StateDesc. vSize = { 873.f * 0.4f, 653.f * 0.4f};
+	StateDesc.vPos = { StateDesc.vSize.x * 0.5f, g_iWinSizeY - StateDesc.vSize.y * 0.5f, 0.f };
 	StateDesc.pPlayerHp = m_pPlayer->Get_Hp_Address();
 
 

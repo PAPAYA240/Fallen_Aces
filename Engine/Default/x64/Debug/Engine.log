@@ -1,10 +1,1 @@
-﻿  VIBuffer_Terrain.cpp
-  Component.cpp
-  GameInstance.cpp
-  GameObject.cpp
-  Level.cpp
-  Level_Manager.cpp
-  VIBuffer_Rect.cpp
-  코드를 생성하고 있습니다...
-     ..\Bin\Engine.lib 라이브러리 및 ..\Bin\Engine.exp 개체를 생성하고 있습니다.
-  Engine.vcxproj -> C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Bin\Engine.dll
+﻿  Engine.vcxproj -> C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Bin\Engine.dll
