@@ -30,3 +30,14 @@
 *.exe
 *.out
 *.app
+
+# Project Client
+Client/Bin/Client.exe
+Client/Bin/Client.pdb
+Client/Bin/Client.dll
+
+# Project Engine
+Engine/Bin/Engine.dll
+Engine/Bin/Engine.exp
+Engine/Bin/Engine.lib
+Engine/Bin/Engine.pdb
