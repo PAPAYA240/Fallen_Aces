@@ -9,7 +9,7 @@
 BEGIN(Engine)
 
 
-//	TEST Jaeha
+//	TEST Sangwoo
 
 class ENGINE_DLL CCollider abstract : public CComponent
 {
