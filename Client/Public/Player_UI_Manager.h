@@ -5,6 +5,8 @@
 
 BEGIN(Client)
 
+// test
+
 class CPlayer_UI_Manager final : public CGameObject
 {
 public:

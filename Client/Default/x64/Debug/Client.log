@@ -1,2 +1,43 @@
-﻿  Level_GamePlay.cpp
-  Client.vcxproj -> C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Client\Bin\Client.exe
+﻿  stdafx.cpp
+  BackGround.cpp
+  Camera_Free.cpp
+  Camera_Object.cpp
+  CHealItem.cpp
+  CItem.cpp
+  CItemApple.cpp
+  CItemBanana.cpp
+  CItemCola.cpp
+  CItemMedKit.cpp
+  Effect.cpp
+  Goon_Monster.cpp
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\Goon_Monster.cpp(35,91): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\Goon_Monster.cpp(35,72): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  LandObject.cpp
+  Level_GamePlay.cpp
+  Level_Loading.cpp
+  Level_Logo.cpp
+  Loader.cpp
+  MainApp.cpp
+  Matches_Monster.cpp
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\Matches_Monster.cpp(30,91): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\Matches_Monster.cpp(30,72): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Monster.cpp
+  PipeGuy_Monster.cpp
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\PipeGuy_Monster.cpp(32,91): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\PipeGuy_Monster.cpp(32,72): warning C4244: '인수': 'int'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\CItem.cpp(40): warning C4172: 지역 변수 또는 임시의 주소를 반환하고 있습니다.
+  컴파일하고 있습니다...
+  Player.cpp
+  Player_LH.cpp
+  Player_RH.cpp
+  Player_UI_Manager.cpp
+  Sky.cpp
+  Terrain.cpp
+  UI_Equip.cpp
+  UI_Inventory.cpp
+  UI_Player_State.cpp
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Private\UI_Player_State.cpp(32,9): warning C4244: '인수': 'FLOAT'에서 'const Engine::_uint'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Client.cpp
+  코드를 생성하고 있습니다...
+  Client.vcxproj -> C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Client\Bin\Client.exe
