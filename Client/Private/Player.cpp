@@ -10,6 +10,8 @@
 
 #include "Player_UI_Manager.h"
 
+#include "CItem.h"
+
 CPlayer::CPlayer(LPDIRECT3DDEVICE9 pGraphic_Device)
 	: CLandObject(pGraphic_Device)
 {
@@ -59,6 +61,28 @@ void CPlayer::Tick(_float fTimeDelta)
 	{
 		m_iHp++;
 	}
+
+	if (m_pGameInstance->Get_KeyState(VK_LBUTTON) == EKeyState::DOWN)
+	{
+		if (nullptr == m_pEquipment)
+		{
+			/* 랜드오브젝트용 객체들에게 필요한 데이터를 구한다.*/
+			CLandObject::LANDOBJECT_DESC		LandObjectDesc = {};
+
+			LandObjectDesc.pTerrainTransform = (CTransform*)(m_pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_BackGround"), g_strTransformTag));
+			LandObjectDesc.pTerrainVIBuffer = (CVIBuffer_Terrain*)(m_pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_BackGround"), TEXT("Com_VIBuffer")));
+
+			m_pGameInstance->Add_Clone((CGameObject**)&m_pEquipment, LEVEL_GAMEPLAY, TEXT("Layer_Item"), TEXT("Prototype_GameObject_Banana"), &LandObjectDesc);
+				
+		}
+		else if(nullptr != m_pEquipment)
+		{
+			if(1 == Safe_Release(m_pEquipment))
+				m_pEquipment = nullptr;
+		}
+	}
+
+
 	//if (m_pGameInstance->Get_KeyState('W') == EKeyState::PRESSING)
 	//{
 	//	//if (m_pGameInstance->Get_KeyState(VK_SHIFT) == EKeyState::DOWN)
@@ -229,7 +253,6 @@ HRESULT CPlayer::Set_RenderState()
 {	
 	m_pGraphic_Device->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
 
-
 	m_pGraphic_Device->SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_POINT);
 	m_pGraphic_Device->SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_POINT);
 	m_pGraphic_Device->SetSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_POINT);	
@@ -242,9 +265,6 @@ HRESULT CPlayer::Set_RenderState()
 
 	/* 그려지는 픽세르이 알파가 내가 설정한 알파보다 클때만 그려라. */
 	m_pGraphic_Device->SetRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATER);
-
-	
-
 
 	return S_OK;
 }
@@ -323,4 +343,5 @@ void CPlayer::Free()
 
 	Safe_Release(m_pPlayer_LH);
 	Safe_Release(m_pPlayer_RH);
+	Safe_Release(m_pEquipment);
 }

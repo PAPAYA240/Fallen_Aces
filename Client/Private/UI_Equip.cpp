@@ -13,12 +13,25 @@ CUI_Equip::CUI_Equip(CUI_Equip& rhs)
 
 HRESULT CUI_Equip::Initialize_Prototype()
 {
-    return E_NOTIMPL;
+    return S_OK;
 }
 
 HRESULT CUI_Equip::Initialize(void* pArg)
 {
-    return E_NOTIMPL;
+    UI_EQUIP_DESC* Desc = (UI_EQUIP_DESC*)pArg;
+    m_pEquipItem = Desc->pEquipItem;
+
+    if (FAILED(__super::Initialize(pArg)))
+        return E_FAIL;
+
+    if (FAILED(Add_Components()))
+        return E_FAIL;
+
+    Initialize_UI_Setting(g_iWinSizeX, g_iWinSizeY);
+
+    m_pTextureCom->Change_Container(TEXT("UI"), TEXT("Inven_Icons"));
+
+    return S_OK;
 }
 
 void CUI_Equip::Tick(_float fTimeDelta)
@@ -27,26 +40,65 @@ void CUI_Equip::Tick(_float fTimeDelta)
 
 void CUI_Equip::Late_Tick(_float fTimeDelta)
 {
+    if (nullptr != *m_pEquipItem)
+    {
+        m_pGameInstance->Add_RenderGroup(CRenderer::RENDER_UI, this);
+    }
 }
 
 HRESULT CUI_Equip::Render()
 {
-    return E_NOTIMPL;
+    if (FAILED(m_pTransformCom->Bind_WorldMatrix()))
+        return E_FAIL;
+
+    m_pGraphic_Device->SetTransform(D3DTS_VIEW, &m_ViewMatrix);
+    m_pGraphic_Device->SetTransform(D3DTS_PROJECTION, &m_ProjMatrix);
+
+    if (FAILED(m_pTextureCom->Bind_Texture(0, 0)))
+        return E_FAIL;
+
+    if (FAILED(Set_RenderState()))
+        return E_FAIL;
+
+    if (FAILED(m_pVIBufferCom->Render()))
+        return E_FAIL;
+
+    if (FAILED(Reset_RenderState()))
+        return E_FAIL;
+
+    return S_OK;
 }
 
 HRESULT CUI_Equip::Add_Components()
 {
-    return E_NOTIMPL;
+    if (FAILED(__super::Add_Component(LEVEL_STATIC, TEXT("Prototype_Component_VIBuffer_Rect"),
+        TEXT("Com_VIBuffer"), (CComponent**)&m_pVIBufferCom)))
+        return E_FAIL;
+
+    if (FAILED(__super::Add_Component(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Texture_UI"),
+        TEXT("Com_Texture"), (CComponent**)&m_pTextureCom)))
+        return E_FAIL;
 }
 
 HRESULT CUI_Equip::Set_RenderState()
 {
-    return E_NOTIMPL;
+    /* 알파테스트를 한다. (그려지는 픽셀들의 알파를 검사하여 그릴지 안그릴지를 판단한다.) */
+    m_pGraphic_Device->SetRenderState(D3DRS_ALPHATESTENABLE, TRUE);
+
+    /* 내가 설정한 알파는 0이다. */
+    m_pGraphic_Device->SetRenderState(D3DRS_ALPHAREF, 100);
+
+    /* 그려지는 픽세르이 알파가 내가 설정한 알파보다 클때만 그려라. */
+    m_pGraphic_Device->SetRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATER);
+
+    return S_OK;
 }
 
 HRESULT CUI_Equip::Reset_RenderState()
 {
-    return E_NOTIMPL;
+    m_pGraphic_Device->SetRenderState(D3DRS_ALPHATESTENABLE, FALSE);
+
+    return S_OK;
 }
 
 CUI_Equip* CUI_Equip::Create(LPDIRECT3DDEVICE9 pGraphic_Device)

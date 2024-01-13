@@ -25,7 +25,9 @@ public:
 	virtual HRESULT Render() override;
 
 public:
+	// 플레이어 멤버 변수의 주소를 반환해주는 함수
 	_uint* Get_Hp_Address() { return &m_iHp; }
+	class CItem** Get_EquipItem_Address()  { return &m_pEquipment; }
 
 private:
 	CTexture*				m_pTextureCom = { nullptr };
@@ -42,8 +44,8 @@ private:
 	_float3						m_vTargetPos = {};
 
 	_uint						m_iHp = { 0 };
+	class CItem*				m_pEquipment = { nullptr };
 	vector<class CItem*>		m_vecInven;
-
 
 private:
 	CGameObject* Check_Collision(LEVEL eLevel, const wstring& strLayerTag, _float3* pDirection = nullptr);

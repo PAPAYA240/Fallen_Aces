@@ -63,13 +63,16 @@ HRESULT CUI_Inventory::Render()
 
 HRESULT CUI_Inventory::Add_Components()
 {
-    if (FAILED(__super::Add_Component(LEVEL_STATIC, TEXT("Prototype_Component_VIBuffer_Rect"),
-        TEXT("Com_VIBuffer"), (CComponent**)&m_pVIBufferCom)))
-        return E_FAIL;
+    for (size_t i = 0; i < 3; i++)
+    {
+        if (FAILED(__super::Add_Component(LEVEL_STATIC, TEXT("Prototype_Component_VIBuffer_Rect"),
+            TEXT("Com_VIBuffer"), (CComponent**)&m_pVIBufferCom[i])))
+            return E_FAIL;
 
-    if (FAILED(__super::Add_Component(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Texture_Player"),
-        TEXT("Com_Texture"), (CComponent**)&m_pTextureCom)))
-        return E_FAIL;
+        if (FAILED(__super::Add_Component(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Texture_Player"),
+            TEXT("Com_Texture"), (CComponent**)&m_pTextureCom[i])))
+            return E_FAIL;
+    }
 
     return S_OK;
 }

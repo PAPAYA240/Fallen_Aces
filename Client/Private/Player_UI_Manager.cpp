@@ -3,6 +3,8 @@
 
 #include "Player.h"
 #include "UI_Player_State.h"
+#include "UI_Equip.h"
+#include "CItem.h"
 
 CPlayer_UI_Manager::CPlayer_UI_Manager(LPDIRECT3DDEVICE9 pGraphic_Device)
 	:CGameObject(pGraphic_Device)
@@ -20,6 +22,10 @@ HRESULT CPlayer_UI_Manager::Initialize_Prototype()
 		CUI_Player_State::Create(m_pGraphic_Device))))
 		return E_FAIL;
 
+	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_UI_Equip"),
+		CUI_Equip::Create(m_pGraphic_Device))))
+		return E_FAIL;
+
 	return S_OK;
 }
 
@@ -32,13 +38,24 @@ HRESULT CPlayer_UI_Manager::Initialize(void* pArg)
 	if (FAILED(__super::Initialize(pArg)))
 		return E_FAIL;
 
+#pragma region Cloned Player State UI
 	CUI_Player_State::UI_PLAYER_STATE_DESC StateDesc = {};
 	StateDesc. vSize = { 873.f * 0.3f, 653.f * 0.3f};
 	StateDesc.vPos = { StateDesc.vSize.x * 0.5f, g_iWinSizeY - StateDesc.vSize.y * 0.55f, 0.f };
 	StateDesc.pPlayerHp = m_pPlayer->Get_Hp_Address();
 
-
 	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, TEXT("Layer_Player_UI"), TEXT("Prototype_GameObject_UI_Player_State"), &StateDesc)))
+		return E_FAIL;
+#pragma endregion
+
+
+#pragma region Cloned Player Equipment UI
+	CUI_Equip::UI_EQUIP_DESC EquipDesc = {};
+	EquipDesc.vSize = { 304.f * 0.4f, 171.f * 0.4f };
+	EquipDesc.vPos = { g_iWinSizeX - (StateDesc.vSize.x * 0.5f), g_iWinSizeY - StateDesc.vSize.y * 0.5f, 0.f };
+	EquipDesc.pEquipItem = (m_pPlayer->Get_EquipItem_Address());
+
+	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, TEXT("Layer_Player_UI"), TEXT("Prototype_GameObject_UI_Equip"), &EquipDesc)))
 		return E_FAIL;
 
 	return S_OK;
