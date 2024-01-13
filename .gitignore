@@ -49,4 +49,7 @@ Engine/Bin/Engine.pdb
 EngineSDK/
 
 # Project x64 Folder
+Engine/Default/x64
+Client/Default/x64
 x64/
+
