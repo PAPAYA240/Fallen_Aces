@@ -35,21 +35,21 @@
 .vs/
 
 # Project Client
-Client\Bin\Client.exe
-Client\Bin\Client.pdb
-Client\Bin\Client.dll
+Client/Bin/Client.exe
+Client/Bin/Client.pdb
+Client/Bin/Client.dll
 
 # Project Engine
-Engine\Bin\Engine.dll
-Engine\Bin\Engine.exp
-Engine\Bin\Engine.lib
-Engine\Bin\Engine.pdb
+Engine/Bin/Engine.dll
+Engine/Bin/Engine.exp
+Engine/Bin/Engine.lib
+Engine/Bin/Engine.pdb
 
 # Project EngineSDK
-EngineSDK\
+EngineSDK/
 
 # Project x64 Folder
-Engine\Default\x64\
-Client\Default\x64\
-x64\
+Engine/Default/x64/
+Client/Default/x64/
+x64/
 
