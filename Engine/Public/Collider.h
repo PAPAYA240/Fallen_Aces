@@ -7,7 +7,7 @@
 BEGIN(Engine)
 
 
-//	TEST
+//	TEST Jaeha
 
 class ENGINE_DLL CCollider abstract : public CComponent
 {
