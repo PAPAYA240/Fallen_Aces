@@ -34,14 +34,15 @@ HRESULT CMonster::Initialize(void* pArg)
 	if (FAILED(Add_Components()))
 		return E_FAIL;
 
-	m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(_float(rand() % 100), 0.5f, _float(rand() % 100)));
+	m_pTransformCom->Set_Scaled(2.f, 2.5f, 1.f);
+	m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(_float(rand() % 100), 1.5f, _float(rand() % 100)));
 
 	return S_OK;
 }
 
 void CMonster::Tick(_float fTimeDelta)
 {
-	SetUp_OnTerrain(0.5f);
+	SetUp_OnTerrain(1.f);
 	Monster_Radius(fTimeDelta); // Player 인식 반경
 
 	const CTransform* pPlayer_Transform = dynamic_cast<const CTransform*>(m_pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_Player"), g_strTransformTag));
@@ -57,27 +58,25 @@ void CMonster::Tick(_float fTimeDelta)
 
 	/* TODO: 나중에 지우거나 함수화*/
 	/* TestCode */
-	if (false == m_Collisions.empty())
-	{
-		_float3 vPos = m_pTransformCom->Get_State(CTransform::STATE_POSITION);
+	//if (false == m_Collisions.empty())
+	//{
+	//	_float3 vPos = m_pTransformCom->Get_State(CTransform::STATE_POSITION);
 
-		for (auto Collision : m_Collisions)
-		{
-			if (COLLISION_EVENT::EV_OVERLAP == Collision.eEvent)
-			{
-				vPos.x += Collision.vOverlap.x;
-				vPos.z += Collision.vOverlap.z;
-			}			
+	//	for (auto Collision : m_Collisions)
+	//	{
+	//		if (COLLISION_EVENT::EV_OVERLAP == Collision.eEvent)
+	//		{
+	//			vPos.x += Collision.vOverlap.x;
+	//			vPos.z += Collision.vOverlap.z;
+	//		}			
 
-			Safe_Release(Collision.pCollisionObject);
-		}
+	//		Safe_Release(Collision.pCollisionObject);
+	//	}
 
-		m_Collisions.clear();
+	//	m_Collisions.clear();
 
-		m_pTransformCom->Set_State(CTransform::STATE_POSITION, vPos);
-	}
-
-	m_pTransformCom->NormalizeScale(m_pTextureCom->Get_ImageScale(m_fFrame));
+	//	m_pTransformCom->Set_State(CTransform::STATE_POSITION, vPos);
+	//}
 
 	if (FAILED(Check_ForChangeContainer()))
 		return;
@@ -88,7 +87,7 @@ void CMonster::Late_Tick(_float fTimeDelta)
 	Chase_Player(fTimeDelta);
 
 	SetUp_BillBoard();
-	
+
 	m_pGameInstance->Add_RenderGroup(CRenderer::RENDER_NONBLEND, this);
 }
 
@@ -96,6 +95,13 @@ HRESULT CMonster::Render()
 {	
 	if (FAILED(__super::Render()))
 		return E_FAIL;
+
+	//m_pTransformCom->NormalizeScale(m_pTextureCom->Get_ImageScale(m_fFrame));
+
+	//_float4x4 Test = m_pTransformCom->Get_Test();
+
+	//if (FAILED(m_pGraphic_Device->SetTransform(D3DTS_WORLD, &Test)))
+	//	return E_FAIL;
 
 	if (FAILED(m_pTransformCom->Bind_WorldMatrix()))
 		return E_FAIL;
@@ -149,7 +155,7 @@ void CMonster::Monster_Attack()
 		m_pMonsterState = MONSTER_HEAVY_ATTACK;
 
 		std::srand(static_cast<unsigned int>(std::time(nullptr)));
-		_uint iRandom = rand() % 4;
+		_uint iRandom = 3;
 		m_iHeavy_Count = iRandom;
 	}
 	else
@@ -344,9 +350,9 @@ HRESULT CMonster::Set_RenderState()
 {	
 	m_pGraphic_Device->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
 
-	m_pGraphic_Device->SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_POINT);
-	m_pGraphic_Device->SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_POINT);
-	m_pGraphic_Device->SetSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_POINT);	
+	//m_pGraphic_Device->SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_POINT);
+	//m_pGraphic_Device->SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_POINT);
+	//m_pGraphic_Device->SetSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_POINT);	
 
 	/* 알파테스트를 한다. (그려지는 픽셀들의 알파를 검사하여 그릴지 안그릴지를 판단한다.) */
 	m_pGraphic_Device->SetRenderState(D3DRS_ALPHATESTENABLE, TRUE);
@@ -365,9 +371,9 @@ HRESULT CMonster::Reset_RenderState()
 	m_pGraphic_Device->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
 	m_pGraphic_Device->SetRenderState(D3DRS_ALPHATESTENABLE, FALSE);
 
-	m_pGraphic_Device->SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
-	m_pGraphic_Device->SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
-	m_pGraphic_Device->SetSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_LINEAR);
+	//m_pGraphic_Device->SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_LINEAR);
+	//m_pGraphic_Device->SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_LINEAR);
+	//m_pGraphic_Device->SetSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_LINEAR);
 
 	return S_OK;
 }

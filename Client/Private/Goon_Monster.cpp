@@ -26,7 +26,7 @@ HRESULT CGoon_Monster::Initialize(void* pArg)
 	m_fRunRange = pMonsterDesc->fRun_Range = 40.f; // 뛰는 모션의 범위
 	m_fWalkRange = pMonsterDesc->fWalk_Range = 20.f; // 걷는 모션의 범위
 
-	m_wstrStateTag = TEXT("PipeGuy");
+	m_wstrStateTag = TEXT("Goon");
 
 	if (FAILED(__super::Initialize(pArg)))
 		return E_FAIL;
@@ -34,7 +34,7 @@ HRESULT CGoon_Monster::Initialize(void* pArg)
 	if (FAILED(Add_Components()))
 		return E_FAIL;
 
-	m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(rand() % 20, 0.5f, rand() % 20));
+	m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(30.f, 3.5f, 30.f));
 	//m_pTransformCom->Set_Scaled();
 	m_pMonsterState = pMonsterDesc->pMonster_Start_State; // 시작 행동
 	

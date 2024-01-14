@@ -1,2 +1,3 @@
 ﻿  Transform.cpp
+C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\private\Transform.cpp(22,14): warning C4244: '초기화 중': 'const LONG'에서 'Engine::_float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Engine.vcxproj -> C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Bin\Engine.dll

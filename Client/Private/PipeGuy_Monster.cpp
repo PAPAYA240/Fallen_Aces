@@ -31,7 +31,7 @@ HRESULT CPipeGuy_Monster::Initialize(void* pArg)
 	if (FAILED(Add_Components()))
 		return E_FAIL;
 
-	m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(rand() % 20, 0.5f, rand() % 20));
+	m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(rand() % 20, 1.5f, rand() % 20));
 	m_pMonsterState = pMonsterDesc->pMonster_Start_State; // 시작 행동
 
 	m_pTextureCom->Change_Container(TEXT("Monster"), TEXT("PipeGuy_Idle"));
