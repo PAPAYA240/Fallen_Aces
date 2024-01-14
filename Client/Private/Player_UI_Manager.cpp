@@ -57,8 +57,8 @@ HRESULT CPlayer_UI_Manager::Initialize(void* pArg)
 	// È­¸é ÁÂÇÏ´Ü
 	HUDDesc.vPos = { HUDDesc.vSize.x * 0.5f, g_iWinSizeY - HUDDesc.vSize.y * 0.55f, 0.f };
 
-	/*if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, TEXT("Layer_Player_UI"), TEXT("Prototype_GameObject_UI_HUD"), &HUDDesc)))
-		return E_FAIL;*/
+	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, TEXT("Layer_Player_UI"), TEXT("Prototype_GameObject_UI_HUD"), &HUDDesc)))
+		return E_FAIL;
 #pragma endregion
 
 #pragma region Cloned Player State UI
