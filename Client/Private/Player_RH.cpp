@@ -42,7 +42,7 @@ HRESULT CPlayer_RH::Initialize(void* pArg)
         0.f
     ));
 
-    m_pTextureCom->Change_Container(TEXT("Player"), TEXT("Right_Hand"));
+    m_pTextureCom->Change_Container(TEXT("Right_Hand"), TEXT("Fist"));
 
     return S_OK;
 }
@@ -64,7 +64,7 @@ HRESULT CPlayer_RH::Render()
     m_pGraphic_Device->SetTransform(D3DTS_VIEW, &m_ViewMatrix);
     m_pGraphic_Device->SetTransform(D3DTS_PROJECTION, &m_ProjMatrix);
 
-    if (FAILED(m_pTextureCom->Bind_Texture(0, 1)))
+    if (FAILED(m_pTextureCom->Bind_Texture(0, 0)))
         return E_FAIL;
 
     if (FAILED(Set_RenderState()))

@@ -21,8 +21,8 @@ public:
 
 private:
 	// 클래스 내부에서만 사용할 컴포넌트 멤버 변수
-	vector<CVIBuffer_Rect*>		m_vecVIBufferCom = { nullptr };
-	vector<CTexture*>			m_vecTextureCom = { nullptr };
+	CVIBuffer_Rect*		m_pVIBufferCom = { nullptr };
+	CTexture*			m_pTextureCom = { nullptr };
 
 	vector<class CItem*>*		m_pInven;
 

@@ -2,6 +2,7 @@
 #include "Player_UI_Manager.h"
 
 #include "Player.h"
+#include "UI_HUD.h"
 #include "UI_Player_State.h"
 #include "UI_Inventory.h"
 #include "UI_Equip.h"
@@ -20,6 +21,10 @@ CPlayer_UI_Manager::CPlayer_UI_Manager(CPlayer_UI_Manager& rhs)
 
 HRESULT CPlayer_UI_Manager::Initialize_Prototype()
 {
+	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_UI_HUD"),
+		CUI_HUD::Create(m_pGraphic_Device))))
+		return E_FAIL;
+
 	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_UI_Player_State"),
 		CUI_Player_State::Create(m_pGraphic_Device))))
 		return E_FAIL;
@@ -41,11 +46,25 @@ HRESULT CPlayer_UI_Manager::Initialize(void* pArg)
 	if (FAILED(__super::Initialize(pArg)))
 		return E_FAIL;
 
+
+#pragma region Cloned HUD UI
+	CUI_HUD::UI_DESC HUDDesc = {};
+	HUDDesc.vSize = { 873.f * 0.3f, 653.f * 0.3f };
+	// 화면 좌하단
+	HUDDesc.vPos = { HUDDesc.vSize.x * 0.5f, g_iWinSizeY - HUDDesc.vSize.y * 0.55f, 0.f };
+
+	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, TEXT("Layer_Player_UI"), TEXT("Prototype_GameObject_UI_HUD"), &HUDDesc)))
+		return E_FAIL;
+#pragma endregion
+
 #pragma region Cloned Player State UI
 	CUI_Player_State::UI_PLAYER_STATE_DESC StateDesc = {};
-	StateDesc. vSize = { 873.f * 0.3f, 653.f * 0.3f};
+	StateDesc. vSize = { 565.f * 0.2f, 665.f * 0.2f};
 	// 화면 좌하단
-	StateDesc.vPos = { StateDesc.vSize.x * 0.5f, g_iWinSizeY - StateDesc.vSize.y * 0.55f, 0.f };
+	StateDesc.vPos = { HUDDesc.vPos.x - (HUDDesc.vSize.x * 0.2f), HUDDesc.vPos.y - (HUDDesc.vSize.y * 0.1f) ,0.f };
+	StateDesc.vFontSize = { HUDDesc.vSize.x * 0.075f, HUDDesc.vSize.y * 0.15f };
+	StateDesc.vFontPos = { HUDDesc.vPos.x - (HUDDesc.vSize.x * 0.3f), HUDDesc.vPos.y + (HUDDesc.vSize.y * 0.3f) };
+	//StateDesc.vPos = { StateDesc.vSize.x * 0.75f, g_iWinSizeY - StateDesc.vSize.y * 0.95f, 0.f };
 	// 플레이어의 체력 멤버변수의 주소를 가져와 연동
 	StateDesc.pPlayerHp = m_pPlayer->Get_Hp_Address();
 
@@ -69,7 +88,7 @@ HRESULT CPlayer_UI_Manager::Initialize(void* pArg)
 	CUI_Equip::UI_EQUIP_DESC EquipDesc = {};
 	EquipDesc.vSize = { 304.f * 0.4f, 171.f * 0.4f };
 	// 화면 우하단
-	EquipDesc.vPos = { g_iWinSizeX - (StateDesc.vSize.x * 0.5f), g_iWinSizeY - StateDesc.vSize.y * 0.5f, 0.f };
+	EquipDesc.vPos = { g_iWinSizeX - (EquipDesc.vSize.x * 0.5f), g_iWinSizeY - EquipDesc.vSize.y * 0.5f, 0.f };
 	// 플레이어의 장착 아이템 멤버변수의 주소를 가져와 연동
 	EquipDesc.pEquipItem = (m_pPlayer->Get_EquipItem_Address());
 

@@ -186,8 +186,10 @@
     <ClInclude Include="..\Public\Sky.h" />
     <ClInclude Include="..\Public\Terrain.h" />
     <ClInclude Include="..\Public\UI_Equip.h" />
+    <ClInclude Include="..\public\UI_HUD.h" />
     <ClInclude Include="..\Public\UI_Inventory.h" />
     <ClInclude Include="..\Public\UI_Player_State.h" />
+    <ClInclude Include="..\public\UI_Slot.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -220,8 +222,10 @@
     <ClCompile Include="..\Private\Sky.cpp" />
     <ClCompile Include="..\Private\Terrain.cpp" />
     <ClCompile Include="..\Private\UI_Equip.cpp" />
+    <ClCompile Include="..\private\UI_HUD.cpp" />
     <ClCompile Include="..\Private\UI_Inventory.cpp" />
     <ClCompile Include="..\Private\UI_Player_State.cpp" />
+    <ClCompile Include="..\private\UI_Slot.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

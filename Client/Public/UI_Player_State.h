@@ -10,7 +10,9 @@ class CUI_Player_State final : public CUI
 public:
 	typedef struct tagUIPlayerStateDescription : public CUI::UI_DESC
 	{
-		_uint* pPlayerHp;
+		_uint*		pPlayerHp;
+		_float2		vFontSize;
+		_float2		vFontPos;
 	}UI_PLAYER_STATE_DESC;
 
 private:
@@ -31,6 +33,8 @@ private:
 	CTexture*			m_pTextureCom = { nullptr };
 		
 	_uint*				m_pPlayerHp = { nullptr };
+	_float2				m_vFontSize;
+	_float2				m_vFontPos;
 
 private:
 	/* 이 객체에게 필요한 컴포넌트를 원형을 복제하여 이 객체에게 추가한다. */

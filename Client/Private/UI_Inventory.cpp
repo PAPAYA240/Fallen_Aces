@@ -18,9 +18,6 @@ HRESULT CUI_Inventory::Initialize_Prototype()
 
 HRESULT CUI_Inventory::Initialize(void* pArg)
 {
-    m_vecVIBufferCom.reserve(3);
-    m_vecTextureCom.reserve(3);
-
     if (FAILED(__super::Initialize(pArg)))
         return E_FAIL;
 
@@ -49,26 +46,14 @@ HRESULT CUI_Inventory::Render()
     m_pGraphic_Device->SetTransform(D3DTS_VIEW, &m_ViewMatrix);
     m_pGraphic_Device->SetTransform(D3DTS_PROJECTION, &m_ProjMatrix);
 
-    for (size_t i = 0; i < m_vecVIBufferCom.size(); i++)
-    {
-        if (FAILED(m_vecTextureCom[i]->Bind_Texture(0, 1)))
-            return E_FAIL;
-
-        if (FAILED(Set_RenderState()))
-            return E_FAIL;
-
-        if (FAILED(m_vecVIBufferCom[i]->Render()))
-            return E_FAIL;
-    }
-
-   /* if (FAILED(m_pTextureCom->Bind_Texture(0, 1)))
+    if (FAILED(m_pTextureCom->Bind_Texture(0, 1)))
         return E_FAIL;
 
     if (FAILED(Set_RenderState()))
         return E_FAIL;
 
     if (FAILED(m_pVIBufferCom->Render()))
-        return E_FAIL;*/
+        return E_FAIL;
 
     if (FAILED(Reset_RenderState()))
         return E_FAIL;
@@ -78,16 +63,13 @@ HRESULT CUI_Inventory::Render()
 
 HRESULT CUI_Inventory::Add_Components()
 {
-    for (size_t i = 0; i < 3; i++)
-    {
         if (FAILED(__super::Add_Component(LEVEL_STATIC, TEXT("Prototype_Component_VIBuffer_Rect"),
-            TEXT("Com_VIBuffer"), (CComponent**)&m_vecVIBufferCom[i])))
+            TEXT("Com_VIBuffer"), (CComponent**)&m_pVIBufferCom)))
             return E_FAIL;
 
         if (FAILED(__super::Add_Component(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Texture_Player"),
-            TEXT("Com_Texture"), (CComponent**)&m_vecTextureCom[i])))
+            TEXT("Com_Texture"), (CComponent**)&m_pTextureCom)))
             return E_FAIL;
-    }
 
     return S_OK;
 }
@@ -100,7 +82,7 @@ HRESULT CUI_Inventory::Set_RenderState()
     /* 내가 설정한 알파는 0이다. */
     m_pGraphic_Device->SetRenderState(D3DRS_ALPHAREF, 100);
 
-    /* 그려지는 픽셀이 알파가 내가 설정한 알파보다 클때만 그려라. */
+    /* 그려지는 픽세르이 알파가 내가 설정한 알파보다 클때만 그려라. */
     m_pGraphic_Device->SetRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATER);
 
     return S_OK;
@@ -145,20 +127,6 @@ void CUI_Inventory::Free()
 {
     __super::Free();
 
-    for (auto iter: m_vecTextureCom)
-    {
-        Safe_Release(iter);
-    }
-    m_vecTextureCom.clear();
-
-    for (auto iter : m_vecVIBufferCom)
-    {
-        Safe_Release(iter);
-    }
-    m_vecVIBufferCom.clear();
-
-   /* 
-   Safe_Release(m_pTextureCom);
+    Safe_Release(m_pTextureCom);
     Safe_Release(m_pVIBufferCom);
-    */
 }
