@@ -65,7 +65,7 @@ HRESULT CUI_Player_State::Render()
     if (FAILED(m_pVIBufferCom->Render()))
         return E_FAIL;
 
-    m_pGameInstance->Render_Font(TEXT("Font_Default"),to_wstring(*m_pPlayerHp), &_float2(m_vFontPos.x, m_vFontPos.y), D3DXCOLOR(1.f, 0.f, 0.f, 0.5f));
+    m_pGameInstance->Render_Font(TEXT("Font_Hp"),to_wstring(*m_pPlayerHp), &_float2(m_vFontPos.x, m_vFontPos.y), D3DXCOLOR(1.f, 0.f, 0.f, 0.5f));
 
     if (FAILED(Reset_RenderState()))
         return E_FAIL;

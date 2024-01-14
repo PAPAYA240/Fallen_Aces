@@ -118,6 +118,9 @@
     <Filter Include="02.GameObjects\UI\Player\UI_HUD">
       <UniqueIdentifier>{2794fd0b-de4d-4c7e-bc66-97f3d06c5a41}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02.GameObjects\UI\Player\UI_Inventory\Select">
+      <UniqueIdentifier>{5888474c-fb24-4b31-9bf4-c9685219d62c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -225,7 +228,12 @@
     <ClInclude Include="..\public\UI_Slot.h">
       <Filter>02.GameObjects\UI\Player\UI_Inventory\Slot</Filter>
     </ClInclude>
-    <ClInclude Include="..\public\UI_HUD.h" />
+    <ClInclude Include="..\public\UI_HUD.h">
+      <Filter>02.GameObjects\UI\Player\UI_HUD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\UI_Select.h">
+      <Filter>02.GameObjects\UI\Player\UI_Inventory\Select</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -321,7 +329,12 @@
     <ClCompile Include="..\private\UI_Slot.cpp">
       <Filter>02.GameObjects\UI\Player\UI_Inventory\Slot</Filter>
     </ClCompile>
-    <ClCompile Include="..\private\UI_HUD.cpp" />
+    <ClCompile Include="..\private\UI_HUD.cpp">
+      <Filter>02.GameObjects\UI\Player\UI_HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\UI_Select.cpp">
+      <Filter>02.GameObjects\UI\Player\UI_Inventory\Select</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Client.ico">

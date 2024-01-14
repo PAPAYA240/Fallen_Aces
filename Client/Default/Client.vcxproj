@@ -189,6 +189,7 @@
     <ClInclude Include="..\public\UI_HUD.h" />
     <ClInclude Include="..\Public\UI_Inventory.h" />
     <ClInclude Include="..\Public\UI_Player_State.h" />
+    <ClInclude Include="..\public\UI_Select.h" />
     <ClInclude Include="..\public\UI_Slot.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Resource.h" />
@@ -225,6 +226,7 @@
     <ClCompile Include="..\private\UI_HUD.cpp" />
     <ClCompile Include="..\Private\UI_Inventory.cpp" />
     <ClCompile Include="..\Private\UI_Player_State.cpp" />
+    <ClCompile Include="..\private\UI_Select.cpp" />
     <ClCompile Include="..\private\UI_Slot.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="stdafx.cpp">

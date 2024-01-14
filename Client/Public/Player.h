@@ -27,8 +27,10 @@ public:
 public:
 	// 플레이어 멤버 변수의 주소를 반환해주는 함수들 (UI에 연동해줌)
 	_uint* Get_Hp_Address() { return &m_iHp; }
-	class CItem** Get_EquipItem_Address()  { return &m_pEquipment; }
 	vector<class CItem*>* Get_Inventory_Address() { return &m_vecInven; }
+	class CItem** Get_EquipItem_Address() { return &m_pEquipment; }
+	_uint* Get_SelectItemNum_Address() { return &m_iSelectItemNum; }
+
 
 private:
 	CTexture*				m_pTextureCom = { nullptr };
@@ -44,9 +46,14 @@ private:
 	_bool						m_isMove = { false };
 	_float3						m_vTargetPos = {};
 
+	// 체력
 	_uint						m_iHp = { 0 };
-	class CItem*				m_pEquipment = { nullptr };
+	// 인벤토리
 	vector<class CItem*>		m_vecInven;
+	// 현재 장착한 아이템
+	class CItem*				m_pEquipment = { nullptr };
+	// 현재 선택한 인벤토리 넘버
+	_uint						m_iSelectItemNum = { 0 };
 
 private:
 	CGameObject* Check_Collision(LEVEL eLevel, const wstring& strLayerTag, _float3* pDirection = nullptr);

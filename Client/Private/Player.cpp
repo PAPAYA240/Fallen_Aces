@@ -62,6 +62,19 @@ void CPlayer::Tick(_float fTimeDelta)
 		m_iHp++;
 	}
 
+	if (m_pGameInstance->Get_KeyState('1') == EKeyState::DOWN)
+	{
+		m_iSelectItemNum = 0;
+	}
+	if (m_pGameInstance->Get_KeyState('2') == EKeyState::DOWN)
+	{
+		m_iSelectItemNum = 1;
+	}
+	if (m_pGameInstance->Get_KeyState('3') == EKeyState::DOWN)
+	{
+		m_iSelectItemNum = 2;
+	}
+
 	// 장비 아이템 UI 테스트용 Item 생성문
 	if (m_pGameInstance->Get_KeyState(VK_LBUTTON) == EKeyState::DOWN)
 	{

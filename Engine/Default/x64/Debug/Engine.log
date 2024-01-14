@@ -1,4 +1,35 @@
-﻿  UI.cpp
+﻿  Base.cpp
+  BlendObject.cpp
+  Camera.cpp
+  Collider.cpp
+  Collider_Box.cpp
+  Collider_Sphere.cpp
+  Component.cpp
+  Component_Manager.cpp
+  CTexLayer.cpp
+  CustomFont.cpp
+  Font_Manager.cpp
+  GameInstance.cpp
   GameObject.cpp
+  Graphic_Device.cpp
+  Key_Manager.cpp
+  Layer.cpp
+  Level.cpp
+  Level_Manager.cpp
+  Object_Manager.cpp
+  Picking.cpp
   코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  Renderer.cpp
+  Texture.cpp
+  Timer.cpp
+  Timer_Manager.cpp
+  Transform.cpp
+  UI.cpp
+  VIBuffer.cpp
+  VIBuffer_Cube.cpp
+  VIBuffer_Rect.cpp
+  VIBuffer_Terrain.cpp
+  코드를 생성하고 있습니다...
+     ..\Bin\Engine.lib 라이브러리 및 ..\Bin\Engine.exp 개체를 생성하고 있습니다.
   Engine.vcxproj -> C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Bin\Engine.dll

@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "UI_Equip.h"
 
+#include "CItem.h"
+
 CUI_Equip::CUI_Equip(LPDIRECT3DDEVICE9 pGraphic_Device)
     :CUI(pGraphic_Device)
 {
