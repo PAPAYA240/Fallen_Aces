@@ -91,3 +91,8 @@ void CItem::Check_Durability()
 	break;
 	}
 }
+
+void CItem::Check_PlayerRadius()
+{
+
+}

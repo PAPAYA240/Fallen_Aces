@@ -38,7 +38,6 @@ HRESULT CMonster::Initialize(void* pArg)
 
 	//m_pTransformCom->NormalizeScale(ptSize);
 	m_pTransformCom->Set_Scaled(1.f, 1.5f, 1.f);
-	m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(_float(rand() % 100), 1.5f, _float(rand() % 100)));
 
 	return S_OK;
 }

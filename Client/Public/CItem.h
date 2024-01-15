@@ -38,6 +38,7 @@ public:
 protected:
 	void					BillBoard_Camera();
 	void					Check_Durability();
+	void					Check_PlayerRadius();
 
 private:
 	CGameObject*			Check_Collision(LEVEL eLevel, const wstring& strLayerTag, _float3* pDirection = nullptr) = 0;

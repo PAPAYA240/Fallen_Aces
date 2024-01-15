@@ -39,7 +39,12 @@ HRESULT CCamera_Object::Initialize(void* pArg)
 
 void CCamera_Object::Tick(_float fTimeDelta)
 {
+	if (!GetFocus())
+		return;
+
 	POINT		ptMouse = {};
+
+	/* 스크린 기준의 마우스 위치를 얻어온다. */
 	GetCursorPos(&ptMouse);
 
 	/* 왼쪽으로 움직이면 -, 오른쪽으로 움직이면 + */
@@ -75,14 +80,10 @@ void CCamera_Object::Tick(_float fTimeDelta)
 	if (FAILED(__super::Bind_PipeLines()))
 		return;
 
-
-	ScreenToClient(g_hWnd, &ptMouse);
-	ptMouse = { (_long)(g_iWinSizeX * 0.5f), (_long)(g_iWinSizeY * 0.5f) };
-
-	//ClientToScreen(g_hWnd, &m_ptMouse);
-
+	/* Mouse Position */
+	ptMouse = { _long(g_iWinSizeX * 0.5f), _long(g_iWinSizeY * 0.5f) };
+	ClientToScreen(g_hWnd, &ptMouse);
 	SetCursorPos(ptMouse.x, ptMouse.y);
-	//GetCursorPos(&ptMouse);
 
 	m_ptMouse = ptMouse;
 }
