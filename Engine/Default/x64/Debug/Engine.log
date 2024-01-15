@@ -1,2 +1,26 @@
-﻿  Transform.cpp
+﻿  CTexLayer.cpp
+  Collider.cpp
+  Collider_Box.cpp
+  Collider_Sphere.cpp
+  Texture.cpp
+  UI.cpp
+  VIBuffer_Terrain.cpp
+  BlendObject.cpp
+  Camera.cpp
+  Component.cpp
+  Component_Manager.cpp
+  GameInstance.cpp
+  GameObject.cpp
+  Layer.cpp
+  Level.cpp
+  Level_Manager.cpp
+  Object_Manager.cpp
+  Picking.cpp
+  Renderer.cpp
+  Transform.cpp
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  VIBuffer_Rect.cpp
+  코드를 생성하고 있습니다...
+     ..\Bin\Engine.lib 라이브러리 및 ..\Bin\Engine.exp 개체를 생성하고 있습니다.
   Engine.vcxproj -> C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Bin\Engine.dll

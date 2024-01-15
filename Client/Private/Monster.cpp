@@ -34,9 +34,9 @@ HRESULT CMonster::Initialize(void* pArg)
 	if (FAILED(Add_Components()))
 		return E_FAIL;
 
-	POINT ptSize = { 2048.f, 2048.f };
+	//POINT ptSize = { 8092.f, 1024.f };
 
-	m_pTransformCom->NormalizeScale(ptSize);
+	//m_pTransformCom->NormalizeScale(ptSize);
 	m_pTransformCom->Set_Scaled(1.f, 1.5f, 1.f);
 	m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(_float(rand() % 100), 1.5f, _float(rand() % 100)));
 
@@ -308,7 +308,7 @@ HRESULT CMonster::Check_ForChangeContainer()
 		strArrow += TEXT("_NorthWest");
 		break;
 	case _uint(CAMERA_DIR::WEST):
-		strArrow += TEXT("_WEST");
+		strArrow += TEXT("_West");
 		break;
 	}
 
