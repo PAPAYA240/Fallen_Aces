@@ -44,7 +44,7 @@ HRESULT CMonster::Initialize(void* pArg)
 
 void CMonster::Tick(_float fTimeDelta)
 {
-	SetUp_OnTerrain(7.f);
+	SetUp_OnTerrain(0.5f);
 	Monster_Radius(fTimeDelta); // Player 인식 반경
 
 	const CTransform* pPlayer_Transform = dynamic_cast<const CTransform*>(m_pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_Player"), g_strTransformTag));
