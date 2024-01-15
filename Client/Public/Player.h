@@ -32,6 +32,10 @@ public:
 	class CItem** Get_SlotItem_Address(_int iSlotIdx) { return &m_vecInven[iSlotIdx]; }
 	_uint* Get_SelectItemNum_Address() { return &m_iSelectItemNum; }
 
+	void	Set_PickItem(class CItem* pickItem) { m_pEquipment = pickItem; }
+
+	bool Input_Item(class CItem* input_Item);
+
 
 private:
 	CTexture*				m_pTextureCom = { nullptr };
@@ -51,10 +55,12 @@ private:
 	_uint						m_iHp = { 0 };
 	// 인벤토리
 	vector<class CItem*>		m_vecInven;
-	// 현재 장착한 아이템
-	class CItem*				m_pEquipment = { nullptr };
+
 	// 현재 선택한 인벤토리 넘버
 	_uint						m_iSelectItemNum = { 0 };
+
+	// 현재 장착한 아이템
+	class CItem*				m_pEquipment = { nullptr };
 
 private:
 	CGameObject* Check_Collision(LEVEL eLevel, const wstring& strLayerTag, _float3* pDirection = nullptr);

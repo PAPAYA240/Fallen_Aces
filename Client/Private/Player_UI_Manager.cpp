@@ -102,7 +102,7 @@ HRESULT CPlayer_UI_Manager::Initialize(void* pArg)
 	for (_int i = 0; i < 3; i++)
 	{
 		CUI_Slot::UI_SLOT_DESC SlotDesc = {};
-		SlotDesc.vSize = { 304.f * 0.4f, 171.f * 0.4f };
+		SlotDesc.vSize = { 312.f * 0.3f, 174.f * 0.3f };
 		// 화면 우하단
 		SlotDesc.vPos = { SelectDesc.SlotPosArr[i].x, SelectDesc.SlotPosArr[i].y, 0.f };
 		// 플레이어의 장착 아이템 멤버변수의 주소를 가져와 연동

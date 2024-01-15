@@ -29,7 +29,7 @@ HRESULT CUI_Slot::Initialize(void* pArg)
 
     Initialize_UI_Setting(g_iWinSizeX, g_iWinSizeY);
 
-    m_pTextureCom->Change_Container(TEXT("UI"), TEXT("HUD"));
+    m_pTextureCom->Change_Container(TEXT("UI"), TEXT("Inven_Icons"));
 
     return S_OK;
 }
@@ -40,7 +40,7 @@ void CUI_Slot::Tick(_float fTimeDelta)
 
 void CUI_Slot::Late_Tick(_float fTimeDelta)
 {
-    if (nullptr != *m_pSlotItem)
+   if (nullptr != *m_pSlotItem)
     {
         m_pGameInstance->Add_RenderGroup(CRenderer::RENDER_UI, this);
     }
@@ -54,7 +54,7 @@ HRESULT CUI_Slot::Render()
     m_pGraphic_Device->SetTransform(D3DTS_VIEW, &m_ViewMatrix);
     m_pGraphic_Device->SetTransform(D3DTS_PROJECTION, &m_ProjMatrix);
 
-    if (FAILED(m_pTextureCom->Bind_Texture(0, 0)))
+    if (FAILED(m_pTextureCom->Bind_Texture(0, 1)))
         return E_FAIL;
 
     if (FAILED(Set_RenderState()))

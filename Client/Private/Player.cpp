@@ -77,67 +77,73 @@ void CPlayer::Tick(_float fTimeDelta)
 		m_iSelectItemNum = 2;
 	}
 
-	// 장비 아이템 UI 테스트용 Item 생성문
-	if (m_pGameInstance->Get_KeyState(VK_LBUTTON) == EKeyState::DOWN)
+	
+	if (m_pGameInstance->Get_KeyState('F') == EKeyState::DOWN)
 	{
-		if (nullptr == m_pEquipment)
-		{
-			/* 랜드오브젝트용 객체들에게 필요한 데이터를 구한다.*/
-			CLandObject::LANDOBJECT_DESC		LandObjectDesc = {};
-
-			LandObjectDesc.pTerrainTransform = (CTransform*)(m_pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_BackGround"), g_strTransformTag));
-			LandObjectDesc.pTerrainVIBuffer = (CVIBuffer_Terrain*)(m_pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_BackGround"), TEXT("Com_VIBuffer")));
-
-			m_pGameInstance->Add_Clone((CGameObject**)&m_pEquipment, LEVEL_GAMEPLAY, TEXT("Layer_Item"), TEXT("Prototype_GameObject_Banana"), &LandObjectDesc);
-				
-		}
-		else if(nullptr != m_pEquipment)
-		{
-			if(1 == Safe_Release(m_pEquipment))
-				m_pEquipment = nullptr;
-		}
+		m_vecInven[m_iSelectItemNum] = nullptr;
 	}
 
-
-	//if (m_pGameInstance->Get_KeyState('W') == EKeyState::PRESSING)
+	//// 장비 아이템 UI 테스트용 Item 생성문
+	//if (m_pGameInstance->Get_KeyState(VK_LBUTTON) == EKeyState::DOWN)
 	//{
-	//	//if (m_pGameInstance->Get_KeyState(VK_SHIFT) == EKeyState::DOWN)
-	//	//	//m_pTransformCom->Set_Speed(15.f);
-	//	//if (m_pGameInstance->Get_KeyState(VK_SHIFT) == EKeyState::UP)
-	//	//	//m_pTransformCom->Set_Speed(10.f);
+	//	if (nullptr == m_pEquipment)
+	//	{
+	//		/* 랜드오브젝트용 객체들에게 필요한 데이터를 구한다.*/
+	//		CLandObject::LANDOBJECT_DESC		LandObjectDesc = {};
 
-	//	m_pTransformCom->Go_Straight(fTimeDelta);
-	//}
-	////if (m_pGameInstance->Get_KeyState('W') == EKeyState::UP)
-	////{
-	////	//m_pTransformCom->Set_Speed(10.f);
-	////}
+	//		LandObjectDesc.pTerrainTransform = (CTransform*)(m_pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_BackGround"), g_strTransformTag));
+	//		LandObjectDesc.pTerrainVIBuffer = (CVIBuffer_Terrain*)(m_pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_BackGround"), TEXT("Com_VIBuffer")));
 
-
-	//if (m_pGameInstance->Get_KeyState('S') == EKeyState::PRESSING)
-	//{
-	//	m_pTransformCom->Go_Backward(fTimeDelta);
-	//}
-
-	//if (m_pGameInstance->Get_KeyState('A') == EKeyState::PRESSING)
-	//{
-	//	//if (m_pGameInstance->Get_KeyState(VK_SHIFT) == EKeyState::DOWN)
-	//	//	//m_pTransformCom->Set_Speed(30.f);
-	//	//if (m_pGameInstance->Get_KeyState(VK_SHIFT) == EKeyState::UP)
-	//	//	//m_pTransformCom->Set_Speed(10.f);
-
-	//	m_pTransformCom->Go_Left(fTimeDelta);
+	//		m_pGameInstance->Add_Clone((CGameObject**)&m_pEquipment, LEVEL_GAMEPLAY, TEXT("Layer_Item"), TEXT("Prototype_GameObject_Banana"), &LandObjectDesc);
+	//			
+	//	}
+	//	else if(nullptr != m_pEquipment)
+	//	{
+	//		if(1 == Safe_Release(m_pEquipment))
+	//			m_pEquipment = nullptr;
+	//	}
 	//}
 
-	//if (m_pGameInstance->Get_KeyState('D') == EKeyState::PRESSING)
-	//{
-	//	//if (m_pGameInstance->Get_KeyState(VK_SHIFT) == EKeyState::DOWN)
-	//	//	//m_pTransformCom->Set_Speed(30.f);
-	//	//if (m_pGameInstance->Get_KeyState(VK_SHIFT) == EKeyState::UP)
-	//	//	//m_pTransformCom->Set_Speed(10.f);
 
-	//	m_pTransformCom->Go_Right(fTimeDelta);
+	if (m_pGameInstance->Get_KeyState('W') == EKeyState::PRESSING)
+	{
+		//if (m_pGameInstance->Get_KeyState(VK_SHIFT) == EKeyState::DOWN)
+		//	//m_pTransformCom->Set_Speed(15.f);
+		//if (m_pGameInstance->Get_KeyState(VK_SHIFT) == EKeyState::UP)
+		//	//m_pTransformCom->Set_Speed(10.f);
+
+		m_pTransformCom->Go_Straight(fTimeDelta);
+	}
+	//if (m_pGameInstance->Get_KeyState('W') == EKeyState::UP)
+	//{
+	//	//m_pTransformCom->Set_Speed(10.f);
 	//}
+
+
+	if (m_pGameInstance->Get_KeyState('S') == EKeyState::PRESSING)
+	{
+		m_pTransformCom->Go_Backward(fTimeDelta);
+	}
+
+	if (m_pGameInstance->Get_KeyState('A') == EKeyState::PRESSING)
+	{
+		//if (m_pGameInstance->Get_KeyState(VK_SHIFT) == EKeyState::DOWN)
+		//	//m_pTransformCom->Set_Speed(30.f);
+		//if (m_pGameInstance->Get_KeyState(VK_SHIFT) == EKeyState::UP)
+		//	//m_pTransformCom->Set_Speed(10.f);
+
+		m_pTransformCom->Go_Left(fTimeDelta);
+	}
+
+	if (m_pGameInstance->Get_KeyState('D') == EKeyState::PRESSING)
+	{
+		//if (m_pGameInstance->Get_KeyState(VK_SHIFT) == EKeyState::DOWN)
+		//	//m_pTransformCom->Set_Speed(30.f);
+		//if (m_pGameInstance->Get_KeyState(VK_SHIFT) == EKeyState::UP)
+		//	//m_pTransformCom->Set_Speed(10.f);
+
+		m_pTransformCom->Go_Right(fTimeDelta);
+	}
 
 
 
@@ -158,6 +164,12 @@ void CPlayer::Tick(_float fTimeDelta)
 
 		_int a = 10;
 	}*/
+
+	if (m_vecInven[m_iSelectItemNum] != m_pEquipment)
+	{
+		m_pEquipment = m_vecInven[m_iSelectItemNum];
+	}
+
 }
 
 void CPlayer::Late_Tick(_float fTimeDelta)
@@ -201,6 +213,20 @@ HRESULT CPlayer::Render()
 		return E_FAIL;
 
 	return S_OK;
+}
+
+bool CPlayer::Input_Item(CItem* input_Item)
+{
+	for (auto &InvenIter : m_vecInven)
+	{
+		if (nullptr == InvenIter)
+		{
+			InvenIter = input_Item;
+			return true;
+		}
+	}
+	
+	return false;
 }
 
 CGameObject* CPlayer::Check_Collision(LEVEL eLevel, const wstring& strLayerTag, _float3* pDirection)
