@@ -28,6 +28,8 @@ HRESULT CTerrain::Initialize(void* pArg)
 	if (FAILED(Add_Components()))
 		return E_FAIL;
 
+	m_pTextureCom->Change_Container(TEXT("Terrain"), TEXT("_Dirt"));
+
 	return S_OK;
 }
 

@@ -51,7 +51,7 @@ HRESULT CItemMedKit::Initialize(void* pArg)
 
 	m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(_float(rand() % 100), 5.f, _float(rand() % 100)));
 	//m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(_float(0), 5.f, _float(0)));
-	m_pTransformCom->Set_Scaled(0.5f, 0.3f, 1.f);
+	m_pTransformCom->Set_Scaled(0.6f, 0.3f, 1.f);
 
 	return S_OK;
 }

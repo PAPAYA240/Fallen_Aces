@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "CItem.h"
 
+#include "Player.h"
+
 CItem::CItem(LPDIRECT3DDEVICE9 _pGraphic_Device)
 	: CLandObject(_pGraphic_Device)
 {
@@ -112,6 +114,11 @@ void CItem::Check_PlayerRadius()
 {
 	const CTransform* pPlayerTransform = dynamic_cast<const CTransform*>(m_pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_Player"), g_strTransformTag));
 
+	list<class CGameObject*>* pPlayerLayerList = m_pGameInstance->Get_LayerList(LEVEL_GAMEPLAY, TEXT("Layer_Player"));
+	CGameObject* pGameObject = *(pPlayerLayerList->begin());
+
+	CPlayer* pPlayer = dynamic_cast<CPlayer*>(pGameObject);
+
 	if (nullptr == pPlayerTransform)
 		return;
 
@@ -124,7 +131,7 @@ void CItem::Check_PlayerRadius()
 
 	if (abs(fDistance) <= 1.0f)
 	{
-		if (GetKeyState('E') & 0x8000)
+		if (DOWN == m_pGameInstance->Get_KeyState('E'))
 		{
 			if (ITEM_DURA::BROKEN != m_eDuraType)
 			{
@@ -133,10 +140,11 @@ void CItem::Check_PlayerRadius()
 			}
 		}
 
-		if (GetKeyState('R') & 0x8000)
+		if (DOWN == m_pGameInstance->Get_KeyState('R') && !m_isTestDead)
 		{
 			// 플레이어 함수를 사용하여 객체의 정보를 넘김
 			// 이 객체는 삭제
+			pPlayer->Input_Item(this);
 			m_isTestDead = true;
 		}
 	}
