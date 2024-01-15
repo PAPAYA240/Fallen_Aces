@@ -1,47 +1,45 @@
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\vc143.pdb
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\vc143.idb
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\texture.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\renderer.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\picking.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\object_manager.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\level_manager.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\level.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\layer.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\key_manager.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\graphic_device.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\gameobject.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\gameinstance.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\ctexlayer.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\component_manager.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\component.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\collider_sphere.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\collider_box.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\collider.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\camera.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\blendobject.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\base.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\vibuffer_terrain.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\vibuffer_rect.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\vibuffer_cube.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\vibuffer.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\transform.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\timer_manager.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\timer.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\font_manager.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\customfont.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\ui.obj
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\bin\engine.lib
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\bin\engine.exp
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\vc143.pdb
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\vc143.idb
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\picking.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\object_manager.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\level_manager.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\level.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\layer.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\key_manager.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\graphic_device.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\gameobject.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\gameinstance.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\font_manager.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\customfont.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\ctexlayer.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\component_manager.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\component.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\collider_sphere.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\collider_box.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\collider.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\camera.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\blendobject.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\base.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\vibuffer_terrain.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\vibuffer_rect.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\vibuffer_cube.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\vibuffer.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\ui.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\transform.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\timer_manager.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\timer.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\texture.obj
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\renderer.obj
 c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\bin\engine.lib
 c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\bin\engine.exp
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\bin\engine.dll
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\engine.ilk
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\bin\engine.pdb
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\engine.tlog\cl.command.1.tlog
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\engine.tlog\cl.items.tlog
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\engine.tlog\cl.read.1.tlog
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\engine.tlog\cl.write.1.tlog
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\engine.tlog\link.command.1.tlog
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\engine.tlog\link.read.1.tlog
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\engine.tlog\link.write.1.tlog
-c:\users\tkddn\onedrive\desktop\수업자료\[ sr ] fallen aces\sr_fallen_aces\engine\default\x64\debug\engine.tlog\link.write.2u.tlog
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\bin\engine.dll
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\engine.ilk
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\bin\engine.pdb
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\engine.tlog\cl.command.1.tlog
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\engine.tlog\cl.items.tlog
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\engine.tlog\cl.read.1.tlog
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\engine.tlog\cl.write.1.tlog
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\engine.tlog\link.command.1.tlog
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\engine.tlog\link.read.1.tlog
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\engine.tlog\link.write.1.tlog
+c:\users\qrst0\onedrive\문서\study\sr_fallen_aces\engine\default\x64\debug\engine.tlog\link.write.2u.tlog

@@ -10,7 +10,7 @@ class CUI_Equip final : public CUI
 public:
 	typedef struct tagUIEquipDescription : public CUI::UI_DESC
 	{
-		class CItem* pEquipItem;
+		class CItem** pEquipItem;
 	}UI_EQUIP_DESC;
 
 private:
@@ -30,7 +30,7 @@ private:
 	CVIBuffer_Rect*		m_pVIBufferCom = { nullptr };
 	CTexture*			m_pTextureCom = { nullptr };
 
-	class CItem*		m_pEquipItem = { nullptr };
+	class CItem**		m_pEquipItem = { nullptr };
 
 private:
 	/* 이 객체에게 필요한 컴포넌트를 원형을 복제하여 이 객체에게 추가한다. */

@@ -1,30 +1,30 @@
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Private\Base.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\Base.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\private\BlendObject.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\BlendObject.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\private\Camera.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\Camera.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Private\Collider.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\Collider.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Private\Collider_Box.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\Collider_Box.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Private\Collider_Sphere.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\Collider_Sphere.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\private\Component.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\Component.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\private\Component_Manager.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\Component_Manager.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Private\CTexLayer.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\CTexLayer.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Private\CustomFont.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\CustomFont.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Private\Font_Manager.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\Font_Manager.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\private\GameInstance.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\GameInstance.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\private\GameObject.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\GameObject.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Private\Graphic_Device.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\Graphic_Device.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Private\Key_Manager.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\Key_Manager.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\private\Layer.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\Layer.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\private\Level.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\Level.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\private\Level_Manager.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\Level_Manager.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\private\Object_Manager.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\Object_Manager.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\private\Picking.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\Picking.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\private\Renderer.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\Renderer.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Private\Texture.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\Texture.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Private\Timer.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\Timer.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\private\Timer_Manager.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\Timer_Manager.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\private\Transform.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\Transform.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Private\UI.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\UI.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\private\VIBuffer.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\VIBuffer.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Private\VIBuffer_Cube.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\VIBuffer_Cube.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\private\VIBuffer_Rect.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\VIBuffer_Rect.obj
-C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Private\VIBuffer_Terrain.cpp;C:\Users\tkddn\OneDrive\Desktop\수업자료\[ SR ] Fallen Aces\SR_Fallen_Aces\Engine\Default\x64\Debug\VIBuffer_Terrain.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Private\Base.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\Base.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\private\BlendObject.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\BlendObject.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\private\Camera.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\Camera.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Private\Collider.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\Collider.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Private\Collider_Box.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\Collider_Box.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Private\Collider_Sphere.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\Collider_Sphere.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\private\Component.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\Component.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\private\Component_Manager.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\Component_Manager.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Private\CTexLayer.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\CTexLayer.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Private\CustomFont.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\CustomFont.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Private\Font_Manager.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\Font_Manager.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\private\GameInstance.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\GameInstance.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\private\GameObject.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\GameObject.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Private\Graphic_Device.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\Graphic_Device.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Private\Key_Manager.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\Key_Manager.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\private\Layer.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\Layer.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\private\Level.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\Level.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\private\Level_Manager.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\Level_Manager.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\private\Object_Manager.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\Object_Manager.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\private\Picking.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\Picking.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\private\Renderer.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\Renderer.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Private\Texture.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\Texture.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Private\Timer.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\Timer.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\private\Timer_Manager.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\Timer_Manager.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\private\Transform.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\Transform.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Private\UI.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\UI.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\private\VIBuffer.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\VIBuffer.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Private\VIBuffer_Cube.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\VIBuffer_Cube.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\private\VIBuffer_Rect.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\VIBuffer_Rect.obj
+C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Private\VIBuffer_Terrain.cpp;C:\Users\qrst0\OneDrive\문서\study\SR_Fallen_Aces\Engine\Default\x64\Debug\VIBuffer_Terrain.obj

@@ -21,10 +21,10 @@ public:
 
 private:
 	// 클래스 내부에서만 사용할 컴포넌트 멤버 변수
-	CVIBuffer_Rect*			m_pVIBufferCom = { nullptr };
-	CTexture*				m_pTextureCom = { nullptr };
+	CVIBuffer_Rect*		m_pVIBufferCom = { nullptr };
+	CTexture*			m_pTextureCom = { nullptr };
 
-	vector<class CItem*>* m_pInven;
+	vector<class CItem*>*		m_pInven;
 
 private:
 	/* 이 객체에게 필요한 컴포넌트를 원형을 복제하여 이 객체에게 추가한다. */

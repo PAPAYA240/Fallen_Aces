@@ -10,6 +10,8 @@
 
 #include "Player_UI_Manager.h"
 
+#include "CItem.h"
+
 CPlayer::CPlayer(LPDIRECT3DDEVICE9 pGraphic_Device)
 	: CLandObject(pGraphic_Device)
 {
@@ -43,6 +45,8 @@ HRESULT CPlayer::Initialize(void* pArg)
 
 	Ready_Layer_Player_Hands(TEXT("Layer_Player_Hand"));
 
+	m_vecInven.resize(3);
+
 	// Player UI들을 총괄 생성해줄 객체 생성
 	CPlayer_UI_Manager::Player_UI_Manager_DESC Desc = {};
 	Desc.pPlayer = this;
@@ -55,10 +59,46 @@ HRESULT CPlayer::Initialize(void* pArg)
 
 void CPlayer::Tick(_float fTimeDelta)
 {
-	if (m_iHp < 500)
+	if (m_iHp < 100)
 	{
 		m_iHp++;
 	}
+
+	if (m_pGameInstance->Get_KeyState('1') == EKeyState::DOWN)
+	{
+		m_iSelectItemNum = 0;
+	}
+	if (m_pGameInstance->Get_KeyState('2') == EKeyState::DOWN)
+	{
+		m_iSelectItemNum = 1;
+	}
+	if (m_pGameInstance->Get_KeyState('3') == EKeyState::DOWN)
+	{
+		m_iSelectItemNum = 2;
+	}
+
+	// 장비 아이템 UI 테스트용 Item 생성문
+	if (m_pGameInstance->Get_KeyState(VK_LBUTTON) == EKeyState::DOWN)
+	{
+		if (nullptr == m_pEquipment)
+		{
+			/* 랜드오브젝트용 객체들에게 필요한 데이터를 구한다.*/
+			CLandObject::LANDOBJECT_DESC		LandObjectDesc = {};
+
+			LandObjectDesc.pTerrainTransform = (CTransform*)(m_pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_BackGround"), g_strTransformTag));
+			LandObjectDesc.pTerrainVIBuffer = (CVIBuffer_Terrain*)(m_pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_BackGround"), TEXT("Com_VIBuffer")));
+
+			m_pGameInstance->Add_Clone((CGameObject**)&m_pEquipment, LEVEL_GAMEPLAY, TEXT("Layer_Item"), TEXT("Prototype_GameObject_Banana"), &LandObjectDesc);
+				
+		}
+		else if(nullptr != m_pEquipment)
+		{
+			if(1 == Safe_Release(m_pEquipment))
+				m_pEquipment = nullptr;
+		}
+	}
+
+
 	//if (m_pGameInstance->Get_KeyState('W') == EKeyState::PRESSING)
 	//{
 	//	//if (m_pGameInstance->Get_KeyState(VK_SHIFT) == EKeyState::DOWN)
@@ -109,9 +149,9 @@ void CPlayer::Tick(_float fTimeDelta)
 		m_bLeftPunch ? m_pPlayer_LH->Set_State(STATE_ATTACK) : m_pPlayer_RH->Set_State(STATE_ATTACK);
 
 		m_bLeftPunch = !m_bLeftPunch;
-	}
+	}*/
 
-	if (m_pGameInstance->Get_KeyState(VK_RBUTTON) == EKeyState::DOWN)
+	/*if (m_pGameInstance->Get_KeyState(VK_RBUTTON) == EKeyState::DOWN)
 	{
 		_uint LCnt = m_pPlayer_LH->m_iAttackCnt;
 		_uint RCnt = m_pPlayer_RH->m_iAttackCnt;
@@ -229,7 +269,6 @@ HRESULT CPlayer::Set_RenderState()
 {	
 	m_pGraphic_Device->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
 
-
 	m_pGraphic_Device->SetSamplerState(0, D3DSAMP_MINFILTER, D3DTEXF_POINT);
 	m_pGraphic_Device->SetSamplerState(0, D3DSAMP_MAGFILTER, D3DTEXF_POINT);
 	m_pGraphic_Device->SetSamplerState(0, D3DSAMP_MIPFILTER, D3DTEXF_POINT);	
@@ -242,9 +281,6 @@ HRESULT CPlayer::Set_RenderState()
 
 	/* 그려지는 픽세르이 알파가 내가 설정한 알파보다 클때만 그려라. */
 	m_pGraphic_Device->SetRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATER);
-
-	
-
 
 	return S_OK;
 }
@@ -323,4 +359,5 @@ void CPlayer::Free()
 
 	Safe_Release(m_pPlayer_LH);
 	Safe_Release(m_pPlayer_RH);
+	Safe_Release(m_pEquipment);
 }

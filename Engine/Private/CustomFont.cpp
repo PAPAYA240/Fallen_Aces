@@ -34,7 +34,7 @@ void CCustomFont::Render_Font(const wstring& strText, const _float2 * pPos, D3DX
 
 	m_pSprite->Begin(D3DXSPRITE_ALPHABLEND);
 
-	m_pFont->DrawTextW(m_pSprite, strText.c_str(), strText.length(), &rc, DT_NOCLIP, Color);
+	m_pFont->DrawTextW(m_pSprite, strText.c_str(), (_int)strText.length(), &rc, DT_NOCLIP, Color);
 
 	m_pSprite->End();
 }

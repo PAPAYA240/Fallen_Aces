@@ -115,6 +115,15 @@
     <Filter Include="02.GameObjects\UI\Player\Inventory">
       <UniqueIdentifier>{0cd918d1-dfe3-4ec8-b685-4255c663c1df}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02.GameObjects\UI\Player\UI_Inventory\Slot">
+      <UniqueIdentifier>{43e54c32-1c00-4b2e-b47b-74542b4e786b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\UI\Player\UI_HUD">
+      <UniqueIdentifier>{2794fd0b-de4d-4c7e-bc66-97f3d06c5a41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\UI\Player\UI_Inventory\Select">
+      <UniqueIdentifier>{5888474c-fb24-4b31-9bf4-c9685219d62c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -222,6 +231,15 @@
     <ClInclude Include="..\Public\UI_Player_State.h">
       <Filter>02.GameObjects\UI\Player\State</Filter>
     </ClInclude>
+    <ClInclude Include="..\public\UI_Slot.h">
+      <Filter>02.GameObjects\UI\Player\UI_Inventory\Slot</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\UI_HUD.h">
+      <Filter>02.GameObjects\UI\Player\UI_HUD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\UI_Select.h">
+      <Filter>02.GameObjects\UI\Player\UI_Inventory\Select</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -316,6 +334,15 @@
     </ClCompile>
     <ClCompile Include="..\Private\UI_Player_State.cpp">
       <Filter>02.GameObjects\UI\Player\State</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\UI_Slot.cpp">
+      <Filter>02.GameObjects\UI\Player\UI_Inventory\Slot</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\UI_HUD.cpp">
+      <Filter>02.GameObjects\UI\Player\UI_HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\UI_Select.cpp">
+      <Filter>02.GameObjects\UI\Player\UI_Inventory\Select</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -48,7 +48,7 @@ void CUI::Initialize_UI_Setting(_uint iWinSizeX, _uint iWinSizeY)
 	m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(
 		m_vPos.x - iWinSizeX * 0.5f,
 		-m_vPos.y + iWinSizeY * 0.5f,
-		0.f
+		m_vPos.z
 	));
 }
 

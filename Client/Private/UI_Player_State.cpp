@@ -20,6 +20,8 @@ HRESULT CUI_Player_State::Initialize(void* pArg)
 {
     UI_PLAYER_STATE_DESC* Desc = (UI_PLAYER_STATE_DESC*)pArg;
     m_pPlayerHp = Desc->pPlayerHp;
+    m_vFontSize = Desc->vFontSize;
+    m_vFontPos = Desc->vFontPos;
 
     if (FAILED(__super::Initialize(pArg)))
         return E_FAIL;
@@ -29,8 +31,10 @@ HRESULT CUI_Player_State::Initialize(void* pArg)
 
     Initialize_UI_Setting(g_iWinSizeX, g_iWinSizeY);
 
-    if (FAILED(m_pGameInstance->Add_Font(TEXT("Font_Default"), TEXT("³Ø½¼Lv1 °íµñ"), m_vSize.x * 0.1f, m_vSize.y * 0.18f, FW_BOLD)))
+    if (FAILED(m_pGameInstance->Add_Font(TEXT("Font_Hp"), TEXT("³Ø½¼Lv1 °íµñ"), (_uint)m_vFontSize.x, (_uint)m_vFontSize.y, FW_BOLD)))
         return E_FAIL;
+
+    m_pTextureCom->Change_Container(TEXT("Mike_Face"), TEXT("Look_Straight"));
 
     return S_OK;
 }
@@ -61,7 +65,7 @@ HRESULT CUI_Player_State::Render()
     if (FAILED(m_pVIBufferCom->Render()))
         return E_FAIL;
 
-    m_pGameInstance->Render_Font(TEXT("Font_Default"),to_wstring(*m_pPlayerHp), &_float2(m_vPos.x - (m_vSize.x * 0.3f), m_vPos.y + (m_vSize.y * 0.3f)), D3DXCOLOR(1.f, 0.f, 0.f, 1.f));
+    m_pGameInstance->Render_Font(TEXT("Font_Hp"),to_wstring(*m_pPlayerHp), &_float2(m_vFontPos.x, m_vFontPos.y), D3DXCOLOR(1.f, 0.f, 0.f, 0.5f));
 
     if (FAILED(Reset_RenderState()))
         return E_FAIL;
