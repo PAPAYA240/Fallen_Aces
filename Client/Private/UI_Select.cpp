@@ -38,10 +38,13 @@ HRESULT CUI_Select::Initialize(void* pArg)
 
 void CUI_Select::Tick(_float fTimeDelta)
 {
-	if (m_pGameInstance->Get_KeyState('R') == DOWN)
+	if (m_iCurSelect != *m_pSelectNum)
 	{
+		m_iCurSelect = *m_pSelectNum;
 		m_vPos = { m_SlotPosArr[*m_pSelectNum].x, m_SlotPosArr[*m_pSelectNum].y , m_vPos.z };
-		m_pTransformCom->Set_State(CTransform::STATE_POSITION, m_vPos);
+		//m_pTransformCom->Set_State(CTransform::STATE_POSITION, m_vPos);
+
+		Initialize_UI_Setting(g_iWinSizeX, g_iWinSizeY);
 	}
 }
 

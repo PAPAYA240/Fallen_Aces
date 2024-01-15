@@ -30,6 +30,7 @@ private:
 	CVIBuffer_Rect* m_pVIBufferCom = { nullptr };
 	CTexture* m_pTextureCom = { nullptr };
 
+	_uint			m_iCurSelect = { 0 };
 	_uint*			m_pSelectNum = {nullptr};
 	_float2			m_SlotPosArr[3];
 

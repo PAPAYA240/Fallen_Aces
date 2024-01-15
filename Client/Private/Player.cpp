@@ -45,6 +45,8 @@ HRESULT CPlayer::Initialize(void* pArg)
 
 	Ready_Layer_Player_Hands(TEXT("Layer_Player_Hand"));
 
+	m_vecInven.resize(3);
+
 	// Player UI甸阑 醚褒 积己秦临 按眉 积己
 	CPlayer_UI_Manager::Player_UI_Manager_DESC Desc = {};
 	Desc.pPlayer = this;
@@ -57,7 +59,7 @@ HRESULT CPlayer::Initialize(void* pArg)
 
 void CPlayer::Tick(_float fTimeDelta)
 {
-	if (m_iHp < 500)
+	if (m_iHp < 100)
 	{
 		m_iHp++;
 	}

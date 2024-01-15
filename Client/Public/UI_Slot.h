@@ -7,6 +7,12 @@ BEGIN(Client)
 
 class CUI_Slot final : public CUI
 {
+public:
+	typedef struct tagUISlotDescription : public CUI::UI_DESC
+	{
+		class CItem** pSlotItem;
+	}UI_SLOT_DESC;
+
 private:
 	CUI_Slot(LPDIRECT3DDEVICE9 pGraphic_Device);
 	CUI_Slot(CUI_Slot& rhs);
@@ -24,8 +30,7 @@ private:
 	CVIBuffer_Rect* m_pVIBufferCom = { nullptr };
 	CTexture*		m_pTextureCom = { nullptr };
 
-	_uint*			m_pSelectSlotNum = { nullptr };
-	vector<_float2>	m_vecSlotPos;
+	class CItem**	m_pSlotItem = { nullptr };
 
 private:
 	/* 이 객체에게 필요한 컴포넌트를 원형을 복제하여 이 객체에게 추가한다. */

@@ -29,6 +29,7 @@ public:
 	_uint* Get_Hp_Address() { return &m_iHp; }
 	vector<class CItem*>* Get_Inventory_Address() { return &m_vecInven; }
 	class CItem** Get_EquipItem_Address() { return &m_pEquipment; }
+	class CItem** Get_SlotItem_Address(_int iSlotIdx) { return &m_vecInven[iSlotIdx]; }
 	_uint* Get_SelectItemNum_Address() { return &m_iSelectItemNum; }
 
 

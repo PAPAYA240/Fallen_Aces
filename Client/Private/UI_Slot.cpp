@@ -18,6 +18,9 @@ HRESULT CUI_Slot::Initialize_Prototype()
 
 HRESULT CUI_Slot::Initialize(void* pArg)
 {
+    UI_SLOT_DESC* Desc = (UI_SLOT_DESC*)pArg;
+    m_pSlotItem = Desc->pSlotItem;
+
     if (FAILED(__super::Initialize(pArg)))
         return E_FAIL;
 
@@ -37,7 +40,10 @@ void CUI_Slot::Tick(_float fTimeDelta)
 
 void CUI_Slot::Late_Tick(_float fTimeDelta)
 {
-	m_pGameInstance->Add_RenderGroup(CRenderer::RENDER_UI, this);
+    if (nullptr != *m_pSlotItem)
+    {
+        m_pGameInstance->Add_RenderGroup(CRenderer::RENDER_UI, this);
+    }
 }
 
 HRESULT CUI_Slot::Render()

@@ -6,6 +6,7 @@
 #include "UI_Player_State.h"
 #include "UI_Select.h"
 #include "UI_Equip.h"
+#include "UI_Slot.h"
 
 #include "CItem.h"
 
@@ -31,6 +32,10 @@ HRESULT CPlayer_UI_Manager::Initialize_Prototype()
 
 	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_UI_Select"),
 		CUI_Select::Create(m_pGraphic_Device))))
+		return E_FAIL;
+
+	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_UI_Slot"),
+		CUI_Slot::Create(m_pGraphic_Device))))
 		return E_FAIL;
 
 	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_UI_Equip"),
@@ -89,6 +94,22 @@ HRESULT CPlayer_UI_Manager::Initialize(void* pArg)
 
 	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, TEXT("Layer_Player_UI"), TEXT("Prototype_GameObject_UI_Select"), &SelectDesc)))
 		return E_FAIL;
+#pragma endregion
+
+#pragma region Cloned Player Slot UI
+
+	for (_int i = 0; i < 3; i++)
+	{
+		CUI_Slot::UI_SLOT_DESC SlotDesc = {};
+		SlotDesc.vSize = { 304.f * 0.4f, 171.f * 0.4f };
+		// 화면 우하단
+		SlotDesc.vPos = { SelectDesc.SlotPosArr[i].x, SelectDesc.SlotPosArr[i].y, 0.f };
+		// 플레이어의 장착 아이템 멤버변수의 주소를 가져와 연동
+		SlotDesc.pSlotItem = m_pPlayer->Get_SlotItem_Address(i);
+
+		if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, TEXT("Layer_Player_UI"), TEXT("Prototype_GameObject_UI_Slot"), &SlotDesc)))
+			return E_FAIL;
+	}
 #pragma endregion
 
 #pragma region Cloned Player Equipment UI
