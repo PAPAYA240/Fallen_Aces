@@ -122,7 +122,7 @@ void CObject_Manager::Tick(_float fTimeDelta)
 		{
 			/* 필요한 위치의 갱신작어블 수행한다. */
 			Pair.second->Tick(fTimeDelta);
-		}		
+		}
 	}
 }
 

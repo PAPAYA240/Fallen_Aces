@@ -28,7 +28,7 @@ HRESULT CItemCola::Initialize(void* pArg)
 		MyDesc.pTerrainVIBuffer = pDesc->pTerrainVIBuffer;
 	}
 
-	MyDesc.eItemType = { ITEM::COLA };
+	MyDesc.eItemID = { ITEM_ID::COLA };
 	MyDesc.fAttackDamage = { 0.f };
 	MyDesc.fDurability = { 1.f };
 
@@ -57,6 +57,9 @@ HRESULT CItemCola::Initialize(void* pArg)
 
 void CItemCola::Tick(_float fTimeDelta)
 {
+	Check_PlayerRadius();
+	Check_Durability();
+
 	if (FAILED(SetUp_OnTerrain(0.3f)))
 		return;
 }
@@ -70,6 +73,9 @@ void CItemCola::Late_Tick(_float fTimeDelta)
 
 HRESULT CItemCola::Render()
 {
+	if (true == m_isTestDead)
+		return E_FAIL;
+
 	if (FAILED(m_pTransformCom->Bind_WorldMatrix()))
 		return E_FAIL;
 

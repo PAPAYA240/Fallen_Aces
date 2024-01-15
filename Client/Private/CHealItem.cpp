@@ -29,15 +29,17 @@ HRESULT CHealItem::Initialize(void* pArg)
 		m_fSpeed_Buff = pDesc->fSpeed_Buff;
 	}
 
+	m_eItemType = ITEM_TYPE::HEAL;
+
 	if (FAILED(__super::Initialize(pArg)))
 		return E_FAIL;
 
 	return S_OK;
 }
 
-const ITEM& CHealItem::ItemType() const
+const ITEM_ID& CHealItem::ItemType() const
 {
-	return m_eItemType;
+	return m_eItemID;
 }
 
 void CHealItem::Free()
