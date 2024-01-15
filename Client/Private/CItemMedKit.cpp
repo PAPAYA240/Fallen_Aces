@@ -28,7 +28,7 @@ HRESULT CItemMedKit::Initialize(void* pArg)
 		MyDesc.pTerrainVIBuffer = pDesc->pTerrainVIBuffer;
 	}
 
-	MyDesc.eItemType = { ITEM::MEDKIT };
+	MyDesc.eItemID = { ITEM_ID::MEDKIT };
 	MyDesc.fAttackDamage = { 0.f };
 	MyDesc.fDurability = { 1.f };
 
@@ -58,6 +58,9 @@ HRESULT CItemMedKit::Initialize(void* pArg)
 
 void CItemMedKit::Tick(_float fTimeDelta)
 {
+	Check_PlayerRadius();
+	Check_Durability();
+
 	if (FAILED(SetUp_OnTerrain(0.3f)))
 		return;
 }
@@ -71,6 +74,9 @@ void CItemMedKit::Late_Tick(_float fTimeDelta)
 
 HRESULT CItemMedKit::Render()
 {
+	if (true == m_isTestDead)
+		return E_FAIL;
+
 	if (FAILED(m_pTransformCom->Bind_WorldMatrix()))
 		return E_FAIL;
 

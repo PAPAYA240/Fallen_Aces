@@ -194,8 +194,8 @@ HRESULT CPlayer::Render()
 	if (FAILED(Set_RenderState()))
 		return E_FAIL;		
 
-	if (FAILED(m_pVIBufferCom->Render()))
-		return E_FAIL;
+	/*if (FAILED(m_pVIBufferCom->Render()))
+		return E_FAIL;*/
 
 	if (FAILED(Reset_RenderState()))
 		return E_FAIL;

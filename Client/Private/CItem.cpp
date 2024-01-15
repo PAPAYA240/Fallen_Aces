@@ -24,7 +24,7 @@ HRESULT CItem::Initialize(void* pArg)
 
 		m_fAttackDamage = pDesc->fAttackDamage;
 		m_fDurability = pDesc->fDurability;
-		m_eItemType = pDesc->eItemType;
+		m_eItemID = pDesc->eItemID;
 	}
 
 	if (FAILED(__super::Initialize(pArg)))
@@ -61,7 +61,7 @@ void CItem::BillBoard_Camera()
 
 void CItem::Check_Durability()
 {
-	if (nullptr == m_pTextureCom)
+	if (nullptr == m_pTextureCom || ITEM_DURA::BROKEN == m_eDuraType)
 		return;
 
 	if (100.f >= m_fDurability && 50.f < m_fDurability)
@@ -71,9 +71,9 @@ void CItem::Check_Durability()
 	else if(0.f >= m_fDurability)
 		m_eDuraType = ITEM_DURA::BROKEN;
 
-	switch (_uint(m_eItemType))
+	switch (_uint(m_eItemID))
 	{
-	case _uint(ITEM::APPLE):
+	case _uint(ITEM_ID::APPLE):
 	{
 		if (ITEM_DURA::GOOD == m_eDuraType)
 			m_pTextureCom->Change_Container(TEXT("Item"), TEXT("Apple"));
@@ -81,7 +81,7 @@ void CItem::Check_Durability()
 			m_pTextureCom->Change_Container(TEXT("Item"), TEXT("Apple_Eat"));
 	}
 		break;
-	case _uint(ITEM::BANANA):
+	case _uint(ITEM_ID::BANANA):
 	{
 		if (ITEM_DURA::GOOD == m_eDuraType)
 			m_pTextureCom->Change_Container(TEXT("Item"), TEXT("Banana"));
@@ -89,10 +89,55 @@ void CItem::Check_Durability()
 			m_pTextureCom->Change_Container(TEXT("Item"), TEXT("Banana_Eat"));
 	}
 	break;
+
+	case _uint(ITEM_ID::MEDKIT):
+	{
+		// °´Ã¼ ÆÄ±«
+		if (ITEM_DURA::GOOD == m_eDuraType)
+			m_pTextureCom->Change_Container(TEXT("Item"), TEXT("Medkit"));
+	}
+	break;
+
+	case _uint(ITEM_ID::COLA):
+	{
+		// °´Ã¼ ÆÄ±«
+		if (ITEM_DURA::GOOD == m_eDuraType)
+			m_pTextureCom->Change_Container(TEXT("Item"), TEXT("Cola"));
+	}
+	break;
 	}
 }
 
 void CItem::Check_PlayerRadius()
 {
+	const CTransform* pPlayerTransform = dynamic_cast<const CTransform*>(m_pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_Player"), g_strTransformTag));
 
+	if (nullptr == pPlayerTransform)
+		return;
+
+	_float3 vPlayerPos = pPlayerTransform->Get_State(CTransform::STATE_POSITION);
+	_float3 vMyPos = m_pTransformCom->Get_State(CTransform::STATE_POSITION);
+
+	_float3 vDiff = vPlayerPos - vMyPos;
+
+	_float fDistance = D3DXVec3Length(&vDiff);
+
+	if (abs(fDistance) <= 1.0f)
+	{
+		if (GetKeyState('E') & 0x8000)
+		{
+			if (ITEM_DURA::BROKEN != m_eDuraType)
+			{
+				if (ITEM_ID::APPLE == m_eItemID || ITEM_ID::BANANA == m_eItemID || ITEM_ID::COLA == m_eItemID || ITEM_ID::MEDKIT == m_eItemID)
+					m_fDurability -= 1;
+			}
+		}
+
+		if (GetKeyState('R') & 0x8000)
+		{
+			// ÇÃ·¹ÀÌ¾î ÇÔ¼ö¸¦ »ç¿ëÇÏ¿© °´Ã¼ÀÇ Á¤º¸¸¦ ³Ñ±è
+			// ÀÌ °´Ã¼´Â »èÁ¦
+			m_isTestDead = true;
+		}
+	}
 }

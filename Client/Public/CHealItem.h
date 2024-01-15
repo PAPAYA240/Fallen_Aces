@@ -24,7 +24,7 @@ public:
 	virtual HRESULT			Initialize(void* pArg)			override;
 
 public:
-	const ITEM& ItemType() const;
+	const ITEM_ID& ItemType() const;
 
 public:
 	virtual CGameObject*	Clone(void* pArg) = 0;

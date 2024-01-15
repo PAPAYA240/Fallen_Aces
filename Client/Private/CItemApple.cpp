@@ -30,7 +30,7 @@ HRESULT CItemApple::Initialize(void* pArg)
 
 	m_eBillbordType = XYZ;
 
-	MyDesc.eItemType = { ITEM::APPLE };
+	MyDesc.eItemID = { ITEM_ID::APPLE };
 	
 	MyDesc.fAttackDamage = { 0.f };
 	MyDesc.fDurability = { 1.f };
@@ -60,6 +60,7 @@ HRESULT CItemApple::Initialize(void* pArg)
 
 void CItemApple::Tick(_float fTimeDelta)
 {
+	Check_PlayerRadius();
 	Check_Durability();
 
 	if (FAILED(SetUp_OnTerrain(0.3f)))
@@ -75,6 +76,9 @@ void CItemApple::Late_Tick(_float fTimeDelta)
 
 HRESULT CItemApple::Render()
 {
+	if (true == m_isTestDead)
+		return E_FAIL;
+
 	if (FAILED(m_pTransformCom->Bind_WorldMatrix()))
 		return E_FAIL;
 
