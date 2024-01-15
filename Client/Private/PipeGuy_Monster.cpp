@@ -23,8 +23,6 @@ HRESULT CPipeGuy_Monster::Initialize(void* pArg)
 	pMonsterDesc->fRotationPerSec = D3DXToRadian(90.0f);
 	m_fAttack_Radius = pMonsterDesc->fAttack_Direction = _float3(1.f, 1.f, 1.f);
 
-	m_wstrStateTag = TEXT("PipeGuy");
-
 	if (FAILED(__super::Initialize(pArg)))
 		return E_FAIL;
 
@@ -34,9 +32,10 @@ HRESULT CPipeGuy_Monster::Initialize(void* pArg)
 	m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(rand() % 20, 1.5f, rand() % 20));
 	m_pMonsterState = pMonsterDesc->pMonster_Start_State; // 시작 행동
 
-	m_pTextureCom->Change_Container(TEXT("Monster"), TEXT("PipeGuy_Idle"));
 	m_fOrigin_Position = m_pTransformCom->Get_State(CTransform::STATE_POSITION);
-	m_pTextureCom = dynamic_cast<CTexture*>((*m_Components.find(TEXT("Com_Texture"))).second);
+	//m_pTextureCom = dynamic_cast<CTexture*>((*m_Components.find(TEXT("Com_Texture"))).second);
+
+	m_wstrStateTag = TEXT("PipeGuy");
 	
 	return S_OK;
 }

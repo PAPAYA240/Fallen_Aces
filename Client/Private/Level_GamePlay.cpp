@@ -148,11 +148,11 @@ HRESULT CLevel_GamePlay::Ready_Layer_Items(const wstring& strLayerTag, CLandObje
 
 HRESULT CLevel_GamePlay::Ready_Layer_Effect(const wstring & strLayerTag)
 {
-	for (size_t i = 0; i < 10; i++)
-	{
-		if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_Effect"))))
-			return E_FAIL;
-	}
+	//for (size_t i = 0; i < 10; i++)
+	//{
+	//	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_Effect"))))
+	//		return E_FAIL;
+	//}
 
 	return S_OK;
 }

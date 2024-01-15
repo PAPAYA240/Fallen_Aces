@@ -34,7 +34,10 @@ HRESULT CMonster::Initialize(void* pArg)
 	if (FAILED(Add_Components()))
 		return E_FAIL;
 
-	m_pTransformCom->Set_Scaled(2.f, 2.5f, 1.f);
+	POINT ptSize = { 2048.f, 2048.f };
+
+	m_pTransformCom->NormalizeScale(ptSize);
+	m_pTransformCom->Set_Scaled(1.f, 1.5f, 1.f);
 	m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(_float(rand() % 100), 1.5f, _float(rand() % 100)));
 
 	return S_OK;
@@ -77,13 +80,11 @@ void CMonster::Tick(_float fTimeDelta)
 
 	//	m_pTransformCom->Set_State(CTransform::STATE_POSITION, vPos);
 	//}
-
-	if (FAILED(Check_ForChangeContainer()))
-		return;
 }
 
 void CMonster::Late_Tick(_float fTimeDelta)
 {
+	Check_MonsterArrow();									/* 카메라가 현재 객체 기준 어디 방향에 있는지 [ 상우 ]*/
 	Chase_Player(fTimeDelta);
 
 	SetUp_BillBoard();
@@ -93,15 +94,11 @@ void CMonster::Late_Tick(_float fTimeDelta)
 
 HRESULT CMonster::Render()
 {	
-	if (FAILED(__super::Render()))
+	if (FAILED(Check_ForChangeContainer()))					/* 마지막에 최종 업데이트 이후 애니메이션 컨테이너 결정 [ 상우 ] */
 		return E_FAIL;
 
-	//m_pTransformCom->NormalizeScale(m_pTextureCom->Get_ImageScale(m_fFrame));
-
-	//_float4x4 Test = m_pTransformCom->Get_Test();
-
-	//if (FAILED(m_pGraphic_Device->SetTransform(D3DTS_WORLD, &Test)))
-	//	return E_FAIL;
+	if (FAILED(__super::Render()))
+		return E_FAIL;
 
 	if (FAILED(m_pTransformCom->Bind_WorldMatrix()))
 		return E_FAIL;
@@ -405,7 +402,7 @@ void CMonster::SetUp_BillBoard()
 	m_pTransformCom->Set_State(CTransform::STATE_LOOK, *(_float3*)&ViewMatrix.m[CTransform::STATE_LOOK][0]);
 }
 
-void CMonster::TestCamera()
+void CMonster::Check_MonsterArrow()
 {
 	/* 카메라의 Transform 을 가지고 옴*/
 	m_eBodyDraw = m_pGameInstance->Get_CameraDot(m_pTransformCom, LEVEL_GAMEPLAY, TEXT("Layer_Camera"));

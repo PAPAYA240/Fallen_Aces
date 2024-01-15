@@ -78,15 +78,8 @@ public:
 
 	_float3 Get_ToLook() const { return m_vToLookAt; }
 
-	_float4x4 Get_Test() {
-		return m_TestMatrix
-			;
-	}
-
 private:
 	_float4x4			m_WorldMatrix;
-	_float4x4			m_TestMatrix;
-
 	_float3				m_vScale = { 1.f, 1.f, 1.f };
 
 	_float3				m_vToLookAt = { 0.f, 0.f, 0.f };

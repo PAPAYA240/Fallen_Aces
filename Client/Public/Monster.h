@@ -97,7 +97,7 @@ private:
 	void SetUp_BillBoard();
 
 protected:
-	void TestCamera();
+	void Check_MonsterArrow();
 	//virtual void CheckToArrow() = 0;
 
 private:

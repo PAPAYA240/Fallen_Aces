@@ -12,14 +12,14 @@ void CTransform::Set_Scaled(_float fX, _float fY, _float fZ)
 	_float3		vUp = Get_State(STATE_UP);
 	_float3		vLook = Get_State(STATE_LOOK);
 
-	Set_State(STATE_RIGHT, *D3DXVec3Normalize(&vRight, &vRight) * fX);
-	Set_State(STATE_UP, *D3DXVec3Normalize(&vUp, &vUp) * fY);
+	Set_State(STATE_RIGHT, *D3DXVec3Normalize(&vRight, &vRight) * m_vScale.x * fX);
+	Set_State(STATE_UP, *D3DXVec3Normalize(&vUp, &vUp) * m_vScale.y * fY);
 	Set_State(STATE_LOOK, *D3DXVec3Normalize(&vLook, &vLook) * fZ);
 }
 
 void CTransform::NormalizeScale(const POINT& _ptSize)
 {
-	_float fMax = (_float)_ptSize.x < _ptSize.y ? _ptSize.y : _ptSize.x;
+	_float fMax = _ptSize.x < _ptSize.y ? (_float)_ptSize.y : (_float)_ptSize.x;
 
 	if (512 > fMax)
 	{
@@ -31,13 +31,6 @@ void CTransform::NormalizeScale(const POINT& _ptSize)
 		m_vScale.x = (_ptSize.x / 1024.f);
 		m_vScale.y = (_ptSize.y / 1024.f);
 	}
-
-	D3DXMatrixIdentity(&m_TestMatrix);
-	
-	m_TestMatrix._11 *= m_vScale.x;
-	m_TestMatrix._22 *= m_vScale.y;
-
-	m_TestMatrix *= m_WorldMatrix;
 }
 
 HRESULT CTransform::Initialize_Prototype()
