@@ -32,7 +32,7 @@ HRESULT CPlayer::Initialize_Prototype()
 HRESULT CPlayer::Initialize(void* pArg)
 {	
 	CGameObject::GAMEOBJECT_DESC*	pGameObjectDesc = (CGameObject::GAMEOBJECT_DESC*)pArg;
-	pGameObjectDesc->fSpeedPerSec = 10.f;
+	pGameObjectDesc->fSpeedPerSec = 3.f;
 	pGameObjectDesc->fRotationPerSec = D3DXToRadian(90.0f);
 
 	if (FAILED(__super::Initialize(pArg)))
@@ -81,6 +81,15 @@ void CPlayer::Tick(_float fTimeDelta)
 	if (m_pGameInstance->Get_KeyState('F') == EKeyState::DOWN)
 	{
 		m_vecInven[m_iSelectItemNum] = nullptr;
+	}
+
+	if (m_pGameInstance->Get_KeyState(VK_SHIFT) == EKeyState::PRESSING)
+	{
+		m_pTransformCom->Set_Speed(5.f);
+	}
+	else
+	{
+		m_pTransformCom->Set_Speed(3.f);
 	}
 
 	//// 장비 아이템 UI 테스트용 Item 생성문

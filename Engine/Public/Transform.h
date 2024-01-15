@@ -72,6 +72,9 @@ public:
 	_bool MoveToTarget(const CTransform* pTargetTransform, _float fTimeDelta, _float fMinDistance = 0.f);
 	_bool MoveToTarget(const _float3& vTargetPoint, _float fTimeDelta, _float fMinDistance = 0.f);
 
+
+	void Set_Speed(const _float& fSpeed) { m_fSpeedPerSec = fSpeed; }	/* 임의로 만든 Set Speed */
+
 public:
 	void Refresh_ToLook(const _float3& _vLookVec) { m_vToLookAt = _vLookVec; }
 	void Refresh_ToLook();

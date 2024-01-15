@@ -60,7 +60,7 @@ void CItemCola::Tick(_float fTimeDelta)
 	Check_PlayerRadius();
 	Check_Durability();
 
-	if (FAILED(SetUp_OnTerrain(0.3f)))
+	if (FAILED(SetUp_OnTerrain(m_pTransformCom->Get_Scaled().y * 0.5f)))
 		return;
 }
 

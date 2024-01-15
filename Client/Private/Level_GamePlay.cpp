@@ -105,19 +105,19 @@ HRESULT CLevel_GamePlay::Ready_Layer_Player(const wstring & strLayerTag, CLandOb
 
 HRESULT CLevel_GamePlay::Ready_Layer_Monster(const wstring & strLayerTag, CMonster::MONSTER_DESC& MonsterDesc)
 {
-	//for (size_t i = 0; i < 5; i++)
-	//{
-	//	MonsterDesc.pMonster_Start_State = MONSTER_IDLE;
-	//	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_PipeGuy_Monster"), &MonsterDesc)))
-	//		return E_FAIL;
+	for (size_t i = 0; i < 5; i++)
+	{
+		MonsterDesc.pMonster_Start_State = MONSTER_IDLE;
+		if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_PipeGuy_Monster"), &MonsterDesc)))
+			return E_FAIL;
 
-	//	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_Matches_Monster"), &MonsterDesc)))
-	//		return E_FAIL;
-	//}
+		if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_Matches_Monster"), &MonsterDesc)))
+			return E_FAIL;
+	}
 
-	//MonsterDesc.pMonster_Start_State = MONSTER_IDLE;
-	//if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_Goon_Monster"), &MonsterDesc)))
-	//	return E_FAIL;
+	MonsterDesc.pMonster_Start_State = MONSTER_IDLE;
+	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_Goon_Monster"), &MonsterDesc)))
+		return E_FAIL;
 
 	MonsterDesc.pMonster_Start_State = MONSTER_IDLE;
 	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_Goon_Monster"), &MonsterDesc)))

@@ -42,6 +42,24 @@ HRESULT CPipeGuy_Monster::Initialize(void* pArg)
 
 void CPipeGuy_Monster::Tick(_float fTimeDelta)
 {
+	_uint iMaxSize = m_pTextureCom->Container_MaxSize();
+
+	m_fFrame += iMaxSize * fTimeDelta;
+
+	if (m_pMonsterState == MONSTER_ATTACK || m_pMonsterState == MONSTER_HEAVY_ATTACK) // 한 번의 애니메이션만 사용할 때
+	{
+		if (m_fFrame >= iMaxSize)
+		{
+			m_bOneMotion = true;
+			m_fFrame = 0.f;
+		}
+	}
+	else
+	{
+		if (m_fFrame >= iMaxSize)
+			m_fFrame = 0.f;
+	}
+
 	__super::Tick(fTimeDelta);
 
 	// Change_Texture(m_pMonsterState);

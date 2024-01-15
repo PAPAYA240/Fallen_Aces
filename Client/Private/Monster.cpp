@@ -25,7 +25,7 @@ HRESULT CMonster::Initialize_Prototype()
 HRESULT CMonster::Initialize(void* pArg)
 {
 	CGameObject::GAMEOBJECT_DESC*	pGameObjectDesc = (CGameObject::GAMEOBJECT_DESC*)pArg;
-	pGameObjectDesc->fSpeedPerSec = 5;
+	pGameObjectDesc->fSpeedPerSec = 2.f;
 	pGameObjectDesc->fRotationPerSec = D3DXToRadian(90.0f);
 	
 	if (FAILED(__super::Initialize(pArg)))
@@ -37,14 +37,14 @@ HRESULT CMonster::Initialize(void* pArg)
 	//POINT ptSize = { 8092.f, 1024.f };
 
 	//m_pTransformCom->NormalizeScale(ptSize);
-	m_pTransformCom->Set_Scaled(1.f, 1.5f, 1.f);
+	m_pTransformCom->Set_Scaled(2.f, 1.5f, 1.f);
 
 	return S_OK;
 }
 
 void CMonster::Tick(_float fTimeDelta)
 {
-	SetUp_OnTerrain(0.5f);
+	SetUp_OnTerrain(m_pTransformCom->Get_Scaled().y * 0.5f);
 	Monster_Radius(fTimeDelta); // Player 인식 반경
 
 	const CTransform* pPlayer_Transform = dynamic_cast<const CTransform*>(m_pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_Player"), g_strTransformTag));
