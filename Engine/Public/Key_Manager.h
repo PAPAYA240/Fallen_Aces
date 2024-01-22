@@ -11,8 +11,8 @@ private:
 	~CKey_Manager() = default;
 
 public:
-	HRESULT Initialize();
-	void	Update();
+	HRESULT		Initialize();
+	void		Update();
 	EKeyState Get_KeyState(int _iKey) { return m_eKeyState[_iKey]; }
 
 private:

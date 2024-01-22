@@ -1,0 +1,142 @@
+#include "stdafx.h"
+#include "Red_Switch.h"
+
+CRed_Switch::CRed_Switch(LPDIRECT3DDEVICE9 _pGraphic_Device)
+	:CSwitchObj(_pGraphic_Device)
+{
+}
+
+CRed_Switch::CRed_Switch(const CRed_Switch& rhs)
+	: CSwitchObj(rhs)
+{
+}
+
+HRESULT CRed_Switch::Initialize_Prototype()
+{
+	return S_OK;
+}
+
+HRESULT CRed_Switch::Initialize(void* pArg)
+{
+	CGameObject::GAMEOBJECT_DESC MyDesc = {};
+
+	if (nullptr != pArg)
+	{
+		CGameObject::GAMEOBJECT_DESC* pDesc = (CGameObject::GAMEOBJECT_DESC*)pArg;
+	}
+
+	if (FAILED(__super::Initialize(&pArg)))
+		return E_FAIL;
+
+	if (FAILED(Add_MyComponents()))
+		return E_FAIL;
+
+	m_ePuzzleID = PUZZLE_ID::RED_SWITCH;
+	m_bSwitch_Check = SWITCH::ON;
+
+	m_pTextureCom->Change_Container(TEXT("Puzzle"), TEXT("Red_Butten_Switch_Off"));
+
+	m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(_float(rand() % 100), 1.f, _float(rand() % 100)));
+	//m_pTransformCom->Set_Scaled(0.3f, 0.3f, 1.f);
+
+	return S_OK;
+}
+
+void CRed_Switch::Tick(_float fTimeDelta)
+{
+	__super::Tick(fTimeDelta);
+}
+
+void CRed_Switch::Late_Tick(_float fTimeDelta)
+{
+	m_pGameInstance->Add_RenderGroup(CRenderer::RENDER_NONBLEND, this);
+}
+
+HRESULT CRed_Switch::Render()
+{
+	if (FAILED(m_pTransformCom->Bind_WorldMatrix()))
+		return E_FAIL;
+
+	if (FAILED(m_pTextureCom->Bind_Texture(0, 0)))
+		return E_FAIL;
+
+	if (FAILED(Set_RenderState()))
+		return E_FAIL;
+
+	if (FAILED(m_pVIbufferCom->Render()))
+		return E_FAIL;
+
+	if (FAILED(Reset_RenderState()))
+		return E_FAIL;
+
+	return S_OK;
+}
+
+HRESULT CRed_Switch::Set_RenderState()
+{
+	m_pGraphic_Device->SetRenderState(D3DRS_ALPHATESTENABLE, TRUE);
+	m_pGraphic_Device->SetRenderState(D3DRS_ALPHAREF, 150);
+	m_pGraphic_Device->SetRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATER);
+
+	return S_OK;
+}
+
+HRESULT CRed_Switch::Reset_RenderState()
+{
+	m_pGraphic_Device->SetRenderState(D3DRS_ALPHATESTENABLE, FALSE);
+
+	return S_OK;
+}
+
+CRed_Switch* CRed_Switch::Create(LPDIRECT3DDEVICE9 _pGraphic_Device)
+{
+	CRed_Switch* pInstance = new CRed_Switch(_pGraphic_Device);
+
+	if (FAILED(pInstance->Initialize_Prototype()))
+	{
+		MSG_BOX(TEXT("Failed to Created : CRed_Switch "));
+
+		Safe_Release<CRed_Switch*>(pInstance);
+	}
+
+	return pInstance;
+}
+
+HRESULT CRed_Switch::Add_MyComponents()
+{
+	if (FAILED(__super::Add_Component(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Texture_Puzzle"),
+		TEXT("Com_Texture"), (CComponent**)&m_pTextureCom)))
+		return E_FAIL;
+
+	if (FAILED(__super::Add_Component(LEVEL_STATIC, TEXT("Prototype_Component_VIBuffer_Rect"),
+		TEXT("Com_VIBuffer"), (CComponent**)&m_pVIbufferCom)))
+		return E_FAIL;
+
+	return S_OK;
+}
+
+
+CGameObject* CRed_Switch::Clone(void* pArg)
+{
+	CRed_Switch* pInstance = new CRed_Switch(*this);
+
+	if (FAILED(pInstance->Initialize(pArg)))
+	{
+		MSG_BOX(TEXT("Failed to Cloned : CRed_Switch Clone "));
+
+		Safe_Release<CRed_Switch*>(pInstance);
+	}
+
+	return pInstance;
+}
+
+CGameObject* CRed_Switch::Check_Collision(LEVEL eLevel, const wstring& strLayerTag, _float3* pDirection)
+{
+	return nullptr;
+}
+
+
+void CRed_Switch::Free()
+{
+	__super::Free();
+}

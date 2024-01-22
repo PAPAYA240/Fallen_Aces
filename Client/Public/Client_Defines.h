@@ -2,7 +2,6 @@
 
 
 #include "GameInstance.h"
-
 #define SQRT(x, y, z) x * x + y * y + z * z
 
 namespace Client
@@ -12,6 +11,8 @@ namespace Client
 	enum class ITEM_ID { NONE, APPLE, BANANA, COLA, MEDKIT, GLASS, PISTOL, TOMYGUN, _END };
 	enum class ITEM_DURA { PERFECT, GOOD, BROKEN, _END };
 	enum class ITEM_TYPE { NONE, HEAL, WEAPON, _END };
+
+	enum class PUZZLE_ID { NONE, BUTTEN_SWITCH, LIGHT_SWITCH, RED_SWITCH, LEVER_SWITCH, COLOR_KEY, BUILDING_KEY, BOSS_KEY, PADLOCK_KEY, COLOR_KEYCARD, SILVER_KEY, _END };
 
 	enum MONSTER_STATE
 	{

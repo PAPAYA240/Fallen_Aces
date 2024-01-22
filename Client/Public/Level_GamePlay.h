@@ -4,6 +4,7 @@
 #include "Level.h"
 #include "LandObject.h"
 #include "Monster.h"
+#include "KeyObject.h"
 
 /* 1. 레벨에 필요한 객체들을 생성한다. */
 /* 2. 레벨을 반복적으로 갱신하여 화면에 보여준다. */
@@ -30,6 +31,9 @@ private:
 	HRESULT Ready_Layer_Monster(const wstring& strLayerTag, CMonster::MONSTER_DESC& MonsterDesc);
 	HRESULT	Ready_Layer_Items(const wstring& strLayerTag, CLandObject::LANDOBJECT_DESC& LandObjectDesc);
 	HRESULT Ready_Layer_Effect(const wstring& strLayerTag);
+	HRESULT Ready_Layer_Key(const wstring& strLayerTag);
+	HRESULT Ready_Layer_Switch(const wstring& strLayerTag);
+	HRESULT Ready_Layer_Object(const wstring& strLayerTag);
 	
 public:
 	static CLevel_GamePlay* Create(LPDIRECT3DDEVICE9 pGraphic_Device);

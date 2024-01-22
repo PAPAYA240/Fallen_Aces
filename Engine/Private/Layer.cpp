@@ -66,6 +66,21 @@ CAMERA_DIR CLayer::Get_CameraDot(const CTransform* _pTransform, _uint _iNum)
 	return pCamera->Get_CameraDot(_pTransform);
 }
 
+CGameObject* CLayer::Get_Object(_uint _iNum)
+{
+	if (m_GameObjects.size() <= _iNum)
+		return nullptr;
+
+	auto iter = m_GameObjects.begin();
+
+	for (size_t i = 0; i < _iNum; ++i)
+		++iter;
+
+	CGameObject* pCamera = (*iter);
+
+	return pCamera;
+}
+
 CLayer * CLayer::Create()
 {
 	CLayer*		pInstance = new CLayer();

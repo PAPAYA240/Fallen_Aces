@@ -37,20 +37,14 @@
     <Filter Include="02.GameObjects\Camera">
       <UniqueIdentifier>{1ad405b1-9ece-4ddd-90f4-0dd7f956903a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02.GameObjects\Camera\Camera_Object">
+      <UniqueIdentifier>{e9b50dd1-667a-48a1-ae0a-93b6a858fe82}</UniqueIdentifier>
+    </Filter>
     <Filter Include="02.GameObjects\LandObject">
       <UniqueIdentifier>{a6b5ce7a-e84a-4da4-b0d0-0145f716597b}</UniqueIdentifier>
     </Filter>
     <Filter Include="02.GameObjects\LandObject\Player">
       <UniqueIdentifier>{59e6cfee-ceb8-460c-8532-eb2b1deaab0c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.GameObjects\LandObject\Monster">
-      <UniqueIdentifier>{438a8e37-22ac-4de3-97ed-b474b3f192a3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.GameObjects\Sky">
-      <UniqueIdentifier>{fb2e0bb0-d06f-4ae0-9c30-8c97d2b433d6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.GameObjects\Effect">
-      <UniqueIdentifier>{2cc338d0-ceaf-46c9-ab7e-344d7c18136b}</UniqueIdentifier>
     </Filter>
     <Filter Include="02.GameObjects\LandObject\Player\Hand">
       <UniqueIdentifier>{d18da776-1b49-4b94-9788-ed9bdff46b11}</UniqueIdentifier>
@@ -61,8 +55,8 @@
     <Filter Include="02.GameObjects\LandObject\Player\Hand\Right">
       <UniqueIdentifier>{680dd5b4-8099-4695-8687-d60a3c1e04d7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02.GameObjects\Camera\Camera_Object">
-      <UniqueIdentifier>{e9b50dd1-667a-48a1-ae0a-93b6a858fe82}</UniqueIdentifier>
+    <Filter Include="02.GameObjects\LandObject\Monster">
+      <UniqueIdentifier>{438a8e37-22ac-4de3-97ed-b474b3f192a3}</UniqueIdentifier>
     </Filter>
     <Filter Include="02.GameObjects\LandObject\Monster\1. Goon Monster">
       <UniqueIdentifier>{5c305ea3-5329-402c-adae-88270cb7c6f3}</UniqueIdentifier>
@@ -79,12 +73,6 @@
     <Filter Include="02.GameObjects\LandObject\Items\0. HealItems">
       <UniqueIdentifier>{9b3ea859-ce97-46a9-bdb5-f9cb63500fd1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02.GameObjects\LandObject\Items\1. BluntItems">
-      <UniqueIdentifier>{e8d9cea0-8680-4fdc-9d64-133819e3b8a3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02.GameObjects\LandObject\Items\2. Guns">
-      <UniqueIdentifier>{d457e43b-1c49-4616-8c85-039680d0b669}</UniqueIdentifier>
-    </Filter>
     <Filter Include="02.GameObjects\LandObject\Items\0. HealItems\00. Apple">
       <UniqueIdentifier>{ef902153-3f16-4ec9-9168-07aec58b24eb}</UniqueIdentifier>
     </Filter>
@@ -96,6 +84,18 @@
     </Filter>
     <Filter Include="02.GameObjects\LandObject\Items\0. HealItems\03. Medkit">
       <UniqueIdentifier>{2bdb1085-14ac-41f0-939e-e1d3e2e5f6c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\LandObject\Items\1. BluntItems">
+      <UniqueIdentifier>{e8d9cea0-8680-4fdc-9d64-133819e3b8a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\LandObject\Items\2. Guns">
+      <UniqueIdentifier>{d457e43b-1c49-4616-8c85-039680d0b669}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Sky">
+      <UniqueIdentifier>{fb2e0bb0-d06f-4ae0-9c30-8c97d2b433d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Effect">
+      <UniqueIdentifier>{2cc338d0-ceaf-46c9-ab7e-344d7c18136b}</UniqueIdentifier>
     </Filter>
     <Filter Include="02.GameObjects\UI">
       <UniqueIdentifier>{c31f0a4b-2575-470f-87b2-4ed6209441f5}</UniqueIdentifier>
@@ -115,14 +115,74 @@
     <Filter Include="02.GameObjects\UI\Player\Inventory">
       <UniqueIdentifier>{0cd918d1-dfe3-4ec8-b685-4255c663c1df}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02.GameObjects\UI\Player\UI_Inventory\Slot">
-      <UniqueIdentifier>{43e54c32-1c00-4b2e-b47b-74542b4e786b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="02.GameObjects\UI\Player\UI_HUD">
       <UniqueIdentifier>{2794fd0b-de4d-4c7e-bc66-97f3d06c5a41}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02.GameObjects\UI\Player\UI_Inventory\Select">
-      <UniqueIdentifier>{5888474c-fb24-4b31-9bf4-c9685219d62c}</UniqueIdentifier>
+    <Filter Include="02.GameObjects\ObjectPool">
+      <UniqueIdentifier>{c86ae0aa-d1e1-47d5-88c4-08c36a003aba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Puzzle">
+      <UniqueIdentifier>{2ea22238-c1f7-4a86-98a7-58b3cf0e8f16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Puzzle\Key">
+      <UniqueIdentifier>{a5dbde1b-02a0-4513-8e35-b5b3c37a95e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Puzzle\Key\ColorKey">
+      <UniqueIdentifier>{83a6c1ca-1b80-4a9a-93a0-727ee29de4f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Puzzle\Key\KeyCard">
+      <UniqueIdentifier>{eb10b896-83e4-4669-a19e-bf51505c0326}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Puzzle\Swtich">
+      <UniqueIdentifier>{e30f8526-6013-4ce0-9a17-aed3435d95c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Puzzle\Swtich\Butten_Switch">
+      <UniqueIdentifier>{3e9d2a6e-c4b7-4ff5-b04c-b9e7cba8b367}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Puzzle\Swtich\Lever_Switch">
+      <UniqueIdentifier>{8f9db076-0387-4c1c-bbed-3adc94174ca9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Puzzle\Swtich\Light_Switch">
+      <UniqueIdentifier>{37ea9e0a-e545-4175-9e64-bdd46d72514f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Puzzle\Swtich\Red_Switch">
+      <UniqueIdentifier>{1e2f60f6-746f-4664-a1a8-8ca41017fe13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Puzzle\Key\PadLock_Key">
+      <UniqueIdentifier>{f33ce024-38ac-4f6d-8dff-09a2f683d84a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Puzzle\Door">
+      <UniqueIdentifier>{9cf9fe99-a864-4e99-af4d-5c1f5d3d5fe8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Puzzle\Key\Building_Key">
+      <UniqueIdentifier>{1b7cfc4d-d43f-4c74-8e23-e603d3361ad8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Puzzle\Door\Fences_Door">
+      <UniqueIdentifier>{87a1b1dc-e6ec-44b5-85d2-68eb31761b87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Puzzle\Door\Fences_Door\PadLock">
+      <UniqueIdentifier>{0109eab9-1204-436b-97f2-6254ec0ceb61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Puzzle\Door\Boss_Door">
+      <UniqueIdentifier>{d3f02851-6006-40ae-917d-7df97e7ad235}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Puzzle\Door\Cellar_Door">
+      <UniqueIdentifier>{a4714bb9-ea6e-4f62-bfa8-e6e9f132056b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Puzzle\Door\Building_Red_Door">
+      <UniqueIdentifier>{ee0369ef-3737-4ec8-ba87-1d05db749a2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Puzzle\Combo_Number_Lock">
+      <UniqueIdentifier>{0d5c7591-f159-443f-b12e-a0c826fcb3a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Puzzle\Key\Boss_Key">
+      <UniqueIdentifier>{6271f19e-b9cd-445e-94de-a01cfe9c603c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Puzzle\Combo_Number_Lock\Number">
+      <UniqueIdentifier>{8258b852-21ad-484d-9eec-2470b0874a37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Puzzle\Door\Fences_Door\PadLock_Broken">
+      <UniqueIdentifier>{77a9c807-a098-4e7f-af06-179a31881206}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -231,14 +291,73 @@
     <ClInclude Include="..\Public\UI_Player_State.h">
       <Filter>02.GameObjects\UI\Player\State</Filter>
     </ClInclude>
-    <ClInclude Include="..\public\UI_Slot.h">
-      <Filter>02.GameObjects\UI\Player\UI_Inventory\Slot</Filter>
-    </ClInclude>
     <ClInclude Include="..\public\UI_HUD.h">
       <Filter>02.GameObjects\UI\Player\UI_HUD</Filter>
     </ClInclude>
-    <ClInclude Include="..\public\UI_Select.h">
-      <Filter>02.GameObjects\UI\Player\UI_Inventory\Select</Filter>
+    <ClInclude Include="..\public\UI_Select.h" />
+    <ClInclude Include="..\public\UI_Slot.h" />
+    <ClInclude Include="..\Public\Effect_ObjectPool.h">
+      <Filter>02.GameObjects\ObjectPool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Butten_Switch.h">
+      <Filter>02.GameObjects\Puzzle\Swtich\Butten_Switch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Lever_Switch.h">
+      <Filter>02.GameObjects\Puzzle\Swtich\Lever_Switch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\KeyCard.h">
+      <Filter>02.GameObjects\Puzzle\Key\KeyCard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\KeyObject.h">
+      <Filter>02.GameObjects\Puzzle\Key</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\ColorKey.h">
+      <Filter>02.GameObjects\Puzzle\Key\ColorKey</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\SwitchObj.h">
+      <Filter>02.GameObjects\Puzzle\Swtich</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\LightSwitch.h">
+      <Filter>02.GameObjects\Puzzle\Swtich\Light_Switch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Red_Switch.h">
+      <Filter>02.GameObjects\Puzzle\Swtich\Red_Switch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\PadLock_Key.h">
+      <Filter>02.GameObjects\Puzzle\Key\PadLock_Key</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Building_Key.h">
+      <Filter>02.GameObjects\Puzzle\Key\Building_Key</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Fences_Door.h">
+      <Filter>02.GameObjects\Puzzle\Door\Fences_Door</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\PadLock.h">
+      <Filter>02.GameObjects\Puzzle\Door\Fences_Door\PadLock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Boss_Door.h">
+      <Filter>02.GameObjects\Puzzle\Door\Boss_Door</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Cellar_Door.h">
+      <Filter>02.GameObjects\Puzzle\Door\Cellar_Door</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Red_Door.h">
+      <Filter>02.GameObjects\Puzzle\Door\Building_Red_Door</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\DoorObj.h">
+      <Filter>02.GameObjects\Puzzle\Door</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Boss_Key.h">
+      <Filter>02.GameObjects\Puzzle\Key\Boss_Key</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Combo_Lock.h">
+      <Filter>02.GameObjects\Puzzle\Combo_Number_Lock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Number.h">
+      <Filter>02.GameObjects\Puzzle\Combo_Number_Lock\Number</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Combo_Lock_Obj.h">
+      <Filter>02.GameObjects\Puzzle\Combo_Number_Lock</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -335,14 +454,73 @@
     <ClCompile Include="..\Private\UI_Player_State.cpp">
       <Filter>02.GameObjects\UI\Player\State</Filter>
     </ClCompile>
-    <ClCompile Include="..\private\UI_Slot.cpp">
-      <Filter>02.GameObjects\UI\Player\UI_Inventory\Slot</Filter>
-    </ClCompile>
     <ClCompile Include="..\private\UI_HUD.cpp">
       <Filter>02.GameObjects\UI\Player\UI_HUD</Filter>
     </ClCompile>
-    <ClCompile Include="..\private\UI_Select.cpp">
-      <Filter>02.GameObjects\UI\Player\UI_Inventory\Select</Filter>
+    <ClCompile Include="..\private\UI_Select.cpp" />
+    <ClCompile Include="..\private\UI_Slot.cpp" />
+    <ClCompile Include="..\Private\Effect_ObjectPool.cpp">
+      <Filter>02.GameObjects\ObjectPool</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Butten_Switch.cpp">
+      <Filter>02.GameObjects\Puzzle\Swtich\Butten_Switch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Lever_Switch.cpp">
+      <Filter>02.GameObjects\Puzzle\Swtich\Lever_Switch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\KeyCard.cpp">
+      <Filter>02.GameObjects\Puzzle\Key\KeyCard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\KeyObject.cpp">
+      <Filter>02.GameObjects\Puzzle\Key</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\ColorKey.cpp">
+      <Filter>02.GameObjects\Puzzle\Key\ColorKey</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\SwitchObj.cpp">
+      <Filter>02.GameObjects\Puzzle\Swtich</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\LightSwitch.cpp">
+      <Filter>02.GameObjects\Puzzle\Swtich\Light_Switch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Red_Switch.cpp">
+      <Filter>02.GameObjects\Puzzle\Swtich\Red_Switch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\PadLock_Key.cpp">
+      <Filter>02.GameObjects\Puzzle\Key\PadLock_Key</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Building_Key.cpp">
+      <Filter>02.GameObjects\Puzzle\Key\Building_Key</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Fences_Door.cpp">
+      <Filter>02.GameObjects\Puzzle\Door\Fences_Door</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\PadLock.cpp">
+      <Filter>02.GameObjects\Puzzle\Door\Fences_Door\PadLock</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Boss_Door.cpp">
+      <Filter>02.GameObjects\Puzzle\Door\Boss_Door</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Cellar_Door.cpp">
+      <Filter>02.GameObjects\Puzzle\Door\Cellar_Door</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Red_Door.cpp">
+      <Filter>02.GameObjects\Puzzle\Door\Building_Red_Door</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\DoorObj.cpp">
+      <Filter>02.GameObjects\Puzzle\Door</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Boss_Key.cpp">
+      <Filter>02.GameObjects\Puzzle\Key\Boss_Key</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Combo_Lock.cpp">
+      <Filter>02.GameObjects\Puzzle\Combo_Number_Lock</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Number.cpp">
+      <Filter>02.GameObjects\Puzzle\Combo_Number_Lock\Number</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Combo_Lock_Obj.cpp">
+      <Filter>02.GameObjects\Puzzle\Combo_Number_Lock</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

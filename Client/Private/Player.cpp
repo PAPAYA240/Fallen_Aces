@@ -7,6 +7,7 @@
 
 #include "Collider_Box.h"
 #include "Collider_Sphere.h"
+#include "Effect_ObjectPool.h"
 
 #include "Player_UI_Manager.h"
 
@@ -46,6 +47,7 @@ HRESULT CPlayer::Initialize(void* pArg)
 	Ready_Layer_Player_Hands(TEXT("Layer_Player_Hand"));
 
 	m_vecInven.resize(3);
+	m_pKeyList.resize(10);
 
 	// Player UIµéÀ» ÃÑ°ý »ý¼ºÇØÁÙ °´Ã¼ »ý¼º
 	CPlayer_UI_Manager::Player_UI_Manager_DESC Desc = {};
@@ -53,6 +55,12 @@ HRESULT CPlayer::Initialize(void* pArg)
 
 	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, TEXT("Layer_Player_UI"), TEXT("Prototype_GameObject_Player_UI_Manager"), &Desc)))
 		return E_FAIL;
+
+	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, TEXT("Layer_CObjectPool"), TEXT("Prototype_GameObject_CObjectPool"))))
+	{
+		MSG_BOX(TEXT("OBJEC POOL NO"));
+		return E_FAIL;
+	}
 
 	return S_OK;
 }
@@ -70,6 +78,9 @@ void CPlayer::Tick(_float fTimeDelta)
 	}
 	if (m_pGameInstance->Get_KeyState('2') == EKeyState::DOWN)
 	{
+		// ½ÇÇè
+
+
 		m_iSelectItemNum = 1;
 	}
 	if (m_pGameInstance->Get_KeyState('3') == EKeyState::DOWN)
@@ -80,7 +91,9 @@ void CPlayer::Tick(_float fTimeDelta)
 	
 	if (m_pGameInstance->Get_KeyState('F') == EKeyState::DOWN)
 	{
-		m_vecInven[m_iSelectItemNum] = nullptr;
+		//m_vecInven[m_iSelectItemNum] = nullptr;
+		CGameObject* p = m_pGameInstance->Get_Object(LEVEL_GAMEPLAY, TEXT("Layer_CObjectPool"), 0);
+		dynamic_cast<CEffect_ObjectPool*>(p)->New_Object();
 	}
 
 	if (m_pGameInstance->Get_KeyState(VK_SHIFT) == EKeyState::PRESSING)
@@ -235,6 +248,19 @@ bool CPlayer::Input_Item(CItem* input_Item)
 		}
 	}
 	
+	return false;
+}
+
+bool CPlayer::Get_Key(CKeyObject* Get_Key)
+{
+	for (auto& iter : m_pKeyList)
+	{
+		if (nullptr == iter)
+		{
+			iter = Get_Key;
+			return true;
+		}
+	}
 	return false;
 }
 

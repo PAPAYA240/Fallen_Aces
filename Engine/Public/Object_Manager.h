@@ -18,6 +18,7 @@ private:
 public:
 	const class CComponent* Get_Component(_uint iLevelIndex, const wstring& strLayerTag, const wstring& strComTag, _uint iIndex);
 	CAMERA_DIR Get_CameraDot(const class CTransform* _pTransform, _uint _iLevelIdx, const wstring& _wstrLayerTag, _uint _iNum);
+	class CGameObject* Get_Object( _uint _iLevelIdx, const wstring& _wstrLayerTag, _uint _iNum);
 
 public:
 	HRESULT Initialize(_uint iNumLevels);

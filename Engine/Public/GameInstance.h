@@ -32,6 +32,8 @@ public: /* For.Object_Manager */
 	const CComponent* Get_Component(_uint iLevelIndex, const wstring& strLayerTag, const wstring& strComTag, _uint iIndex = 0);
 	CAMERA_DIR Get_CameraDot(const CTransform* _pTransform, _uint _iLevelIdx, const wstring& _wstrLayerTag, _uint _iNum = 0);
 	list<class CGameObject*>* Get_LayerList(int iLevelIndex, const wstring& strLayerTag);
+	class CGameObject* Get_Object(_uint _iLevelIdx, const wstring& _wstrLayerTag, _uint _iNum);
+
 
 
 public: /* For.Component_Manager */

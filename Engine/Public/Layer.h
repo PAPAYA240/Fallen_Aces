@@ -23,6 +23,7 @@ public:
 	void Late_Tick(_float fTimeDelta);
 
 	CAMERA_DIR Get_CameraDot(const class CTransform* _pTransform, _uint _iNum);
+	class CGameObject* Get_Object(_uint _iNum);
 
 public:
 	list<class CGameObject*>* Get_LayerList() {

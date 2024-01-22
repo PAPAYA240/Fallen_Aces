@@ -101,8 +101,7 @@ HRESULT CGoon_Monster::Add_Components()
 
 void CGoon_Monster::Monster_Patton_Ready(_float fTimeDelta)
 {
-	const CTransform* pPlayer_Transform = 
-		dynamic_cast<const CTransform*>(m_pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_Player"), g_strTransformTag));
+	const CTransform* pPlayer_Transform = dynamic_cast<const CTransform*>(m_pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_Player"), g_strTransformTag));
 	
 	// 몬스터 발견 -> 준비 -> 공격
 	{

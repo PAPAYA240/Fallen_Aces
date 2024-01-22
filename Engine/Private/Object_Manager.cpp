@@ -29,6 +29,19 @@ CAMERA_DIR CObject_Manager::Get_CameraDot(const CTransform* _pTransform, _uint _
 	return pLayer->Get_CameraDot(_pTransform, _iNum);
 }
 
+CGameObject* CObject_Manager::Get_Object(_uint _iLevelIdx, const wstring& _wstrLayerTag, _uint _iNum)
+{
+	if (_iNum >= m_iNumLevels)
+		return nullptr;
+
+	CLayer* pLayer = Find_Layer(_iLevelIdx, _wstrLayerTag);
+
+	if (nullptr == pLayer)
+		return nullptr;
+
+	return pLayer->Get_Object(_iNum);
+}
+
 HRESULT CObject_Manager::Initialize(_uint iNumLevels)
 {
 	m_iNumLevels = iNumLevels;

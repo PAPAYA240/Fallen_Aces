@@ -187,6 +187,15 @@ list<class CGameObject*>* CGameInstance::Get_LayerList(int iLevelIndex, const ws
 	return m_pObject_Manager->Get_LayerList(iLevelIndex, strLayerTag);
 }
 
+CGameObject* CGameInstance::Get_Object(_uint _iLevelIdx, const wstring& _wstrLayerTag, _uint _iNum)
+{
+	if (nullptr == m_pObject_Manager)
+		return nullptr;
+
+	return m_pObject_Manager->Get_Object(_iLevelIdx, _wstrLayerTag, _iNum);
+}
+
+
 HRESULT CGameInstance::Add_Prototype(_uint iLevelIndex, const wstring & strPrototypeTag, CComponent * pPrototype)
 {
 	if (nullptr == m_pComponent_Manager)

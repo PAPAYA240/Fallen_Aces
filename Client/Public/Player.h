@@ -3,6 +3,8 @@
 #include "Client_Defines.h"
 #include "LandObject.h"
 
+
+
 BEGIN(Engine)
 class CTexture;
 class CVIBuffer_Rect;
@@ -31,15 +33,16 @@ public:
 	class CItem** Get_EquipItem_Address() { return &m_pEquipment; }
 	class CItem** Get_SlotItem_Address(_int iSlotIdx) { return &m_vecInven[iSlotIdx]; }
 	_uint* Get_SelectItemNum_Address() { return &m_iSelectItemNum; }
-
 	void	Set_PickItem(class CItem* pickItem) { m_pEquipment = pickItem; }
+	vector<class CKeyObject*>* Get_Key_Address() { return &m_pKeyList; }
 
 	bool Input_Item(class CItem* input_Item);
-
+	bool Get_Key(class CKeyObject* Get_Key);
 
 private:
-	CTexture*				m_pTextureCom = { nullptr };
-	CVIBuffer_Rect*			m_pVIBufferCom = { nullptr };
+	CTexture*				m_pTextureCom		= { nullptr };
+	CVIBuffer_Rect*			m_pVIBufferCom		= { nullptr };
+	class CEffect_ObjectPool*		m_pEffect			= { nullptr };
 
 	// 플레이어의 손 제어를 하기 위한 객체 포인터
 	class CPlayer_LH*		m_pPlayer_LH = { nullptr };
@@ -55,6 +58,9 @@ private:
 	_uint						m_iHp = { 0 };
 	// 인벤토리
 	vector<class CItem*>		m_vecInven;
+
+	// 키 여부
+	vector<class CKeyObject*>		m_pKeyList;
 
 	// 현재 선택한 인벤토리 넘버
 	_uint						m_iSelectItemNum = { 0 };

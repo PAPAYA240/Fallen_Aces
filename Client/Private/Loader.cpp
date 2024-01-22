@@ -15,6 +15,8 @@
 #include "Player_UI_Manager.h"
 
 #include "Effect.h"
+#include "Effect_ObjectPool.h"
+
 #include "Sky.h"
 
 #include "Collider_Box.h"
@@ -29,6 +31,28 @@
 #include "CItemBanana.h"
 #include "CItemCola.h"
 #include "CItemMedKit.h"
+
+/* Key */
+#include "ColorKey.h"
+#include "KeyCard.h"
+#include "PadLock.h"
+#include "PadLock_Key.h"
+#include "Boss_Key.h"
+
+/*Switch*/
+#include "Butten_Switch.h"
+#include "Lever_Switch.h"
+#include "Red_Switch.h"
+#include "LightSwitch.h"
+
+/* Door */
+#include "Boss_Door.h"
+#include "Cellar_Door.h"
+#include "Red_Door.h"
+
+#include "Combo_Lock.h"
+#include "Combo_Lock_Obj.h"
+#include "Number.h"
 
 CLoader::CLoader(LPDIRECT3DDEVICE9 pGraphic_Device)
 	: m_pGraphic_Device(pGraphic_Device)
@@ -125,6 +149,7 @@ HRESULT CLoader::Loading_For_GamePlay()
 		CTexture::Create(m_pGraphic_Device, CTexture::TYPE_TEX2D, TEXT("../Bin/Resources/Textures/Terrain")))))
 		return E_FAIL;
 
+
 	/* Prototype_Component_Texture_UI */
 	if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Texture_UI"),
 		CTexture::Create(m_pGraphic_Device, CTexture::TYPE_TEX2D, TEXT("../Bin/Resources/Textures/UI")))))
@@ -135,10 +160,11 @@ HRESULT CLoader::Loading_For_GamePlay()
 		CTexture::Create(m_pGraphic_Device, CTexture::TYPE_TEX2D, TEXT("../Bin/Resources/Textures/Player")))))
 		return E_FAIL;
 
-	/* Prototype_Component_Texture_Monster */
-	if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Texture_Monster"),
-		CTexture::Create(m_pGraphic_Device, CTexture::TYPE_TEX2D, TEXT("../Bin/Resources/Textures/Monster")))))
-		return E_FAIL;
+	//m_strLoadingText = TEXT("Prototype_Component_Texture_Monster(을) 로딩 중 입니다.");
+	///* Prototype_Component_Texture_Monster */
+	//if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Texture_Monster"),
+	//	CTexture::Create(m_pGraphic_Device, CTexture::TYPE_TEX2D, TEXT("../Bin/Resources/Textures/Monster")))))
+	//	return E_FAIL;
 
 	/* Prototype_Component_Texture_Sky */
 	if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Texture_Sky"),
@@ -155,7 +181,11 @@ HRESULT CLoader::Loading_For_GamePlay()
 		CTexture::Create(m_pGraphic_Device, CTexture::TYPE_TEX2D, TEXT("../Bin/Resources/Textures/Item")))))
 		return E_FAIL;
 	
-	m_strLoadingText = TEXT("모델를(을) 로딩 중 입니다.");
+	/* Prototype_Component_Texture_Puzzle */
+	if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Texture_Puzzle"),
+		CTexture::Create(m_pGraphic_Device, CTexture::TYPE_TEX2D, TEXT("../Bin/Resources/Textures/Puzzle")))))
+		return E_FAIL;
+
 	/* Prototype_Component_VIBuffer_Terrain */
 	if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_VIBuffer_Terrain"),
 		CVIBuffer_Terrain::Create(m_pGraphic_Device, TEXT("../Bin/Resources/Terrain/Height.bmp")))))
@@ -211,11 +241,15 @@ HRESULT CLoader::Loading_For_GamePlay()
 		CEffect::Create(m_pGraphic_Device))))
 		return E_FAIL;
 
+	/* For.Prototype_GameObject_Object_Pool */
+	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_CObjectPool"),
+		CEffect_ObjectPool::Create(m_pGraphic_Device))))
+		return E_FAIL;
+
 	/* For.Prototype_GameObject_Sky */
 	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_Sky"),
 		CSky::Create(m_pGraphic_Device))))
 		return E_FAIL;
-
 
 	//	For.Prototype_Component_Collider_Box
 	if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Collider_Box"),
@@ -248,20 +282,79 @@ HRESULT CLoader::Loading_For_GamePlay()
 		CItemMedKit::Create(m_pGraphic_Device))))
 		return E_FAIL;
 
-	/* For.Prototype_GameObject_Monster */
-	/* 1. Goon Monster */
-	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_Goon_Monster"),
-		CGoon_Monster::Create(m_pGraphic_Device))))
+	/* For.Prototype_GameObject_MedKit */
+	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_Key"),
+		CColorKey::Create(m_pGraphic_Device))))
 		return E_FAIL;
 
-	/* 2. Pipe Monster */
-	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_PipeGuy_Monster"),
-		CPipeGuy_Monster::Create(m_pGraphic_Device))))
+	/* For.Prototype_GameObject_CardKey */
+	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_KeyCard"),
+		CKeyCard::Create(m_pGraphic_Device))))
 		return E_FAIL;
 
-	/* 3. Matches_Malone */
-	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_Matches_Monster"),
-		CMatches_Monster::Create(m_pGraphic_Device))))
+	/* For.Prototype_GameObject_SwitchButten */
+	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_Butten_Switch"),
+		CButten_Switch::Create(m_pGraphic_Device))))
+		return E_FAIL;
+
+	/* For.Prototype_GameObject_Lever_Switch */
+	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_Lever_Swich"),
+		CLever_Switch::Create(m_pGraphic_Device))))
+		return E_FAIL;
+
+	/* For.Prototype_GameObject_Red Switch */
+	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_RedButten_Switch"),
+		CRed_Switch::Create(m_pGraphic_Device))))
+		return E_FAIL;
+
+	/* For.Prototype_GameObject_Light Switch*/
+	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_Light_Switch"),
+		CLight_Switch::Create(m_pGraphic_Device))))
+		return E_FAIL;
+
+	/* For.Prototype_GameObject_PadLock*/
+	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_PadLock"),
+		CPadLock::Create(m_pGraphic_Device))))
+		return E_FAIL;
+
+	/* For.PadLock_Key Key*/
+	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_PadLock_Key"),
+		CPadLock_Key::Create(m_pGraphic_Device))))
+		return E_FAIL;
+
+	/* For.BossDoor Key*/
+	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_Boss_Door"),
+		CBoss_Door::Create(m_pGraphic_Device))))
+		return E_FAIL;
+
+	/* For.BossDoor Key*/
+	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_Boss_Key"),
+		CBossKey::Create(m_pGraphic_Device))))
+		return E_FAIL;
+
+	/* For.Number Lock */
+	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_Combo_Lock"),
+		CCombo_Lock::Create(m_pGraphic_Device))))
+		return E_FAIL;
+	
+	/* For.Number */
+	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_Number"),
+		CNumber::Create(m_pGraphic_Device))))
+		return E_FAIL;
+
+	/* For.Cellar Door */
+	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_Cellar_Door"),
+		CCellar_Door::Create(m_pGraphic_Device))))
+		return E_FAIL;
+
+	/* For.Combo_Lock_Obj */
+	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_Combo_Lock_Obj"),
+		CCombo_Lock_Obj::Create(m_pGraphic_Device))))
+		return E_FAIL;
+
+	/* For.Red_Door */
+	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_RedDoor"),
+		CRed_Door::Create(m_pGraphic_Device))))
 		return E_FAIL;
 
 	m_strLoadingText = TEXT("로딩이 완료되었습니다.");

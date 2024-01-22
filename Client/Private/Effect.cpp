@@ -32,44 +32,56 @@ HRESULT CEffect::Initialize(void* pArg)
 
 	m_pTransformCom->Set_Scaled(3.f, 1.f, 1.f);
 
-	m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(_float(rand() % 60), 10.f, _float(rand() % 60)));
+	if (FAILED(m_pGameInstance->Add_Font(TEXT("Font_Effect"), TEXT("궁서 보통"), 50, 50, FW_BOLD)))
+		return E_FAIL;
 
 	return S_OK;
 }
 
 void CEffect::Tick(_float fTimeDelta)
 {
-	_uint iMaxSize = m_pTextureCom->Container_MaxSize();
+	if(m_bActive)
+	{
+		_uint iMaxSize = m_pTextureCom->Container_MaxSize();
 
-	m_fFrame += iMaxSize * fTimeDelta;
+		m_fFrame += iMaxSize * fTimeDelta;
 
-	if (m_fFrame >= iMaxSize)
-		m_fFrame = 0.f;
-
-	Compute_ViewZ();
+		if (m_fFrame >= iMaxSize)
+		{
+			m_fFrame = 0.f;
+			m_bActive = false;
+		}
+		Compute_ViewZ();
+	}
 }
 
 void CEffect::Late_Tick(_float fTimeDelta)
 {	
-	m_pGameInstance->Add_RenderGroup(CRenderer::RENDER_BLEND, this);
+	if(m_bActive)
+		m_pGameInstance->Add_RenderGroup(CRenderer::RENDER_BLEND, this);
 }
 
 HRESULT CEffect::Render()
 {	
-	if (FAILED(m_pTransformCom->Bind_WorldMatrix()))
-		return E_FAIL;		
+	if(m_bActive)
+	{
+		if (FAILED(m_pTransformCom->Bind_WorldMatrix()))
+			return E_FAIL;
 
-	if (FAILED(m_pTextureCom->Bind_Texture(0, (_uint)m_fFrame)))
-		return E_FAIL;
+		if (FAILED(m_pTextureCom->Bind_Texture(0, (_uint)m_fFrame)))
+			return E_FAIL;
 
-	if (FAILED(Set_RenderState()))
-		return E_FAIL;
+		if (FAILED(Set_RenderState()))
+			return E_FAIL;
 
-	if (FAILED(m_pVIBufferCom->Render()))
-		return E_FAIL;
+		if (FAILED(m_pVIBufferCom->Render()))
+			return E_FAIL;
 
-	if (FAILED(Reset_RenderState()))
-		return E_FAIL;
+		m_pGameInstance->Render_Font(TEXT("Font_Effect"), to_wstring((_uint)m_bActive), &_float2(200, 200), D3DXCOLOR(1.f, 0.f, 0.f, 0.f));
+
+		if (FAILED(Reset_RenderState()))
+			return E_FAIL;
+	}
 
 	return S_OK;
 }
@@ -115,10 +127,8 @@ CEffect * CEffect::Create(LPDIRECT3DDEVICE9 pGraphic_Device)
 	if (FAILED(pInstance->Initialize_Prototype()))
 	{
 		MSG_BOX(TEXT("Failed To Created : CEffect"));
-
 		Safe_Release(pInstance);
 	}
-
 	return pInstance;
 }
 /* 사본객체를 생성하기위한 함수에요. */
@@ -129,7 +139,6 @@ CGameObject * CEffect::Clone(void* pArg)
 	if (FAILED(pInstance->Initialize(pArg)))
 	{
 		MSG_BOX(TEXT("Failed To Cloned : CEffect"));
-
 		Safe_Release(pInstance);
 	}
 

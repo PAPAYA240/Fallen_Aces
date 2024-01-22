@@ -4,7 +4,7 @@
 #include "Camera_Free.h"
 #include "Camera_Object.h"
 
-
+#include "KeyObject.h"
 
 CLevel_GamePlay::CLevel_GamePlay(LPDIRECT3DDEVICE9 pGraphic_Device)
 	: CLevel(pGraphic_Device)
@@ -26,6 +26,15 @@ HRESULT CLevel_GamePlay::Initialize()
 		return E_FAIL;
 
 	if (FAILED(Ready_Layer_Effect(TEXT("Layer_Effect"))))
+		return E_FAIL;
+
+	if (FAILED(Ready_Layer_Key(TEXT("Layer_Key"))))
+		return E_FAIL;
+
+	if (FAILED(Ready_Layer_Switch(TEXT("Layer_Switch"))))
+		return E_FAIL;
+
+	if (FAILED(Ready_Layer_Object(TEXT("Layer_Object"))))
 		return E_FAIL;
 
 	return S_OK;
@@ -74,20 +83,16 @@ HRESULT CLevel_GamePlay::Ready_LandObject()
 {
 	/* 랜드오브젝트용 객체들에게 필요한 데이터를 구한다.*/
 	CLandObject::LANDOBJECT_DESC		LandObjectDesc = {};
-	CMonster::MONSTER_DESC				MonsnterDesc = {};
 
 	LandObjectDesc.pTerrainTransform = (CTransform*)(m_pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_BackGround"), g_strTransformTag));
 	LandObjectDesc.pTerrainVIBuffer = (CVIBuffer_Terrain*)(m_pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_BackGround"), TEXT("Com_VIBuffer")));	
-
-	MonsnterDesc.pTerrainTransform = (CTransform*)(m_pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_BackGround"), g_strTransformTag));
-	MonsnterDesc.pTerrainVIBuffer = (CVIBuffer_Terrain*)(m_pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_BackGround"), TEXT("Com_VIBuffer")));
 
 	/* 구한정보들을 각 랜드오브젝트르 생성할 때 던진다. */
 	if (FAILED(Ready_Layer_Player(TEXT("Layer_Player"), LandObjectDesc)))
 		return E_FAIL;
 
-	if (FAILED(Ready_Layer_Monster(TEXT("Layer_Monster"), MonsnterDesc)))
-		return E_FAIL;
+	/*if (FAILED(Ready_Layer_Monster(TEXT("Layer_Monster"), MonsnterDesc)))
+		return E_FAIL;*/
 
 	if (FAILED(Ready_Layer_Items(TEXT("Layer_Items"), LandObjectDesc)))
 		return E_FAIL;
@@ -148,14 +153,85 @@ HRESULT CLevel_GamePlay::Ready_Layer_Items(const wstring& strLayerTag, CLandObje
 
 HRESULT CLevel_GamePlay::Ready_Layer_Effect(const wstring & strLayerTag)
 {
-	//for (size_t i = 0; i < 10; i++)
-	//{
-	//	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_Effect"))))
-	//		return E_FAIL;
-	//}
+	// 현재 플레이어에서 생성 중
+	//if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_CObjectPool"))))
+	//	return E_FAIL;
 
 	return S_OK;
 }
+
+HRESULT CLevel_GamePlay::Ready_Layer_Key(const wstring& strLayerTag)
+{
+	CKeyObject::KEY_DESC	KeyObjectDesc = {};
+
+	KeyObjectDesc.pTerrainTransform = (CTransform*)(m_pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_BackGround"), g_strTransformTag));
+	KeyObjectDesc.pTerrainVIBuffer = (CVIBuffer_Terrain*)(m_pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_BackGround"), TEXT("Com_VIBuffer")));
+
+	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_Boss_Key"), &KeyObjectDesc)))
+		return E_FAIL;
+
+	KeyObjectDesc.eColor = CKeyObject::COLOR::BULE;
+
+	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_Key"), &KeyObjectDesc)))
+		return E_FAIL;
+
+	KeyObjectDesc.eColor = CKeyObject::COLOR::RED;
+	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_Key"), &KeyObjectDesc)))
+		return E_FAIL;
+
+	KeyObjectDesc.eColor = CKeyObject::COLOR::GREEN;
+	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_KeyCard"), &KeyObjectDesc)))
+		return E_FAIL; 
+
+	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_PadLock_Key"), &KeyObjectDesc)))
+		return E_FAIL;
+
+	return S_OK;
+}
+
+HRESULT CLevel_GamePlay::Ready_Layer_Switch(const wstring& strLayerTag)
+{
+	for (_uint i = 0; i < 20; ++i)
+	{
+		if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_Butten_Switch"))))
+			return E_FAIL;
+
+		if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_Lever_Swich"))))
+			return E_FAIL;
+
+		if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_RedButten_Switch"))))
+			return E_FAIL;
+
+		if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_Light_Switch"))))
+			return E_FAIL;
+	}
+	return S_OK;
+}
+
+HRESULT CLevel_GamePlay::Ready_Layer_Object(const wstring& strLayerTag)
+{
+	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_Boss_Door"))))
+		return E_FAIL;
+
+	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_PadLock"))))
+		return E_FAIL;
+
+	/* Combo Lock Door */
+	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, TEXT("Layer_PadLock"), TEXT("Prototype_GameObject_Combo_Lock"))))
+		return E_FAIL;
+
+	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, TEXT("Layer_LockObj"), TEXT("Prototype_GameObject_Combo_Lock_Obj"))))
+		return E_FAIL;
+
+	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_Cellar_Door"))))
+		return E_FAIL;
+	
+	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_RedDoor"))))
+		return E_FAIL;
+
+	return S_OK;
+}
+
 
 HRESULT CLevel_GamePlay::Ready_Layer_BackGround(const wstring & strLayerTag)
 {

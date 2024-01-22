@@ -7,7 +7,7 @@ BEGIN(Client)
 
 class CItem abstract : public CLandObject
 {
-protected:
+public :
 	enum BILLBORAD_TYPE { XYZ, XZ };
 
 public:
