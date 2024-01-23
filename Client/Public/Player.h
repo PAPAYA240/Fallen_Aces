@@ -78,7 +78,7 @@ private:
 	HRESULT Reset_RenderState();
 
 	_float3 Compute_MovePos();
-
+	
 	HRESULT Ready_Layer_Player_Hands(const wstring& strLayerTag, void* pArg = nullptr);
 
 public:

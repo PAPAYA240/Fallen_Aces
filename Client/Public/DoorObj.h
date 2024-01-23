@@ -26,13 +26,16 @@ protected:
 	PUZZLE_ID			m_ePuzzleID = { PUZZLE_ID::_END };
 	CKeyObject::COLOR	m_eColorKey = { CKeyObject::COLOR::_END };
 
-	_bool			m_bOpenDoor = { false };
-	_bool			m_bDoorRot = { false };
-	_float			m_bDoorTime = { 0.0f };
+	_bool				m_bOpenDoor = { false };
+	_bool				m_bDoorRot = { false };
+	_float				m_bDoorTime = { 0.0f };
+
+	_float				m_vPlayerPos = {};
+	_bool				m_bPos = {false};
 
 protected:
-	CTexture*		m_pTextureCom = { nullptr };
-	CVIBuffer_Rect* m_pVIbufferCom = { nullptr };
+	CTexture*			m_pTextureCom = { nullptr };
+	CVIBuffer_Rect*		m_pVIbufferCom = { nullptr };
 
 public:
 	virtual CGameObject* Clone(void* pArg) = 0;

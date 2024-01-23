@@ -47,20 +47,7 @@ HRESULT CBoss_Door::Initialize(void* pArg)
 
 void CBoss_Door::Tick(_float fTimeDelta)
 {
-	//m_pTransformCom->Turn(m_pTransformCom->Get_State(CTransform::STATE_UP), fTimeDelta * 60.f);
 	UnLockingControl(fTimeDelta);
-
-	if (m_bOpenDoor)
-	{
-		if (DOWN == m_pGameInstance->Get_KeyState('E') || m_bDoorRot)
-		{
-			m_bDoorRot = true;
-			UnLockAnimation(fTimeDelta);
-		}
-	}
-	//
-	
-	// 만약 좌물쇠가 열리면 움직임 가능
 }
 
 void CBoss_Door::Late_Tick(_float fTimeDelta)
@@ -129,8 +116,9 @@ void CBoss_Door::UnLockingControl(_float fTimeDelta)
 	_float3 vDiff = vMyPos - vPlayerPos;
 
 	_float fDistance = D3DXVec3Length(&vDiff);
-
-	if (abs(fDistance) <= 3.0f)
+	
+	
+	if (abs(fDistance) <= 2.0f)
 	{
 		list<class CGameObject*>* pPlayerLayerList = m_pGameInstance->Get_LayerList(LEVEL_GAMEPLAY, TEXT("Layer_Player"));
 		CGameObject* pGameObject = *(pPlayerLayerList->begin());
@@ -142,6 +130,11 @@ void CBoss_Door::UnLockingControl(_float fTimeDelta)
 			{
 				if (DOWN == m_pGameInstance->Get_KeyState('E'))
 				{
+<<<<<<< Updated upstream
+=======
+					m_bOpenDoor = true;
+					m_bPos = false;
+>>>>>>> Stashed changes
 					iter = pPlayer->Get_Key_Address()->erase(iter);
 					m_bOpenDoor = true;
 				}
@@ -150,6 +143,16 @@ void CBoss_Door::UnLockingControl(_float fTimeDelta)
 			}
 			else
 				++iter;
+		}
+
+		// 만약 문이 열린 상태라면
+		if (m_bOpenDoor)
+		{
+			if (DOWN == m_pGameInstance->Get_KeyState('E') || m_bDoorRot)
+			{
+				m_bDoorRot = true;
+				UnLockAnimation(fTimeDelta);
+			}
 		}
 	}
 }

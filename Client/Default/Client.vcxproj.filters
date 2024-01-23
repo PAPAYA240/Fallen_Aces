@@ -148,11 +148,16 @@
     <Filter Include="02.GameObjects\Puzzle\Swtich\Red_Switch">
       <UniqueIdentifier>{1e2f60f6-746f-4664-a1a8-8ca41017fe13}</UniqueIdentifier>
     </Filter>
+<<<<<<< Updated upstream
     <Filter Include="02.GameObjects\Puzzle\Key\PadLock_Key">
       <UniqueIdentifier>{f33ce024-38ac-4f6d-8dff-09a2f683d84a}</UniqueIdentifier>
     </Filter>
     <Filter Include="02.GameObjects\Puzzle\Door">
       <UniqueIdentifier>{9cf9fe99-a864-4e99-af4d-5c1f5d3d5fe8}</UniqueIdentifier>
+=======
+    <Filter Include="02.GameObjects\Puzzle\Switch">
+      <UniqueIdentifier>{7cb2be4e-838f-4c50-bc28-86712319ed0b}</UniqueIdentifier>
+>>>>>>> Stashed changes
     </Filter>
     <Filter Include="02.GameObjects\Puzzle\Key\Building_Key">
       <UniqueIdentifier>{1b7cfc4d-d43f-4c74-8e23-e603d3361ad8}</UniqueIdentifier>
@@ -169,6 +174,7 @@
     <Filter Include="02.GameObjects\Puzzle\Door\Cellar_Door">
       <UniqueIdentifier>{a4714bb9-ea6e-4f62-bfa8-e6e9f132056b}</UniqueIdentifier>
     </Filter>
+<<<<<<< Updated upstream
     <Filter Include="02.GameObjects\Puzzle\Door\Building_Red_Door">
       <UniqueIdentifier>{ee0369ef-3737-4ec8-ba87-1d05db749a2d}</UniqueIdentifier>
     </Filter>
@@ -187,6 +193,14 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
+=======
+    <Filter Include="02.GameObjects\Puzzle\Key\PadLock\PadLock_Key">
+      <UniqueIdentifier>{2d71d493-b5c8-45a6-9960-22948422a459}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02.GameObjects\Puzzle\Key\PadLock\PadLock_Broken">
+      <UniqueIdentifier>{7ac90cf6-5215-4938-b3f9-0d8cc0f21118}</UniqueIdentifier>
+    </Filter>
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h">
@@ -324,7 +338,7 @@
       <Filter>02.GameObjects\Puzzle\Swtich\Red_Switch</Filter>
     </ClInclude>
     <ClInclude Include="..\Public\PadLock_Key.h">
-      <Filter>02.GameObjects\Puzzle\Key\PadLock_Key</Filter>
+      <Filter>02.GameObjects\Puzzle\Key\PadLock\PadLock_Key</Filter>
     </ClInclude>
     <ClInclude Include="..\Public\Building_Key.h">
       <Filter>02.GameObjects\Puzzle\Key\Building_Key</Filter>
@@ -358,6 +372,9 @@
     </ClInclude>
     <ClInclude Include="..\Public\Combo_Lock_Obj.h">
       <Filter>02.GameObjects\Puzzle\Combo_Number_Lock</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\PadLock_Broken.h">
+      <Filter>02.GameObjects\Puzzle\Key\PadLock\PadLock_Broken</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -487,7 +504,7 @@
       <Filter>02.GameObjects\Puzzle\Swtich\Red_Switch</Filter>
     </ClCompile>
     <ClCompile Include="..\Private\PadLock_Key.cpp">
-      <Filter>02.GameObjects\Puzzle\Key\PadLock_Key</Filter>
+      <Filter>02.GameObjects\Puzzle\Key\PadLock\PadLock_Key</Filter>
     </ClCompile>
     <ClCompile Include="..\Private\Building_Key.cpp">
       <Filter>02.GameObjects\Puzzle\Key\Building_Key</Filter>
@@ -521,6 +538,9 @@
     </ClCompile>
     <ClCompile Include="..\Private\Combo_Lock_Obj.cpp">
       <Filter>02.GameObjects\Puzzle\Combo_Number_Lock</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\PadLock_Broken.cpp">
+      <Filter>02.GameObjects\Puzzle\Key\PadLock\PadLock_Broken</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

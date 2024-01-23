@@ -27,7 +27,6 @@ HRESULT CRed_Door::Initialize(void* pArg)
 	if (nullptr != pArg)
 		CGameObject::GAMEOBJECT_DESC* pDesc = (CGameObject::GAMEOBJECT_DESC*)pArg;
 	
-
 	if (FAILED(__super::Initialize(&MyDesc)))
 		return E_FAIL;
 
@@ -47,17 +46,7 @@ HRESULT CRed_Door::Initialize(void* pArg)
 
 void CRed_Door::Tick(_float fTimeDelta)
 {
-	// 만약 좌물쇠가 열리면 움직임 가능
 	UnLockingControl(fTimeDelta);
-
-	if (m_bOpenDoor)
-	{
-		if (DOWN == m_pGameInstance->Get_KeyState('E') || m_bDoorRot)
-		{
-			m_bDoorRot = true;
-			UnLockAnimation(fTimeDelta);
-		}
-	}
 }
 
 void CRed_Door::Late_Tick(_float fTimeDelta)
@@ -127,7 +116,7 @@ void CRed_Door::UnLockingControl(_float fTimeDelta)
 
 	_float fDistance = D3DXVec3Length(&vDiff);
 
-	if (abs(fDistance) <= 3.0f)
+	if (abs(fDistance) <= 2.0f)
 	{
 		list<class CGameObject*>* pPlayerLayerList = m_pGameInstance->Get_LayerList(LEVEL_GAMEPLAY, TEXT("Layer_Player"));
 		CGameObject* pGameObject = *(pPlayerLayerList->begin());
@@ -141,6 +130,7 @@ void CRed_Door::UnLockingControl(_float fTimeDelta)
 				if (DOWN == m_pGameInstance->Get_KeyState('E'))
 				{
 					m_bOpenDoor = true;
+					m_bPos = false;
 					iter = pPlayer->Get_Key_Address()->erase(iter);
 				}
 				else
@@ -149,7 +139,19 @@ void CRed_Door::UnLockingControl(_float fTimeDelta)
 			else
 				++iter;
 		}
+
+		// 만약 문이 열린 상태라면
+		if (m_bOpenDoor)
+		{
+			if (DOWN == m_pGameInstance->Get_KeyState('E') || m_bDoorRot)
+			{
+				m_bDoorRot = true;
+				UnLockAnimation(fTimeDelta);
+			}
+		}
 	}
+
+	
 }
 
 CRed_Door* CRed_Door::Create(LPDIRECT3DDEVICE9 pGraphic_Device)

@@ -23,10 +23,8 @@ HRESULT CPadLock::Initialize(void* pArg)
 	CGameObject::GAMEOBJECT_DESC  MyDesc = {};
 
 	if (nullptr != pArg)
-	{
 		CGameObject::GAMEOBJECT_DESC* pDesc = (CGameObject::GAMEOBJECT_DESC*)pArg;
-	}
-
+	
 	if (FAILED(__super::Initialize(&MyDesc)))
 		return E_FAIL;
 
@@ -35,8 +33,14 @@ HRESULT CPadLock::Initialize(void* pArg)
 
 	m_fFrame = 0.f;
 	m_pTextureCom->Change_Container(TEXT("Puzzle"), TEXT("PadLockChain"));
+<<<<<<< Updated upstream
 	m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(3.f, 5.f, 3.f));
 	
+=======
+ 	m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(3.f,1.f, 3.f));
+	m_pTransformCom->Set_Scaled(2.f, 1.f, 1.f);
+
+>>>>>>> Stashed changes
 	return S_OK;
 }
 
@@ -86,6 +90,7 @@ HRESULT CPadLock::Add_MyComponents()
 
 HRESULT CPadLock::Set_RenderState()
 {
+	m_pGraphic_Device->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
 	m_pGraphic_Device->SetRenderState(D3DRS_ALPHATESTENABLE, TRUE);
 	m_pGraphic_Device->SetRenderState(D3DRS_ALPHAREF, 150);
 	m_pGraphic_Device->SetRenderState(D3DRS_ALPHAFUNC, D3DCMP_GREATER);
@@ -95,6 +100,7 @@ HRESULT CPadLock::Set_RenderState()
 
 HRESULT CPadLock::Reset_RenderState()
 {
+	m_pGraphic_Device->SetRenderState(D3DRS_CULLMODE, D3DCULL_CCW);
 	m_pGraphic_Device->SetRenderState(D3DRS_ALPHATESTENABLE, FALSE);
 
 	return S_OK;
@@ -148,12 +154,22 @@ void CPadLock::UnLockAnimation(_float fTimeDelta)
 		}
 		else
 		{
+			if (!m_bBroken_Create)
+			{
+				m_bBroken_Create = true;
+				CPadLock::PADLOCK_DESC pDesc = {};
+				pDesc.Pos = m_pTransformCom->Get_State(CTransform::STATE_POSITION);
+
+				m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, TEXT("Layer_Object"), TEXT("Prototype_GameObject_PadLock_Broken"), &pDesc);
+			}
+
+			m_bDoorOn = true;
+
 			// 아래로 이동
 			m_pTransformCom->Set_State(CTransform::STATE_POSITION,
-				m_pTransformCom->Get_State(CTransform::STATE_POSITION) - _float3(0.f, 3.5f * fTimeDelta, 0.f));
-
+				m_pTransformCom->Get_State(CTransform::STATE_POSITION) - _float3(0.f, 3.8f * fTimeDelta, 0.f));
+			
 			m_fFrame = 1.f;
-			m_bDoorOn = true;
 		}
 	}
 	
@@ -188,7 +204,7 @@ CGameObject* CPadLock::Clone(void* pArg)
 
 CGameObject* CPadLock::Check_Collision(LEVEL eLevel, const wstring& strLayerTag, _float3* pDirection)
 {
-	return nullptr;
+	return false;
 }
 
 void CPadLock::Free()

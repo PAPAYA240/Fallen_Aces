@@ -37,6 +37,9 @@ HRESULT CLevel_GamePlay::Initialize()
 	if (FAILED(Ready_Layer_Object(TEXT("Layer_Object"))))
 		return E_FAIL;
 
+	if (FAILED(Ready_Layer_Door(TEXT("Layer_Door"))))
+		return E_FAIL;
+
 	return S_OK;
 }
 
@@ -108,6 +111,7 @@ HRESULT CLevel_GamePlay::Ready_Layer_Player(const wstring & strLayerTag, CLandOb
 	return S_OK;
 }
 
+<<<<<<< Updated upstream
 HRESULT CLevel_GamePlay::Ready_Layer_Monster(const wstring & strLayerTag, CMonster::MONSTER_DESC& MonsterDesc)
 {
 	for (size_t i = 0; i < 5; i++)
@@ -128,6 +132,19 @@ HRESULT CLevel_GamePlay::Ready_Layer_Monster(const wstring & strLayerTag, CMonst
 	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_Goon_Monster"), &MonsterDesc)))
 		return E_FAIL;
 
+=======
+HRESULT CLevel_GamePlay::Ready_Layer_Enemy(const wstring& wstrLayerTag, CLandObject::LANDOBJECT_DESC& LandObjectDesc)
+{
+	for (_uint i = 0; i < 5; ++i)
+	{
+		if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, wstrLayerTag, TEXT("Prototype_GameObject_Enemy_Goon"), &LandObjectDesc)))
+			return E_FAIL;
+
+		if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, wstrLayerTag, TEXT("Prototype_GameObject_Enemy_Pipe"), &LandObjectDesc)))
+			return E_FAIL;
+	}
+
+>>>>>>> Stashed changes
 	return S_OK;
 }
 
@@ -186,6 +203,8 @@ HRESULT CLevel_GamePlay::Ready_Layer_Key(const wstring& strLayerTag)
 	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_PadLock_Key"), &KeyObjectDesc)))
 		return E_FAIL;
 
+
+
 	return S_OK;
 }
 
@@ -210,10 +229,7 @@ HRESULT CLevel_GamePlay::Ready_Layer_Switch(const wstring& strLayerTag)
 
 HRESULT CLevel_GamePlay::Ready_Layer_Object(const wstring& strLayerTag)
 {
-	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_Boss_Door"))))
-		return E_FAIL;
-
-	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_PadLock"))))
+	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, TEXT("Layer_Lock"), TEXT("Prototype_GameObject_PadLock"))))
 		return E_FAIL;
 
 	/* Combo Lock Door */
@@ -223,13 +239,23 @@ HRESULT CLevel_GamePlay::Ready_Layer_Object(const wstring& strLayerTag)
 	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, TEXT("Layer_LockObj"), TEXT("Prototype_GameObject_Combo_Lock_Obj"))))
 		return E_FAIL;
 
+
+	return S_OK;
+}
+
+HRESULT CLevel_GamePlay::Ready_Layer_Door(const wstring& strLayerTag)
+{
+	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_Boss_Door"))))
+		return E_FAIL;
+
 	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_Cellar_Door"))))
 		return E_FAIL;
-	
+
 	if (FAILED(m_pGameInstance->Add_Clone(LEVEL_GAMEPLAY, strLayerTag, TEXT("Prototype_GameObject_RedDoor"))))
 		return E_FAIL;
 
 	return S_OK;
+
 }
 
 

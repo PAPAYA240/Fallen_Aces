@@ -45,15 +45,6 @@ void CCellar_Door::Tick(_float fTimeDelta)
 {
 	// 만약 좌물쇠가 열리면 움직임 가능
 	UnLockingControl(fTimeDelta);
-
-	if (m_bOpenDoor)
-	{
-		if (DOWN == m_pGameInstance->Get_KeyState('E') || m_bDoorRot)
-		{
-			m_bDoorRot = true;
-			UnLockAnimation(fTimeDelta);
-		}
-	}
 }
 
 void CCellar_Door::Late_Tick(_float fTimeDelta)
@@ -123,13 +114,27 @@ void CCellar_Door::UnLockingControl(_float fTimeDelta)
 
 	_float fDistance = D3DXVec3Length(&vDiff);
 
-	if (abs(fDistance) <= 3.0f)
+	if (abs(fDistance) <= 2.0f )
 	{
 		CGameObject* p = m_pGameInstance->Get_Object(LEVEL_GAMEPLAY, TEXT("Layer_Number"), 0);
 
 		if (DOWN == m_pGameInstance->Get_KeyState('E') && dynamic_cast<CNumber*>(p)->Get_Correct())
+		{
 			m_bOpenDoor = true;
+			m_bPos = false;
+		}
+
+		// 만약 문이 열린 상태라면
+		if (m_bOpenDoor)
+		{
+			if (DOWN == m_pGameInstance->Get_KeyState('E') || m_bDoorRot)
+			{
+				m_bDoorRot = true;
+				UnLockAnimation(fTimeDelta);
+			}
+		}
 	}
+
 }
 
 CCellar_Door* CCellar_Door::Create(LPDIRECT3DDEVICE9 pGraphic_Device)

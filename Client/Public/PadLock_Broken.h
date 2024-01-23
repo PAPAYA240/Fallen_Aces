@@ -2,19 +2,12 @@
 #include "Client_Defines.h"
 #include "GameObject.h"
 
-class CPadLock final : public CGameObject
+class CPadLock_Broken final : public CGameObject
 {
-public :
-	typedef struct vPos : public CGameObject::GAMEOBJECT_DESC
-	{
-		_float3 Pos = {};
-
-	}PADLOCK_DESC;
-
 private:
-	CPadLock(LPDIRECT3DDEVICE9 _pGraphic_Device);
-	CPadLock(const CPadLock& rhs);
-	virtual ~CPadLock() = default;
+	CPadLock_Broken(LPDIRECT3DDEVICE9 _pGraphic_Device);
+	CPadLock_Broken(const CPadLock_Broken& rhs);
+	virtual ~CPadLock_Broken() = default;
 
 public:
 	virtual HRESULT Initialize_Prototype() override;
@@ -23,7 +16,7 @@ public:
 	virtual void Late_Tick(_float fTimeDelta) override;
 	virtual HRESULT Render() override;
 
-public :
+public:
 	_bool	OnDoor() { return m_bDoorOn; }
 
 private:
@@ -32,26 +25,21 @@ private:
 	HRESULT Set_RenderState();
 	HRESULT Reset_RenderState();
 
-public :
-	_bool	Get_Door_Open() { return m_bDoorOn; }
-
-private :
-	void	UnLockingControl();
+private:
+	//void	UnLockingControl();
 	void	UnLockAnimation(_float fTimeDelta);
 
 private:
-	CTexture*		m_pTextureCom = { nullptr };
+	CTexture* m_pTextureCom = { nullptr };
 	CVIBuffer_Rect* m_pVIbufferCom = { nullptr };
 
-private :
+private:
 	_float		m_Drop_Time = { 0.0f };
-	_bool		m_bUnLock = { false };
-	_bool		m_bDoorOn = { false };
-	_bool		m_bBroken_Create = { false };
-	_float		m_fFrame = 0.f;
+	_bool		m_bUnLock = false;
+	_bool		m_bDoorOn = false;
 
 public:
-	static CPadLock* Create(LPDIRECT3DDEVICE9 pGraphic_Device); /* 원형객체를 생성하기위한 함수. */
+	static CPadLock_Broken* Create(LPDIRECT3DDEVICE9 pGraphic_Device); /* 원형객체를 생성하기위한 함수. */
 	virtual CGameObject* Clone(void* pArg) override;
 
 	CGameObject* Check_Collision(LEVEL eLevel, const wstring& strLayerTag, _float3* pDirection);

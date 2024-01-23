@@ -179,9 +179,30 @@
     <ClInclude Include="..\Public\DoorObj.h" />
     <ClInclude Include="..\Public\Effect.h" />
     <ClInclude Include="..\Public\Fences_Door.h" />
-    <ClInclude Include="..\Public\Goon_Monster.h" />
     <ClInclude Include="..\Public\ColorKey.h" />
     <ClInclude Include="..\Public\KeyCard.h" />
+    <ClInclude Include="..\Public\KeyObject.h" />
+    <ClInclude Include="..\public\Level_Tool.h" />
+    <ClInclude Include="..\Public\Lever_Switch.h" />
+    <ClInclude Include="..\Public\LightSwitch.h" />
+    <ClInclude Include="..\Public\Mouse.h" />
+    <ClInclude Include="..\Public\Number.h" />
+    <ClInclude Include="..\Public\PadLock.h" />
+    <ClInclude Include="..\Public\PadLock_Key.h" />
+    <ClInclude Include="..\Public\Particle.h" />
+    <ClInclude Include="..\Public\Client_Objects.h" />
+    <ClInclude Include="..\Public\CWeaponItem.h" />
+    <ClInclude Include="..\Public\Player_UI_Manager.h" />
+    <ClInclude Include="..\Public\QuestionMark.h" />
+    <ClInclude Include="..\Public\Red_Door.h" />
+    <ClInclude Include="..\Public\Red_Switch.h" />
+    <ClInclude Include="..\Public\ResObject.h" />
+    <ClInclude Include="..\Public\Effect.h" />
+    <ClInclude Include="..\Public\HorizonRes.h" />
+    <ClInclude Include="..\Public\Goon_Monster.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="..\public\LandObject.h" />
     <ClInclude Include="..\Public\Level_GamePlay.h" />
     <ClInclude Include="..\public\Level_Loading.h" />
@@ -241,6 +262,25 @@
     <ClCompile Include="..\Private\Goon_Monster.cpp" />
     <ClCompile Include="..\Private\ColorKey.cpp" />
     <ClCompile Include="..\Private\KeyCard.cpp" />
+    <ClCompile Include="..\Private\KeyObject.cpp" />
+    <ClCompile Include="..\private\Level_Tool.cpp" />
+    <ClCompile Include="..\Private\Lever_Switch.cpp" />
+    <ClCompile Include="..\Private\LightSwitch.cpp" />
+    <ClCompile Include="..\Private\Mouse.cpp" />
+    <ClCompile Include="..\Private\Number.cpp" />
+    <ClCompile Include="..\Private\PadLock.cpp" />
+    <ClCompile Include="..\Private\PadLock_Key.cpp" />
+    <ClCompile Include="..\Private\Particle.cpp" />
+    <ClCompile Include="..\Private\Player_UI_Manager.cpp" />
+    <ClCompile Include="..\Private\QuestionMark.cpp" />
+    <ClCompile Include="..\Private\Red_Door.cpp" />
+    <ClCompile Include="..\Private\Red_Switch.cpp" />
+    <ClCompile Include="..\Private\ResObject.cpp" />
+    <ClCompile Include="..\Private\Effect.cpp" />
+    <ClCompile Include="..\Private\Goon_Monster.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\private\LandObject.cpp" />
     <ClCompile Include="..\Private\Level_GamePlay.cpp" />
     <ClCompile Include="..\private\Level_Loading.cpp" />

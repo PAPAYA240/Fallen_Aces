@@ -24,9 +24,7 @@ HRESULT CFences_Door::Initialize(void* pArg)
 	CGameObject::GAMEOBJECT_DESC  MyDesc = {};
 
 	if (nullptr != pArg)
-	{
 		CGameObject::GAMEOBJECT_DESC* pDesc = (CGameObject::GAMEOBJECT_DESC*)pArg;
-	}
 
 	if (FAILED(__super::Initialize(&MyDesc)))
 		return E_FAIL;
@@ -35,6 +33,11 @@ HRESULT CFences_Door::Initialize(void* pArg)
 		return E_FAIL;
 
 	m_pTextureCom->Change_Container(TEXT("Puzzle"), TEXT("Fences_Door"));
+<<<<<<< Updated upstream
+=======
+	m_pTransformCom->Set_State(CTransform::STATE_POSITION, _float3(_float(rand() % 100), 1.f, _float(rand() % 100)));
+	m_pTransformCom->Set_Scaled(0.6f, 0.3f, 1.f);
+>>>>>>> Stashed changes
 
 	return S_OK;
 }
@@ -42,7 +45,6 @@ HRESULT CFences_Door::Initialize(void* pArg)
 void CFences_Door::Tick(_float fTimeDelta)
 {
 	UnLockingControl(fTimeDelta);
-	// 만약 좌물쇠가 열리면 움직임 가능
 }
 
 void CFences_Door::Late_Tick(_float fTimeDelta)
@@ -81,7 +83,7 @@ void CFences_Door::UnLockingControl(_float fTimeDelta)
 
 	_float fDistance = D3DXVec3Length(&vDiff);
 
-	if (abs(fDistance) <= 3.0f)
+	if (abs(fDistance) <= 2.0f)
 	{
 		list<class CGameObject*>* pPlayerLayerList = m_pGameInstance->Get_LayerList(LEVEL_GAMEPLAY, TEXT("Layer_Player"));
 		CGameObject* pGameObject = *(pPlayerLayerList->begin());
@@ -96,13 +98,25 @@ void CFences_Door::UnLockingControl(_float fTimeDelta)
 				if (DOWN == m_pGameInstance->Get_KeyState('E') && bDoor_Open->Get_Door_Open())
 				{
 					// 문 오픈
-					UnLockAnimation(fTimeDelta);
+					m_bOpenDoor = true;
+					m_bPos = false;
+					iter = pPlayer->Get_Key_Address()->erase(iter);
 				}
 				else
 					++iter;
 			}
 			else
 				++iter;
+		}
+
+		// 만약 문이 열린 상태라면
+		if (m_bOpenDoor)
+		{
+			if (DOWN == m_pGameInstance->Get_KeyState('E') || m_bDoorRot)
+			{
+				m_bDoorRot = true;
+				UnLockAnimation(fTimeDelta);
+			}
 		}
 	}
 }
