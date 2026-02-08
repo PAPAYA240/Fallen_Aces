@@ -17,11 +17,11 @@
 <br>
 
 ## 🛠 2. 기술 스택
-- **Engine:** 
-- **Language:** C#
+- **Engine:** DirectX9, ImGui
+- **Language:** C++
 - **IDE:** Visual Studio 2022
-- **Version Control:** Git / GitHub
-- **Collaboration:** Notion, Discord
+- **Version Control:** Git / GitHub DeskTop
+- **Collaboration:** Notion
 
 <br>
 
